@@ -2,10 +2,11 @@
 
 3주차 과제입니다.
 
-'학번_이름(반드시 영문으로 표기)' 폴더를 생성하고 'index.html' 파일(파일생성시 영문으로 표기)을 생성하여 작성합니다.
+'학번_이름(반드시 영문으로 표기)' 폴더를 생성하고 '#homework' 폴더 내의 파일을 복사합니다.<br/>
+index.html 에는 js/script.js 경로의 파일이 로드되어 있습니다. js 파일에 아래 항목들을 수행합니다.
 
 
-## Quest.
+## 문제 풀이.
 
 ### Quest 1.
 1) 변수를 선언하고 숫자 '29' 를 할당합니다.
@@ -15,33 +16,34 @@
 
 
 ### Quest 2.
-1) 알파벳 'a' 부터 'z' 까지 순서대로 console 에 출력되도록 반복문을 작성합니다.
+1) 'user' 라는 변수를 선언하고 새로운 객체를 생성하여 값으로 할당합니다.
+2) 'user' 객체의 각 key 와 value 는 아래 보기와 같이 적용합니다.
+3) 만약 'user' 객체 "job" key의 값(value)을 확인하여 데이터 타입이 문자 타입이라면 "greeting" key의 값을 console에 출력, 문자 타입이 아니라면 "name" key의 값을 console에 출력되도록 조건문을 작성합니다.
+
+```
+첫번째 key: "name" value: "본인이름 입력"
+두번째 key: "greeting" value: "안녕하세요"
+세번째 key: "job" value: "학생"
+네번째 key: "school" value: "계원예술대학교"
+다섯번째 key: "major" value: "디지털미디어디자인"
+여섯번째 key: "grade" value: 2
+일곱번째 key: "class" value: "D"
+```
+
+## JavaScript 연습하기.
+
+1) 숫자(Number), 문자(String), 변수(variable), 연산자(산술, 대입, 비교, 동등, 일치, 부정), 데이터 타입(Data Type), 오브젝트(Object), 배열(Array), 조건문(if) 등에 대해 익히고 연습합니다.
+2) 값은 console.log() 를 이용하여 출력합니다.
+3) 자신이 연습 작성한 코드 실행 출력 시 예상되는 값은 주석을 이용하여 작성합니다.
 
 
-### Quest 3.
-1) '1' 부터 '50' 까지 순서대로 console 에 출력되도록 반복문을 작성하고 출력 시 해당 값의 **짝/홀수** 여부를 함께 표시합니다.
-2) console 에 출력 예시 : **1은 홀수!**
+## 자기소개하기.
 
+1) 숫자(Number), 문자(String), 변수(variable), 연산자(산술, 대입, 비교, 동등, 일치, 부정), 데이터 타입(Data Type), 오브젝트(Object), 배열(Array), 조건문(if) 등을 이용하여 장문의 자기소개를 합니다.
+2) 값은 console.log() 를 이용하여 문서 실행시 자기소개가 한꺼번에 출력되도록 합니다.
+3) 데이터 형식, 연산 등에서 잘 모르는 부분은 주석을 이용하여 질문을 합니다.
 
 
 ## 제출기한
 
 4월 22일 (수) 23:00 까지 업로드
-
-## JavaScript 사용하기
-
-```
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8"/>
-<title>3WEEK</title>
-</head>
-<body>
-<h1>3WEEK - 04/16</h1>
-<script type="text/javascript">
-    //이 부분에 JavaScript 코드를 기입합니다.
-</script>
-</body>
-</html>
-```
