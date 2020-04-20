@@ -59,7 +59,7 @@ user ={
     key7 : "D"
 }
 
-//2. key 출력
+// key 출력
 console.log(user);
 console.log(user.key1);
 console.log(user.key2);
