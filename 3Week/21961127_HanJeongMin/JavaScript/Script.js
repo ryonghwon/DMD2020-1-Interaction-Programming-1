@@ -60,7 +60,7 @@ user ={
 }
 
 console.log(user);
-console.log(user.key1); // 각 항목의 값을 찾기. value1
+console.log(user.key1);
 console.log(user.key2);
 console.log(user.key3);
 console.log(user.key4);
