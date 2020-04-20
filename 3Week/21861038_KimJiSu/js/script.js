@@ -50,23 +50,26 @@ Quest 2.
 // Answer 2.
 // 1. 변수 user를 선언하고 {}(객체) 할당 
 var user = {};
-// 2. 
+
+// 2. 위 원소 적용
 user = {
-    "name" : "김지수",
-    "greeting" : "안녕하세요",
-    "job" : "학생",
-    "school" : "계원예술대학교",
-    "major" : "디지털미디어디자인",
-    "grade" : 2,
-    "class" : "D"
+    name : "김지수",
+    greeting : "안녕하세요",
+    job : "학생",
+    school : "계원예술대학교",
+    major : "디지털미디어디자인",
+    grade : 2,
+    class : "D"
 }
-if(typeof user["job"] === "string")
+
+// 3. 
+if(typeof user.job === "string")
 {
-    console.log(user["greeting"]);
+    console.log(user.greeting);
 }
 else
 {
-    console.log(user["name"]);
+    console.log(user.name);
 }
 
 /*
@@ -78,7 +81,74 @@ JavaScript 연습하기.
 */
 // 연습.
 
+console.log(10); // 10
+console.log(10.5); // 10.5
+console.log(10 + 10.5); // 20.5 정수와 실수 계산 가능
 
+var num1 = 10; // 변수 num1에 숫자 10 대입
+var str1 = "Hello"; // 변수 str1에 문자 "Hi" 대입, 문자(string)는 무조건 "  "(따옴표) 안에 써야함
+
+console.log(num1); // 10
+console.log(num1 + 2); // 10 + 2 -> 12
+console.log(num1 - 2); // 10 - 2 -> 8
+console.log(num1 * 2); // 10 * 2 -> 20
+console.log(num1 / 2); // 10 / 2 -> 5
+console.log(num1 % 2); // 10 % 2 -> 0, 숫자는 당연히 산술 연산 가능
+console.log(str1); // Hello
+console.log(num1 + str1); // 10Hello, 숫자와 문자는 더하기 산술 연산 가능
+console.log(str1 * 2) // HelloHello 인줄 알았으나 NaN으로 수식이 성립되지 않음, 위의 것을 보면 더하기만 가능한 듯
+console.log(str1 + "안녕하세요"); // Hello안녕하세요, 문자 값이 있는 변수와 문자는 연산 가능
+
+console.log("\"안녕하세요~!\""); // 안녕하세요~!, \(escape)로 특수문자 가능
+console.log("안녕\n하세요") // 안녕 \n(줄바꿈) 하세요
+
+// 동등 == 같으면 true, 다르면 false 
+// 일치 === 데이터 타입까지 같으면 true, 하나라도 다르면 false
+console.log(num1 == "10"); // true, 10 == "10" 10이라는 모양이 같아 true
+console.log(num1 === "10"); // false, 10 === "10" 숫자 10, 문자 "10"으로 false
+// 부정 != 같으면 false, 다르면 true   !== 데이터 타입까지 같으면 false, 하나라도 다르면 true
+console.log(num1 != "10") // false, 10 == "10" 10이라는 모양이 같아 false
+console.log(num1 !== "10") // true, 10 === "10" 숫자 10, 문자 "10"으로 true
+
+var num2 = 30;
+console.log(num1 > num2); // false, 10 > 30
+console.log(num1 < num2); // true, 10 < 30
+num1 = 30; // 변수 재활용
+console.log(num1 >= num2); // true, 30 >= 30
+num2 = 40; // 변수 재활용
+console.log(num1 <= num2); // true, 30 <= 40
+
+console.log(typeof num1); // number
+console.log(typeof str1); // string
+console.log(typeof true); // boolean
+
+var obj = {};
+obj = {
+    red : "해",
+    orange : "노을",
+    yellow : "꽃",
+    green : "새싹",
+    blue : "하늘"
+}
+console.log(obj); // {red: "해", orange: "노을", yellow: "꽃", green: "새싹", blue: "하늘"}
+console.log(obj.green); // 새싹
+console.log(typeof obj.blue); // string
+
+var arr = [];
+arr = ["Hi", 21861038, "violet"];
+console.log(arr[2]); // violet
+console.log(arr.length); // 3
+console.log(typeof arr[1]); // number
+console.log(arr); // ["Hi", 21861038, "violet"]
+
+if(typeof obj.red === "string")
+{
+    console.log(arr[1]);
+}
+else
+{
+    console.log(obj.red);
+}
 
 /*
 자기소개하기.
@@ -88,3 +158,67 @@ JavaScript 연습하기.
 3. 데이터 형식, 연산 등에서 잘 모르는 부분은 주석을 이용하여 질문을 합니다.
 */
 // 자기소개.
+
+var hab = {};
+hab = {
+    hi : "안녕하세요!",
+    bye : "잘부탁드립니당!",
+}
+
+var profile1 = {};
+profile1 = {
+    name : "김지수",
+    number : "18학번",
+    age : "23살",
+    major : "프로그래밍"
+}
+
+var sub1 = [];
+sub1 = ["휴학", "복학"];
+
+var fav = [];
+fav = ["친한 친구들과 놀기", "술 먹기", "노래방 가기", "게임하기", "영화보기", "그림"];
+
+var sub2 = [];
+sub2 = ["오버워치", "잔잔한", "화려한"];
+
+var profile2 = {};
+profile2 = {
+    id : "@varoorav",
+    illust : "일러스트",
+    cartoon : "일상툰",
+}
+
+var intr1 = hab.hi + " " + profile1.number + " " + profile1.name + "입니다.\n\n";
+
+var intr2 = "저는 올해 " + profile1.age + "이며 작년에 잠시 쉬고 싶기도 하고 대학에 오면 무조건 한 번쯤은 " + 
+sub1[0] + "해보고 싶어서 " + sub1[0] + "했고 이번년도에 " + sub1[1] + "했습니다. ";
+
+var intr3 = "그리고 제가 생각한 무언가를 더 잘 표현하고 구현하고 싶어서 " + profile1.major +"을 전공으로 선택했습니다.\n\n"
+
+var intr4 = fav + " 등을 좋아하며 게임은 거의 " + sub2[0] + "만 하고 영화는 " + sub2[1] +
+" 드라마나 " + sub2[2] + " 액션..? 영화를 즐겨 봅니다.\n\n"; 
+
+var intr5 = fav[5] + " 그리는 것을 좋아해 2주에 한 번 꼴로 인스타그램 "+ profile2.id + "에 " 
++ profile2.illust + ", " + profile2.cartoon + "을 비정기적으로 올리고 있습니다.\n\n";
+
+var intr6 = "앞으로 " + hab.bye; 
+
+if(typeof hab.hi === "string")
+{
+    console.log(intr1 + intr2 + intr3 + intr4 + intr5 + intr6);
+}
+/*
+안녕하세요! 18학번 김지수입니다.
+저는 올해 23살이며 작년에 잠시 쉬고 싶기도 하고 대학에 오면 무조건 한 번쯤은 휴학해보고 싶어서 휴학했고 이번년도에 복학했습니다.
+그리고 제가 생각한 무언가를 더 잘 표현하고 구현하고 싶어서 프로그래밍을 전공으로 선택했습니다.
+
+친한 친구들과 놀기, 술 먹기, 노래방 가기, 게임하기, 영화보기 등을 좋아하며
+게임은 거의 오버워치만 하고 영화는 잔잔한 드라마나 화려한 액션..? 영화를 즐겨 봅니다. 
+
+그림 그리는 것을 좋아해 2주에 한 번 꼴로 인스타그램 @varoorav에 
+일러스트, 일상툰을 비정기적으로 올리고 있습니다.
+
+앞으로 잘부탁드립니당!
+20200421
+*/
