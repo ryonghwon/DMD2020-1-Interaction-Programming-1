@@ -50,7 +50,8 @@ Quest 2.
 // Answer 2.
 // 1. 변수 user를 선언하고 {}(객체) 할당 
 var user = {};
-// 2. 
+
+// 2. 위 원소 적용
 user = {
     "name" : "김지수",
     "greeting" : "안녕하세요",
@@ -60,6 +61,8 @@ user = {
     "grade" : 2,
     "class" : "D"
 }
+
+// 3. 
 if(typeof user["job"] === "string")
 {
     console.log(user["greeting"]);
@@ -77,6 +80,41 @@ JavaScript 연습하기.
 3. 자신이 연습 작성한 코드 실행 출력 시 예상되는 값은 주석을 이용하여 작성합니다.
 */
 // 연습.
+
+console.log(10); // 10
+console.log(10.5); // 10.5
+console.log(10 + 10.5); // 20.5 정수와 실수 계산 가능
+
+var num1 = 10; // 변수 num1에 숫자 10 대입
+var str1 = "Hello"; // 변수 str1에 문자 "Hi" 대입, 문자(string)는 무조건 "  "(따옴표) 안에 써야함
+
+console.log(num1); // 10
+console.log(num1 + 2); // 10 + 2 -> 12
+console.log(num1 - 2); // 10 - 2 -> 8
+console.log(num1 * 2); // 10 * 2 -> 20
+console.log(num1 / 2); // 10 / 2 -> 5
+console.log(num1 % 2); // 10 % 2 -> 0, 숫자는 당연히 산술 연산 가능
+console.log(str1); // Hello
+console.log(num1 + str1); // 10Hello, 숫자와 문자는 더하기 산술 연산 가능
+console.log(str1 * 2) // HelloHello 인줄 알았으나 NaN으로 수식이 성립되지 않음, 위의 것을 보면 더하기만 가능한 듯
+console.log(str1 + "안녕하세요"); // Hello안녕하세요, 문자 값이 있는 변수와 문자는 연산 가능
+
+console.log("\"안녕하세요~!\""); // 안녕하세요~!, \(escape)로 특수문자 가능
+console.log("안녕\n하세요") // 안녕 \n(줄바꿈) 하세요
+
+console.log(num1 == "10"); // true 
+console.log(num1 === "10"); // false
+console.log(num1 != "10") // false
+console.log(num1 !== "10") // true
+
+
+
+
+
+
+
+
+
 
 
 
