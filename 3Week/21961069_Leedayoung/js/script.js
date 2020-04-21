@@ -57,6 +57,8 @@ else { //문자가 아니라면
     console.log(user.name); //"name" key의 값을 console에 출력
 }
 
+
+console.log("-------------연습--------------");
 /*
 JavaScript 연습하기.
 
@@ -120,6 +122,18 @@ console.log("이건 몇번째 단어일까요".indexOf("건")); //1
 /* -------------------------------------------- */
 
 //3. Variable 변수
+
+//Data Type - 데이터 타입.
+// Number 숫자. ***
+// String 문자열. ***
+// Boolean 참 / 거짓. ***
+// undefined 값이 정의되지 않은 상태.
+// null 값은 적용하지만 비어있는 상태.
+// Object 객체 - {}
+// Array 배열객체 - []
+// Function 함수 - 기능을 만드는 박스.
+// NaN 수식이 성립되지 않은 상태.
+
 var variable; // 선언만 하고 값은 없는 상태 - undefined
 console.log(variable); //undefined 출력
 variable = "value"; //변수 variable 에 값 "value"(문자열) 대입
@@ -165,6 +179,12 @@ var tt4 = 67
 var sum = ((tt1 - tt2) / tt3 * tt1) + tt4
 console.log("결과값 : " + sum); //결과값 : 157
 
+// typeof - 데이터의 타입 찾는 방법.
+console.log(typeof 12); //number
+console.log(typeof "반가워요"); //string
+console.log(typeof true); //boolean 
+console.log(typeof false); //boolean
+
 /* -------------------------------------------- */
 
 // 4. 연산자  
@@ -197,44 +217,76 @@ console.log(string1 == string2); //"반갑습니다!" == "반갑습니다!" true
 console.log(t === 15); //true
 console.log(t === "15"); //false
 
-//대입연산자 += -= *= /= %=
-console.log(t += 5); //t = t + 5 = 20
-console.log(t -= 6); //t = t - 6 = 14
-console.log(t *= 7); //t = t * 7 = 98
-console.log(t /= 2); //t = t / 3 = 49
-console.log(t %= 7); //t = t % 2 = 0
 
 //부등(부정) 연산자. !=, !==
-t = 15 
 console.log(t != 15); //false
 console.log(t != 23); //true
 console.log(t !== '15'); //true
 console.log(t !== 15); //false
 
-
-// 5. Data Type - 데이터 타입.
-// Number 숫자. ***
-// String 문자열. ***
-// Boolean 참 / 거짓. ***
-// undefined 값이 정의되지 않은 상태.
-// null 값은 적용하지만 비어있는 상태.
-// Object 객체 - {}
-// Array 배열객체 - []
-// Function 함수 - 기능을 만드는 박스.
-// NaN 수식이 성립되지 않은 상태.
-// typeof - 데이터의 타입 찾는 방법.
-console.log(typeof 12); //number
-console.log(typeof "반가워요"); //string
-console.log(typeof true); //boolean
-console.log(typeof false); //boolean
-
-
 /* -------------------------------------------- */
 
+// 5. Object - 객체. 색인이 포함된 데이터들의 집합. {}
 
-
+var ob = {}; //새로운 객체를 생성
+ob = {
+    key1 : "춥고",
+    key2 : " 배고프고",
+    "key3" : 123
+}
+console.log(ob);
+console.log(ob.key1); //춥고
+console.log(ob["key1"]); //춥고
+console.log(typeof ob.key2); //string
+console.log(typeof ob.key3); //number
 
 /* -------------------------------------------- */
+// 6. Array - 배열 객체. []
+var ar = []; //새로운 배열을 생성
+ar = [1, 2, 3, "바질", "로즈마리", null, true];
+console.log(ar); // 0 1 2 3 4 5 6 색인이 없다. 순서로 찾을 수 있다.
+console.log(ar[0]); //1
+console.log(ar[3]); //"바질"
+console.log(ar.length) //전체 담긴 데이터의 길이(개수) : 7
+console.log(ar[ar.length - 1]); // 배열 객체의 마지막에 해당하는 값 true
+
+/* -------------------------------------------- */
+//7. if - 조건문
+//비교 연산자, 동등 연산자, 일치 연산자, 부등 연산자. - 조건을 확인하기 위해서 비교.
+var i = 30;
+var i2 = 5;
+var i3;
+console.log(typeof i3); //undefined
+if(typeof i3 === "undefined") { //변수 c 가 undefined면
+    i3 = i * i2; //a*b를 c에 대입한다.
+}else{ //아니면
+    i3 = i + i2; //a+b를 c에 대입한다.
+}
+console.log(i3); // 150
+
+i3 = 150;
+console.log(typeof i3); //number
+if(typeof i3 === "undefined"){//true.
+    i3 = i * i2;
+}else if(typeof c === "string"){//true.
+    i3 = i - i2;
+}else if(typeof c === "boolean"){//true.
+    i3 = i % i2;
+}else if(typeof c === "object"){//true.
+    i3 = i / i2;
+}else{//false.
+    i3 = i + i2;
+}
+console.log(i3); // 35
+
+
+var if1 = 3;
+var if2 = if1 + 30; //33
+var if3 = if2 % 8; //1
+
+console.log(if3 * 3 ); //3
+
+console.log("-------------연습 끝--------------");
 /*
 자기소개하기.
 
@@ -245,3 +297,36 @@ console.log(typeof false); //boolean
 // 자기소개.
 
 
+var lee = {
+    name : "이다영",
+    age : 21,
+    greeting : "안녕하세요."
+}
+var greeting2 = "올해 열심히 배워서 능숙하게 코딩을 할 수 있게 되면 좋겠습니다. "
+var greeting3 = "노력하겠습니다. ";
+var greeting4 = "잘 부탁드립니다!";
+var school = ["계원예술대학교", "디지털미디어디자인과", "D반", "프로그래밍"];
+var grade = 2;
+var home = "인천";
+var hobby = ["노래 듣기", "게임하기"];
+var singer = ["새소년", "쏜애플"]
+var game = ["롤", "스타듀밸리"]
+var birth = {
+    M : 7,
+    D : 22
+}
+var in1 = lee.greeting + "저는 " + lee.name + "입니다.";
+var in1_ = "올해 " + lee.age + "살이며, " + "생일은" + birth.M + "월 " + birth.D + "일생이고, 현재" + home + "에 살고 있습니다.";
+var in2 = school[0] + " " + school[1] + " " + grade + "학년" + school[2] + "입니다.";
+var in2_ = school[3] + " 수업을 듣고 관심이 생겨서" + school[3] + "을 세부전공으로 선택했습니다.";
+var in3 = "취미는 " + hobby[0] + "와 " + hobby[1] + "입니다";
+var in4 = "좋아하는 가수(밴드)는 " + singer[0] + "와 " + singer[1] + "이고,"
+var in5 = "즐겨하는 게임은 " + game[0] + game[1] + "입니다";
+var in6 = greeting2 + greeting3 + greeting4
+
+if (typeof lee.name == "string") {
+    console.log(in1 + "\n" + in2 + "\n" + in3 + "\n" + in4 + "\n" + in5 + "\n" + in6);
+}
+else {
+    console.log("실패;")
+}
