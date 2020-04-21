@@ -85,15 +85,30 @@ JavaScript 연습하기.
 console.log(3); //3
 console.log(7); //7
 
-//2. 문자.
+
+
+//2. 문자. - string
 
 //일반 
 console.log("삐용아 안녕");
 console.log("멍멍");
 
-//""
+//"" - \"
 console.log("\"삐용아 안녕\"");
 console.log("\"멍멍\"");
+
+//string 연산
+console.log("Hellow" + "world");
+console.log("Hellow" + " world");
+console.log("Hellow" + " " + "world" + "~" + "!");
+
+//숫자와 문자의 연산은??
+console.log(1 +1); //2
+console.log("1" + "1"); //11
+console.log(1 + "1"); // 11?
+console.log(1 + parseInt("1")); //2
+console.log(1 + parseInt("100")); //101
+console.log(1 + parseInt("100????")); //101
 
 //줄 바꿈 \n
 console.log("삐용아 안녕 \n멍멍")
@@ -103,6 +118,8 @@ console.log("멍멍\n삐용아 안녕")
 console.log("삐용아 안녕, 멍멍".length); //10
 
 //문자 순서 .indexOF
+
+
 
 //3. 연산자(산술, 대입, 문자)
 
@@ -159,6 +176,8 @@ a = 5;
 b = 2;
 console.log(a !== b);
 
+
+
 //4. 데이터 타입(Data Type) 
 // Number 숫자. ***
 //String 문자열. ***
@@ -173,6 +192,8 @@ console.log(typeof "안녕하세요"); //string
 console.log(typeof true); //boolean
 console.log(typeof false); //boolean
 
+
+
 //5. 오브젝트(Object) - 색인이 포함된 데이터들의 집합.
 var _obj = {}; //새로운 객체를 생성.
 _obj = {
@@ -186,6 +207,8 @@ console.log(_obj["key1"]); // 위와 동일. value1
 console.log(typeof _obj.key2); // string
 console.log(typeof _obj.key3); // number
 
+
+
 //6. 배열(Array) 
 var _arr = []; //새로운 배열 생성.
 _arr = [1, 2, "3", "안녕하세요", null, true];
@@ -196,6 +219,8 @@ console.log(_arr[0]); //1
 console.log(_arr[4]); // null
 console.log(_arr.length) //전체 담기 데이터의 길이(개수); 6
 console.log(_arr[_arr.length - 1]); // 배열 객체의 마지막에 해당하는 값.
+
+
 
 //7. 조건문(if)
 // 비교 연산자, 동등 연산자, 일치 연산자. - 조건을 확인하기 위헤서 비교.
@@ -212,8 +237,6 @@ else {
     console.log(false); // code가 실행
 }
 
-console.log();
-console.log()
 
 /*
 자기소개하기.
@@ -246,12 +269,26 @@ hobby = {
 var dream = [];
 dream = [" 꿈", "3D", "게임 그래픽", "디자이너" , "1-2", "오브젝트", "제작", "구성", "흥미"];
 
-var intro1 = "안녕하세요!" + " 교수님!"
-var intro2 = "저는" + " " + int["school"] + " " + int["major"] +"과" + " " +int["grade"] + "학년" + " " + int["class"] + "반" + " " + int["name"] + "입니다!"
-var intro3 = "가족은" + family[0] + family[1] + family[2] + family[3] + family[4] + family[5] + family[6] +" 구성되어있으며" + " 제" + " 서열은" + " 꼴찌입니다.."
-var intro4 = "제 " + hobby["hobby"] + "는 " + hobby["drawing"] + "입니다" + " 그 중에서도" + hobby["pen"] + "과" + hobby["crayon"] + "를" + " 좋아합니다"
-var intro5 = "제" + dream[0] + "은 " + dream[1] + " " + dream[2] + " " + dream[3] + "입니다"
-var intro6 = dream[4] + "학기 " + dream[1] + "디자인 수업에서 " + dream[5] + "를 이용하여" + " 화면" + dream[6] + " 및 " + dream[7] + "에 " + dream[8] + "를 느껴 정하게 되었습니다"
-var intro7 = "제가 코딩을 잘 하진 않지만 "
+var intro1 = "안녕하세요 교수님 \n"
+var intro2 = "저는" + " " + int["school"] + " " + int["major"] +"과" + " " +int["grade"] + "학년" + " " + int["class"] + "반" + " " + int["name"] + "입니다! \n"
+var intro3 = "저는 " + (2020 - 20) + "년 " + (2 * 4) + "월 " + (23) +"일에 태어났습니다 \n"
+var intro4 = "그리고 가족은" + family[0] + family[1] + family[2] + family[3] + family[4] + family[5] + family[6] +"로 구성되어있으며" + " 제" + "\"서열\"은" + " 꼴찌입니다.. \n"
+var intro5 = "제 " + hobby["hobby"] + "는 " + hobby["drawing"] + "입니다" + " 그 중에서도" + hobby["pen"] + "과" + hobby["crayon"] + "를" + " 좋아합니다 \n"
+var intro6 = "이런 저의" + dream[0] + "은 " + dream[1] + " " + dream[2] + " " + dream[3] + "입니다 \n"
+var intro7 = dream[4] + "학기 " + dream[1] + "디자인 수업에서 " + dream[5] + "를 이용하여" + " 화면" + dream[6] + " 및 " + dream[7] + "에 " + dream[8] + "를 느껴 정하게 되었습니다 \n"
+var intro8 = "제가 코딩을 잘 하진 않지만" + "앞으로 열심히 배워 감각적인 웹을 만들어 보고 싶습니다! \n"
 
-console.log(intro1, intro2, intro3, intro4, intro5, intro6);
+if( typeof intro1 == "string"){//true
+    console.log(intro1, intro2, intro3, intro4, intro5, intro6, intro7, intro8);
+}else{
+    console.log("다시 해오게");
+}
+
+
+//안녕하세요! 교수닙!
+//저는 계원예술대학교 디지털 미디어 디자인과 2학년 D반 권영경입니다!
+//저는 2000년 8월 23일에 태어났습니다
+//그리고 가족은 엄마, 아빠, 언니, 나, 삐용이, 외할머니, 친할머니로 구성되어 있으며, 제 서열은 꼴찌입니다..
+//제 취미는 손 긂입니다. 그 중에서도 펜 드로잉과 크레파스를 좋아합니다.
+//이런 저의 꿈은 3D 그래픽 디자이너 입니다.
+//1-2학기 3D 디자인 수업에서 오브젝트를 이용하여 화면제작 및 구성에 흥미를 느껴 정하게 되었습니다.
