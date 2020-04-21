@@ -102,8 +102,8 @@ console.log("Hellow" + "world");
 console.log("Hellow" + " world");
 console.log("Hellow" + " " + "world" + "~" + "!");
 
-//숫자와 문자의 연산은??
-console.log(1 +1); //2
+//숫자와 문자의 연산
+console.log(1 + 1); //2
 console.log("1" + "1"); //11
 console.log(1 + "1"); // 11?
 console.log(1 + parseInt("1")); //2
@@ -116,8 +116,6 @@ console.log("멍멍\n삐용아 안녕")
 
 //문자열 길이 .length
 console.log("삐용아 안녕, 멍멍".length); //10
-
-//문자 순서 .indexOF
 
 
 
@@ -274,12 +272,13 @@ var intro2 = "저는" + " " + int["school"] + " " + int["major"] +"과" + " " +i
 var intro3 = "저는 " + (2020 - 20) + "년 " + (2 * 4) + "월 " + (23) +"일에 태어났습니다 \n"
 var intro4 = "그리고 가족은" + family[0] + family[1] + family[2] + family[3] + family[4] + family[5] + family[6] +"로 구성되어있으며" + " 제" + "\"서열\"은" + " 꼴찌입니다.. \n"
 var intro5 = "제 " + hobby["hobby"] + "는 " + hobby["drawing"] + "입니다" + " 그 중에서도" + hobby["pen"] + "과" + hobby["crayon"] + "를" + " 좋아합니다 \n"
-var intro6 = "이런 저의" + dream[0] + "은 " + dream[1] + " " + dream[2] + " " + dream[3] + "입니다 \n"
-var intro7 = dream[4] + "학기 " + dream[1] + "디자인 수업에서 " + dream[5] + "를 이용하여" + " 화면" + dream[6] + " 및 " + dream[7] + "에 " + dream[8] + "를 느껴 정하게 되었습니다 \n"
-var intro8 = "제가 코딩을 잘 하진 않지만" + "앞으로 열심히 배워 감각적인 웹을 만들어 보고 싶습니다! \n"
-
+var intro6 = "그래서 종종 제 그림을 인스타에 올리기도 합니다" + "아이디는 \"@yalu_19\"입니당당 \n"
+var intro7 = "이런 저의" + dream[0] + "은 " + dream[1] + " " + dream[2] + " " + dream[3] + "입니다 \n"
+var intro8 = dream[4] + "학기 " + dream[1] + "디자인 수업에서 " + dream[5] + "를 이용하여" + " 화면" + dream[6] + " 및 " + dream[7] + "에 " + dream[8] + "를 느껴 정하게 되었습니다 \n"
+var intro9 = "제가 코딩을 잘 하진 않지만" + "앞으로 열심히 배워 감각적인 웹을 만들어 보고 싶습니다! \n"
+var intro10 = "감사합니다! :))"
 if( typeof intro1 == "string"){//true
-    console.log(intro1, intro2, intro3, intro4, intro5, intro6, intro7, intro8);
+    console.log(intro1, intro2, intro3, intro4, intro5, intro6, intro7, intro8, intro9, intro10);
 }else{
     console.log("다시 해오게");
 }
