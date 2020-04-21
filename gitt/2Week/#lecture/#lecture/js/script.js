@@ -1,0 +1,1 @@
+console.log("외부 JavaScript 가 로드되었습니다.");
