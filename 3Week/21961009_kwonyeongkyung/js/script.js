@@ -140,17 +140,77 @@ console.log(c >= d); //false
 //동등  ==
 a = 5;
 b = 5;
-console.log(a == b); //true
+console.log(a = b); //true - 5
+a = 2;
+console.log(a == b); //true - 5
 
-//일치 ===
+//일치 === - 엄격하게 데이터 타입까지 구분해서 비교
+a = 5;
+b = 5;
+console.log(a === b); //true - 5
+a = 2;
+console.log(a === b); //true - 5
 
-//부정
+//부정 != !== (결과값의 반대)
+a = 5;
+b = 5;
+console.log(a != b);
+a = 5;
+b = 2;
+console.log(a !== b);
 
 //4. 데이터 타입(Data Type) 
-//5. 오브젝트(Object) 
-//6. 배열(Array) 
-//7. 조건문(if)
+// Number 숫자. ***
+//String 문자열. ***
+//Boolean 참 / 거짓 ***
+//undefined 값이 정의되지 않은 상태
+//ull 값은 적용하지만 비어있는 상태
+//Object 객체 - [], {} ...
+//Function 함수 - 기능을 만드는 박스.
+//NaN 수식이 성립되지 않은 상태.
+console.log(typeof 100); //number
+console.log(typeof "안녕하세요"); //string
+console.log(typeof true); //boolean
+console.log(typeof false); //boolean
 
+//5. 오브젝트(Object) - 색인이 포함된 데이터들의 집합.
+var _obj = {}; //새로운 객체를 생성.
+_obj = {
+    key1 : "value1",
+    key2 : "value2",
+    "key3" : "value3",
+}
+console.log(_obj);
+console.log(_obj.key1); //각 항목의 값을 찾기. value1
+console.log(_obj["key1"]); // 위와 동일. value1
+console.log(typeof _obj.key2); // string
+console.log(typeof _obj.key3); // number
+
+//6. 배열(Array) 
+var _arr = []; //새로운 배열 생성.
+_arr = [1, 2, "3", "안녕하세요", null, true];
+console.log(_arr);
+ //0 1 2 3 4 5
+//색인이 없고 순서로 찾을 수 있다.
+console.log(_arr[0]); //1
+console.log(_arr[4]); // null
+console.log(_arr.length) //전체 담기 데이터의 길이(개수); 6
+console.log(_arr[_arr.length - 1]); // 배열 객체의 마지막에 해당하는 값.
+
+//7. 조건문(if)
+// 비교 연산자, 동등 연산자, 일치 연산자. - 조건을 확인하기 위헤서 비교.
+var pro = 3;
+var bro = 5;
+if(pro < bro) { // 해당하는 조건이 true.
+    console.log(true); //code가 실행
+}
+else if(pro > bro){ // true
+    console.log(false); // code가 실행
+}
+else {
+    //모든 조건이 성립되지 않을 때.
+    console.log(false); // code가 실행
+}
 
 console.log();
 console.log()
