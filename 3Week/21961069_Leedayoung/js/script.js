@@ -53,9 +53,9 @@ var user = { //변수 user 선언
 if (typeof user.job == "string"){ //만약 'user' 객체 "job" key의 값(value)을 확인하여 데이터 타입이 문자라면
     console.log(user.greeting); //"greeting" key의 값을 console에 출력
 } //console에 '안녕하세요'가 출력되었다.
-else { //문자가 아니라면 
+else { //데이터 타입이 문자가 아니라면 
     console.log(user.name); //"name" key의 값을 console에 출력
-}
+} //데이터 타입이 문자가 맞기 때문에 출력되지 않음
 
 
 console.log("-------------연습--------------");
@@ -302,7 +302,7 @@ var lee = {
     age : 21,
     greeting : "안녕하세요."
 }
-var greeting2 = "올해 열심히 배워서 능숙하게 코딩을 할 수 있게 되면 좋겠습니다. "
+var greeting2 = "올해 열심히 배워서 능숙하게 코딩을 잘할 수 있게 되면 좋겠습니다. "
 var greeting3 = "노력하겠습니다. ";
 var greeting4 = "잘 부탁드립니다!";
 var school = ["계원예술대학교", "디지털미디어디자인과", "D반", "프로그래밍"];
@@ -315,13 +315,13 @@ var birth = {
     M : 7,
     D : 22
 }
-var in1 = lee.greeting + "저는 " + lee.name + "입니다.";
-var in1_ = "올해 " + lee.age + "살이며, " + "생일은" + birth.M + "월 " + birth.D + "일생이고, 현재" + home + "에 살고 있습니다.";
-var in2 = school[0] + " " + school[1] + " " + grade + "학년" + school[2] + "입니다.";
+var in1 = lee.greeting + " 저는 " + lee.name + "입니다.";
+var in1_ = "올해 " + lee.age + "살이며, " + "생일은" + birth.M + "월 " + birth.D + "일생이고, 현재 " + home + "에 살고 있습니다.";
+var in2 = school[0] + " " + school[1] + " " + grade + "학년 " + school[2] + "입니다.";
 var in2_ = school[3] + " 수업을 듣고 관심이 생겨서" + school[3] + "을 세부전공으로 선택했습니다.";
 var in3 = "취미는 " + hobby[0] + "와 " + hobby[1] + "입니다";
-var in4 = "좋아하는 가수(밴드)는 " + singer[0] + "와 " + singer[1] + "이고,"
-var in5 = "즐겨하는 게임은 " + game[0] + game[1] + "입니다";
+var in4 = "좋아하는 가수(밴드)는 " + singer[0] + "과 " + singer[1] + "이고,"
+var in5 = "즐겨하는 게임은 " + game[0] + "과" + game[1] + "입니다";
 var in6 = greeting2 + greeting3 + greeting4
 
 if (typeof lee.name == "string") {
@@ -330,3 +330,13 @@ if (typeof lee.name == "string") {
 else {
     console.log("실패;")
 }
+
+/* 안녕하세요. 저는 이다영입니다. 
+올해 21살이며 생일은 7월 22일생이고, 현재 인천에 살고 있습니다.
+계원예술대학교 디지털미디어디자인과 2학년 D반입니다.
+프로그래밍 수업을 듣고 관심이 생겨서 프로그래밍을 세부전공으로 선택했습니다. 
+취미는 노래 듣기와 게임하기입니다.
+좋아하는 가수(밴드)는 새소년과 쏜애플이고,
+즐겨하는 게임은 롤과 스타듀밸리입니다.
+올해 열심히 배워서 능숙하게 코딩을 잘할 수 있게 되면 좋겠습니다. 노력하겠습니다. 잘 부탁드립니다.
+*/
