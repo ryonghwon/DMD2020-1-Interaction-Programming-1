@@ -232,19 +232,3 @@ if(typeof c === "undefined"){//true.
     c = a + b;
 }
 console.log(c); // 15
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
