@@ -102,6 +102,18 @@ console.log(a);
 //문자(String)
 var a = "이상연최고";
 console.log(a);
+console.log("안녕하세요1");
+console.log('안녕하세요2');
+console.log("안녕하세요3");
+console.log("\"안녕하세요\"");
+
+// \n - 정규식 줄바꿈.
+console.log("안녕하세요.\n반갑습니다.\n저는 이상연입니다.");
+
+//string 연산 
+console.log("이상연" + "최고");
+console.log("이상연" + " 최고");
+console.log("이상연" + " " + "최" + "고" + "!");
 
 
 /*
