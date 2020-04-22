@@ -15,12 +15,15 @@ Quest 1.
 */
 // 변수를 선언하고 숫자 '29'를 할당한다.
 var x = 29;
+
 // 변수를 하나 더 선언하고 1(순서) 에서 선언한 변수와 덧셈 대입을 이용하여 '31' 이 할당되도록 코드를 작성한다.
 var y = x + 2;
+
 // 변수를 하나 더 선언하고 1(순서) 에서 선언한 변수와 나머지 연산 대입을 이용해서 '2' 를 할당하도록 코드를 작성한다.
 var z = x % 9;
+
 // 만약 2(순서) 에서 생성한 변수를 3(순서) 에서 선언한 변수로 나누었을때 나머지가 '1' 인 경우 '일치합니다.' 라는 문자열이 console 에 출력되도록 작성한다.
-if (y % z== 1)
+if (y % z == 1)
 {  //true.
     console.log("일치합니다.");
 }
@@ -45,6 +48,7 @@ Quest 2.
 */
 // 새로운 객체 생성한다.
 var user = {};
+
 // 객체의 각 원소와 값을 적용한다.
 user= {
     "name" : "김민지",
@@ -55,6 +59,7 @@ user= {
     "grade" : 2,
     "class" : "D"
 }
+
 // 만약(if) 'user' 객체 "job" key의 값(value)을 확인하여 데이터 타입이 문자 타입이라면 "greeting" key의 값을 console에 출력, 문자 타입이 아니라면 "name" key의 값을 console에 출력되도록 조건문을 작성한다.
 if (typeof user.job === "string")
 {
@@ -93,8 +98,10 @@ console.log("오늘은\n날씨가\n맑습니다."); // 문자열 줄바꿈을 �
 날씨가
 맑습니다.
 */
+
 // 2-1. Escape
 console.log("\"날씨는 어떤가요?\""); // Escape, "날씨는 어떤가요?"
+
 // 2-2. 문자열 바꿈
 // 문자열 줄바꿈을 할 때, \n을 붙인다. 
 console.log("오늘은\n날씨가\n맑습니다.");
@@ -103,6 +110,7 @@ console.log("오늘은\n날씨가\n맑습니다.");
 날씨가
 맑습니다.
 */
+
 // 2-3. 문자열 연산
 console.log("귀여운" + "고양이"); // 귀여운고양이
 console.log("귀여운" + " 고양이" + "~!"); // 귀여운 고양이~!
@@ -110,8 +118,10 @@ console.log(100 + 1); // 숫자가 합산되어 출력, 101
 console.log(1 + "1"); // 문자열 그대로 더해짐, 11
 console.log(1 + parseInt("1")); // 형변환으로 숫자 1로 인식, 2
 console.log("1" + "1"); //11
+
 // 2-4. 문자열 길이
 console.log("cute cat".length); // 8
+
 // 2-5. 문자열 순번
 console.log("melon".indexOf("o")); // 3
 
@@ -122,6 +132,7 @@ var a = 1, b = 5, c = 10;
 console.log(a); // 1
 console.log(b); // 5
 console.log(c); // 10
+
 // 3-1. 변수의 응용
 // 5와 10을 더하고, 5로 나누고, 5를 더한 후, 5를 곱한다.
 var sum = (((b + c) / b) + b) * b;
@@ -135,16 +146,19 @@ console.log(10 - 6); // 4
 console.log(4 * 12); // 48
 console.log(45 / 9); // 5
 console.log(81 % 2); // 1
+
 // 4-2. 대입 연산자 : =
 var d = 2;
 d = 5
 console.log(d); // 5
+
 // 4-3. 비교 연산자 : <, >, <=, >=
 var s = 15;
 console.log(s < 20); // true
 console.log(s > 30); // false
 console.log(s <= 45); // true
 console.log(s >= 19); // false
+
 // 4-4. 동등 연산자 : ==
 var v = 6;
 var w = 6;
@@ -152,10 +166,12 @@ console.log(v == w); // true
 v = "cat";
 w = "dog";
 console.log(v == w); //false
+
 // 4-5. 일치 연산자 : 정확히 일치해야 true가 나온다, ===
 var p = 8;
 console.log(p === 8); // true
 console.log(p === "8"); //false
+
 // 4-6. 부정 연산자 : 일치하면 부정하여 false가 나온다, !=
 var q = 9
 console.log(q != 9); // false
@@ -208,6 +224,7 @@ console.log(what[what.length -1]); // 배열 객체의 마지막에 해당하는
 // 8. 조건문(if)
 var r = 9;
 var t = 10;
+
 // r은 t보다 작다. 
 if (r < t)
 {
@@ -242,6 +259,7 @@ info = {
     "major" : "디지털 미디어 디자인과",
     "grade" : 2
 };
+
 var like = [];
 like = ["독서", "게임", "여유", "낮잠", "하늘색", "바다"];
 var ani = [];
@@ -250,6 +268,7 @@ var sns = [];
 sns = ["트위터", "페이스북", "인스타그램", "카카오톡"];
 var nell = [];
 nell = ["기억을 걷는 시간", "멀어지다", "백색왜성"];
+
 var me = {};
 var me = {
     "goal" : "건강하기",
@@ -267,7 +286,9 @@ var _mj6 = "최근에는 과제를 하면서 넬의 " + nell[0] + ", "+ nell[1] 
 var _mj7 = "저의 목표는 언제나 " + me["goal"] + "와 " + me["goal1"] + "을 " + me["goal2"] + "해서 잘할 수 있게 되는 것입니다.\n";
 var _mj8 = "앞으로 부족한 점이 있어도 " + me["goal2"] + "하며 열심히 하겠습니다."
 
+
 console.log(_mj + _mj1 + _mj2 + _mj3 + _mj4 + _mj5 + _mj6 + _mj7 + _mj8)
+
 
 if (2020 > 419)
 {
