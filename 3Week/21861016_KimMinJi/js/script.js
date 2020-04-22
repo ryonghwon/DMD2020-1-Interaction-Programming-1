@@ -1,8 +1,10 @@
 console.log("외부 Javascript 로드");
 
+
 /*
 문제 풀이
 */
+
 
 /*
 Quest 1.
@@ -22,6 +24,7 @@ if (y % z== 1)
 {  //true.
     console.log("일치합니다.");
 }
+
 
 
 
@@ -64,12 +67,14 @@ else // else는 if 조건문에 해당하지 않을때 실행된다.
 
 
 
+
 /*
 JavaScript 연습하기.
 1. 숫자(Number), 문자(String), 변수(variable), 연산자(산술, 대입, 비교, 동등, 일치, 부정), 데이터 타입(Data Type), 오브젝트(Object), 배열(Array), 조건문(if) 등에 대해 익히고 연습합니다.
 2. 값은 console.log() 를 이용하여 출력합니다.
 3. 자신이 연습 작성한 코드 실행 출력 시 예상되는 값은 주석을 이용하여 작성합니다.
 */
+
 
 // 1. 숫자(Number) 
 console.log(100); // 숫자는 그대로 출력되어 100이 나올 것
@@ -122,6 +127,7 @@ console.log(c); // 10
 var sum = (((b + c) / b) + b) * b;
 console.log(sum); // 40
 
+
 // 4. 연산자
 // 4-1. 산술 연산자 : +, -, *, /, %
 console.log(5 + 7); // 12
@@ -146,7 +152,6 @@ console.log(v == w); // true
 v = "cat";
 w = "dog";
 console.log(v == w); //false
-
 // 4-5. 일치 연산자 : 정확히 일치해야 true가 나온다, ===
 var p = 8;
 console.log(p === 8); // true
@@ -218,6 +223,8 @@ else
 }
 
 
+
+
 /*
 자기소개하기.
 1. 숫자(Number), 문자(String), 변수(variable), 연산자(산술, 대입, 비교, 동등, 일치, 부정), 데이터 타입(Data Type), 오브젝트(Object), 배열(Array), 조건문(if) 등을 이용하여 장문의 자기소개를 합니다.
@@ -259,12 +266,14 @@ var _mj5 = "sns는 주로 " + sns[3] + "과 " + sns[0] + "를 하며, " + sns[1]
 var _mj6 = "최근에는 과제를 하면서 넬의 " + nell[0] + ", "+ nell[1] + ", " + nell[2] + "이라는 곡들을 듣습니다.\n"
 var _mj7 = "저의 목표는 언제나 " + me["goal"] + "와 " + me["goal1"] + "을 " + me["goal2"] + "해서 잘할 수 있게 되는 것입니다.\n";
 var _mj8 = "앞으로 부족한 점이 있어도 " + me["goal2"] + "하며 열심히 하겠습니다."
+
 console.log(_mj + _mj1 + _mj2 + _mj3 + _mj4 + _mj5 + _mj6 + _mj7 + _mj8)
 
 if (2020 > 419)
 {
     console.log("감사합니다.");
 }
+
 
 /*
 안녕하세요. 저는 김민지입니다.
