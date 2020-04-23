@@ -14,7 +14,7 @@ var a = 29;
 var b; //undefined
 b = a + 2;
 var c; //undefined
-c = a % 3;
+c = a % 3; // 혹은 9, 27 도 가능
 if ( b % c == 1)
 {
     console.log("일치합니다.");
@@ -47,7 +47,7 @@ user = {
     grade : 2,
     class : "D"
 }
-if (typeof user["name"] == "string")
+if (typeof user["job"] == "string")
 {
     console.log(user.greeting);
 }
