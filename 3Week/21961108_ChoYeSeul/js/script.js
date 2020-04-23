@@ -48,13 +48,21 @@ var a = 29;
 
 // 3. 만약 'user' 객체 "job" key의 값(value)을 확인하여 데이터 타입이 문자라면 "greeting" key의 값을 console에 출력되도록 작성하고, 문자가 아니라면 "name" key의 값을 console에 출력되도록 작성합니다.(조건문의 문법 사용)
     
-    if(user.job === "string"){
+    /*
+    if(user.job === String){
         console.log(typeof user.greeting);
     }
     else{
         console.log(typeof user.name);
     }
+    */
 
+    if(typeof user.job === "string"){ //true
+        console.log(user.greeting);
+    }
+    else{
+        console.log(user.name); //false
+    }
 
 // ----------
 // 첫번째 key: "name" value: "본인이름 입력"
