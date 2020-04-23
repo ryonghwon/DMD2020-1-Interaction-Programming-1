@@ -128,11 +128,13 @@ console.log("결과 :" + c); // 298
 // 연산자
 
 // 산술 연산자
-console.log(2+3);
-console.log(2-3);
-console.log(2*3);
-console.log(2/3);
-console.log(2%3);
+console.log(2+3); // 5
+console.log(2-3); // -1
+console.log(2*3); // 6
+console.log(2/3); // 0.66666666
+console.log(2%3); // 2
+console.log(1+"1"); // 11. string 우선
+console.log("1" + 1); // 11
 
 // 문자열의 경우 연산자 중 "+"만 이용 가능 - 문자열을 서로 붙여줌
 console.log("이불 박근 " + '위험' + " 혜"); // 이불 박근 위험 혜
