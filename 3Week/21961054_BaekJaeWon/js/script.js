@@ -14,7 +14,7 @@ var a = 29;
 var b; //undefined
 b = a + 2;
 var c; //undefined
-c = a % 3;
+c = a % 3; // 혹은 9, 27 도 가능
 if ( b % c == 1)
 {
     console.log("일치합니다.");
@@ -47,7 +47,7 @@ user = {
     grade : 2,
     class : "D"
 }
-if (typeof user["name"] == "string")
+if (typeof user["job"] == "string")
 {
     console.log(user.greeting);
 }
@@ -128,11 +128,13 @@ console.log("결과 :" + c); // 298
 // 연산자
 
 // 산술 연산자
-console.log(2+3);
-console.log(2-3);
-console.log(2*3);
-console.log(2/3);
-console.log(2%3);
+console.log(2+3); // 5
+console.log(2-3); // -1
+console.log(2*3); // 6
+console.log(2/3); // 0.66666666
+console.log(2%3); // 2
+console.log(1+"1"); // 11. string 우선
+console.log("1" + 1); // 11
 
 // 문자열의 경우 연산자 중 "+"만 이용 가능 - 문자열을 서로 붙여줌
 console.log("이불 박근 " + '위험' + " 혜"); // 이불 박근 위험 혜
@@ -317,4 +319,9 @@ console.log("☆★☆★☆★☆★☆★☆자기소개★☆★☆★☆★�
 // 질문:
 // 자바스크립트에서 객체 (object), 함수(function) 이 두가지의 개념이 잘 이해가 되지 않아서 다시 한번 구체적으로 설명해주시면 감사하겠습니다!!
 
-
+/*
+rh
+객체는 여러가지 값을 한번에 변수에 담을 수 있도록 key와 값으로 구성된 그룹화된 타입입니다.
+key와 value로 구성되기 때문에 필요한 요소를 선별해서 사용하고 가공하는데에 용이합니다.
+함수는 아직 수업에서 진행하지 않았습니다. 이번 주에 진행예정입니다.
+*/
