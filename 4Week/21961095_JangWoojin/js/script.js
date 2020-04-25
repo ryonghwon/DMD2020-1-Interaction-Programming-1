@@ -97,6 +97,8 @@ result = getTotal(5, "multiply");
 console.log(result); // 120
 result = getTotal(10, "multiply");
 console.log(result); // 3628800
+result = getTotal(10, "null");
+console.log(result); // 0
 /*
 Quest 3.
 1. getMaxValue 이라는 함수를 선언하고, 1개의 매개변수(배열 타입)를 지정합니다.
