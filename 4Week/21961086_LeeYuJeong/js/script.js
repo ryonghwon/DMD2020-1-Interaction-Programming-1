@@ -120,7 +120,6 @@ function getMaxValue(arr){
         }
     }
     return arr.indexOf(max);
-
 }
 
 var maxIndex = getMaxValue(arr1); 
