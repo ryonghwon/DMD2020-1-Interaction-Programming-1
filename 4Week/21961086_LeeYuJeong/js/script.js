@@ -91,7 +91,7 @@ result = getTotal(5, "multiply"); // 120
 console.log(result);
 result = getTotal(10, "multiply"); //3628800
 console.log(result);
-result = getTotal(10, "none"); //0
+result = getTotal(100); //0
 console.log(result);
 
 
