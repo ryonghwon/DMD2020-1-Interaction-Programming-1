@@ -15,13 +15,11 @@ Quest 1.
 */
 // Answer 1.
 var a = 29;
-var b = 2;
-var c = 3;
-console.log(a + b);
-console.log(a % c);
-if(a % b == 1)
+var b = a + 2;
+var c = a % 3;
+if(b / 1 == 1)
 {
-     alert("일치합니다!");
+    console.log("일치합니다!");
 }
 
 
@@ -30,7 +28,8 @@ if(a % b == 1)
 Quest 2.
 1. 'user' 라는 변수를 선언하고 새로운 객체를 생성하여 값으로 할당합니다.
 2. 'user' 객체의 각 원소와 값은 아래 보기와 같이 적용합니다.
-3. 만약 'user' 객체 "job" key의 값(value)을 확인하여 데이터 타입이 문자라면 "greeting" key의 값을 console에 출력되도록 작성하고, 문자가 아니라면 "name" key의 값을 console에 출력되도록 작성합니다.(조건문의 문법 사용)
+3. 만약 'user' 객체 "job" key의 값(value)을 확인하여 데이터 타입이 문자라면 "greeting" key의 값을 console에 출력되도록 작성하고,
+ 문자가 아니라면 "name" key의 값을 console에 출력되도록 작성합니다.(조건문의 문법 사용)
 
 
 
@@ -56,13 +55,18 @@ var user = {
      "class" : "D"
 }
 // 만약 user.job(문자열데이터 타입) 과 문자열데이터 타입이 일치하면 아래 user.greeting 값을 출력
-if(typeof user.job == typeof "String"){
-     console.log(user.greeting)
+//if(typeof user.job == typeof "String"){ 굳이 typeoof "string"안적어도됨
+if(typeof user.job ===  "String"){
+     console.log(user.greeting);
+     
+}
+else{
+     console.log(user.name);
 }
 // 만약 user.job(문자열데이터 타입) 과 문자열데이터 타입이 불일치하면 아래 user.name 값을 출력
-if(typeof user.job != typeof Number){
-     console.log(user.name)
-};
+// if(typeof user.job != typeof Number){
+//      console.log(user.name)
+// };
 
 
 
@@ -137,3 +141,4 @@ if(dd === 15){
 console.log( h + " " +i + " " + yy[0] + yy[1] +"최상욱입니다.");
 
 // 열심히 하겠습니다~!!
+

@@ -165,6 +165,7 @@ var fav = {
     food : "떡볶이, 피자, 밀크티",
     animal : "고양이"
 };
+
 var one = (me.greeting) + " 저는 " + (me.name) + "입니다. \n";
 var two = "저는 " + (me.home) + "에서 살고 있고, 출생년도는 " + (me.birthday) + "이고 올해 23살이 되었습니다. \n";
 var three = "계속 미대입시를 해왔지만 결국 정시 비실기로 19학번으로 " + (me.major) + "에 입학했습니다.\n";
