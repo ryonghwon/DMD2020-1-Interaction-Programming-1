@@ -27,6 +27,7 @@ compareNumbers(10, 20) 를 호출한 경우 : "첫번째 매개변수에 할당�
 ----------
 */
 // Answer 1.
+
 function compareNumbers(a, b){
     if (typeof b === "undefined"){
         console.log("두번째 매개변수의 값을 찾을 수 없습니다.");
@@ -60,6 +61,7 @@ getTotal(100) 를 호출하여 반환하고 변수를 출력한 결과값 : 0
 ----------
 */
 // Answer 2.
+
 function getTotal(num1, string){
     if(string === "add"){
         var total = 0;
@@ -103,6 +105,7 @@ getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변�
 ----------
 */
 // Answer 3.
+
 function getMaxValue (arr){
     var max = 0;
     var j = 0;
