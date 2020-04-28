@@ -105,7 +105,7 @@ function getTotal(num3, str1)
     }
     else if(str1 === "multiply") // 조건 1-2
     {
-        sum += 1; // sum = 1이며 재사용한 이유는 0을 곱하면 계속 0이 나오기 때문이다.
+        sum = 1; // 변수는 재사용이 가능하며 1을 대입한 이유는 0을 곱하면 계속 0이 나오기 때문이다.
         for(var i2 = 1; i2 <= num3; i2++) // sum과 같은 이유로 i2의 초기값 또한 1로 설정했다.
         {
             sum *= i2;
@@ -133,6 +133,7 @@ function getTotal(num3, str1)
     }
     return sum; // 값을 반환받기 위해 return을 썼다.
 }
+/*
 getTotal(5, "add");
 getTotal(10, "add");
 
@@ -140,22 +141,36 @@ getTotal(5, "multiply");
 getTotal(10, "multiply");
 
 getTotal(100);
+처음에 계산 후 바로 값을 확인하기 위해 썼다.
+
 
 var return1 = getTotal(3, "add"); // 변수를 생성하고 매개변수 (전달인자)값을 지정했다.
 console.log("조건 1-1의 값 " + return1); // 변수 return1의 값 출력
 
 var return2 = getTotal(5, "multiply"); // 변수를 생성하고 매개변수 (전달인자)값을 지정했다.
-console.log("조건 1-2의 값 " + return2); // 변수 return1의 값 출력
+console.log("조건 1-2의 값 " + return2); // 변수 return2의 값 출력
 
 var return3 = getTotal(); // 변수를 생성하고 매개변수 (전달인자)값을 지정했다.
-console.log("조건 1-3의 값 " + return3); // 변수 return1의 값 출력
+console.log("조건 1-3의 값 " + return3); // 변수 return3의 값 출력
+
+변수 재사용하면 된다...는 게 생각이 났다... 그래서!
+*/
+var return1 = getTotal(3, "add");
+console.log("조건 1-1의 값 " + return1); // 6
+
+var return1 = getTotal(5, "multiply");
+console.log("조건 1-2의 값 " + return1); // 120
+
+var return1 = getTotal();
+console.log("조건 1-3의 값 " + return1); // 0
 
 
 
 /*
 Quest 3.
 1. getMaxValue 이라는 함수를 선언하고, 1개의 매개변수(배열 타입)를 지정합니다.
-2. 1(순서) 함수에 전달된 매개변수 배열 원소들의 숫자 값들을 비교하여 숫자가 가장 큰 경우, 1(순서) 배열에서 해당된 순서를 결과값으로 반환합니다.
+2. 1(순서) 함수에 전달된 매개변수 배열 원소들의 숫자 값들을 비교하여 숫자가 가장 큰 경우, 
+   1(순서) 배열에서 해당된 순서를 결과값으로 반환합니다.
 3. 새로운 변수를 생성, 1(순서) 함수에 매개변수를 지정하여 호출하고 값을 반환받습니다.
 4. 3(순서) 변수의 값을 console 에 출력합니다.
 * 매개변수 배열에는 숫자 이외의 타입도 할당되어 있습니다.
@@ -169,5 +184,77 @@ getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변�
 ----------
 */
 // Answer 3.
+/*
+function getMaxValue(arr)
 
+{
+    var maxNum = 0; // maxNum은 배열 원소들을 비교해 가장 큰 값만 저장한다.
+    for(var i3 = 0; i3 < arr.length; i3++) // arr.length는 arr이라는 배열의 원소 갯수를 의미한다. 배열을 0부터 시작하므로 <=을 쓰지 않아도 된다.
+    {
+        if(maxNum < arr[i3]) // maxNum이 arr[i3]보다 작을 때
+        {
+            maxNum = arr[i3]; // arr[i3]의 값을 maxNum에 저장하기로 했고
+        }
+    }
+    console.log(maxNum);
+}
+getMaxValue([-400, "world", 60, 0, {}, 1000]);
+결과적으로 1000이 나왔다.
+하지만 Quest3에서 숫자 값만 비교하며, 제일 큰 값이 아닌 제일 큰 값의 순서를 원한다.
+먼저 숫자 값만 나오게 해본다.
+{
+    var maxNum = 0;
+    for(var i3 = 0; i3 < arr.length; i3++)
+    {
+        if(typeof arr[i3] === "number") // 숫자 타입만 나오게 arr[i3]의 타입이 "Number" 와 일치할 때 라는 조건문을 썼다.
+        {
+            maxNum = arr[i3]; // maxNum에 arr[i3] 값을 넣어
+            console.log(maxNum); // 출력했다.
+        }
+    }
+}
+getMaxValue([-400, "world", 60, 0, {}, 1000]);
+결과는 -400, 60, 0, 1000이 출력되었다.
+이제 큰 값의 순서를 나오게 해본다.
 
+{
+    var maxNum = 0;
+    for(var i3 = 0; i3 < arr.length; i3++)
+    {
+        if(typeof arr[i3] === "number")
+        {
+            if(maxNum < arr[i3]) // maxNum이 arr[i3]보다 작을 때
+            {
+                maxNum = i3; // 배열 원소 중 제일 큰 값의 순서를 넣어준다.
+            }
+        }
+    }
+    console.log(maxNum);
+}
+getMaxValue([-400, "world", 60, 0, {}, 1000]);
+배열은 0부터 시작하므로 결과는 5가 나온다.
+그래서 최종적으로
+*/
+function getMaxValue(arr)
+{
+    var maxNum = 0;
+    for(var i3 = 0; i3 < arr.length; i3++)
+    {
+        if(typeof arr[i3] === "number")
+        {
+            if(maxNum < arr[i3])
+            {
+                maxNum = i3;
+            }
+        }
+    } 
+    return maxNum;
+}
+var return2 = getMaxValue([10, -4, 7, 100, "hello", -50]);
+console.log("제일 큰 값의 배열 순서는 " + return2); // 3
+
+var return2 = getMaxValue([-400, "world", 60, 0, {}, 1000]);
+console.log("제일 큰 값의 배열 순서는 " + return2); // 5
+
+var return2 = getMaxValue([-400, "world", 60, 0, {}, 2]);
+console.log("제일 큰 값의 배열 순서는 " + return2); // 2
