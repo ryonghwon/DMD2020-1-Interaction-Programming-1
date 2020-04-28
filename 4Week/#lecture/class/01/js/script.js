@@ -237,7 +237,7 @@ console.log(size1);
 console.log(size2);
 console.log(size3);
 */
-/*
+
 var _name = "전역변수";
 function getName() {
     // console.log(name); // "전역변수"
@@ -248,4 +248,3 @@ function getName() {
 }
 getName();
 console.log(name); // "전역변수"
-*/
