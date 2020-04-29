@@ -13,10 +13,11 @@ Quest 1.
 var a = 29;
 var b = a + 2;
 var c = a % 3;
+// c = a % 9;
+// c = a % 27;
 if(b % c == 1){
     console.log("일치합니다.");
 }
-
 
 
 /*
@@ -36,14 +37,15 @@ Quest 2.
 ----------
 */
 // Answer 2.
-var user = {};
-user = {
-    name : "박지수",
-    greeting : "안녕하세요",
+// var user = {};
+// user = new Object();
+var user = {
+    name : "박지수", // 문자열이 아닐때 key 부분에 - 를 쓰게 되면 오류.
+    greeting : "안녕하세요", // key를 문자열로 기입할 때는 - 사용 가능.
     job : "학생",
     school : "계원예술대학교",
     major : "디지털미디어디자인",
-    grade : "2",
+    grade : 2,
     class : "D"
 };
 if(typeof user.job === "string"){

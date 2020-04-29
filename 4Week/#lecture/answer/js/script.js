@@ -10,7 +10,20 @@ Quest 1.
 4. 만약 2(순서) 에서 생성한 변수를 3(순서) 에서 선언한 변수로 나누었을때 나머지가 '1' 인 경우 '일치합니다.' 라는 문자열이 console 에 출력되도록 작성합니다.
 */
 // Answer 1.
-
+var a = 29;
+var b = a + 2; // 31.
+var c = a % 3; // 2.
+c = a % 9; // 2.
+c = a % 27; // 2.
+if(b / c === 1){
+    console.log("일치합니다.");
+}
+// 29 % ? = 2
+// 29 - 2 = 27
+// 27 
+// 3 * 9 = 27
+// 9 * 3 = 27
+// 27 * 1 = 27;
 
 
 /*
@@ -30,5 +43,25 @@ Quest 2.
 ----------
 */
 // Answer 2.
-
-
+// var user = {};
+// user = new Object();
+var user = {
+    name_first : "김용원",
+    // name-last : "김용원", // key 부분에 - 를 쓰게 되면 오류.
+    "name-last" : "김용원", // key 를 문자열로 기입할 때는 - 사용 가능.
+    "greeting" : "안녕하세요",
+    "job" : "학생",
+    "school" : "계원예술대학교",
+    "major" : "디지털미디어디자인",
+    "grade" : 2,
+    "class" : "D",
+    "key" : "value"
+};
+// user.job; // 1.
+// user["job"]; // 2.
+// console.log(typeof user["job"]); // "string"
+if(typeof user["job"] === "string") { // true.
+    console.log(user["greeting"]);
+}else{ // false.
+    console.log(user.name);
+}
