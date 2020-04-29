@@ -160,7 +160,7 @@ function getMaxValue(arr) { //getMaxValue 이라는 함수를 선언하고, 1개
     return max2; //알고 싶은 것은 arr 배열 최대값의 순서이므로 max2를 반환.
 }
 
-var value = getMaxValue([10, -4, 7, 100, "hello", -50]); //getMaxValue([10, -4, 7, 100, "hello", -50]) 를 호출하여 반환하고 변수를 출력한 결과값
-console.log(value); //3
+var value = getMaxValue([10, -4, 7, 100, "hello", -50]); //getMaxValue([10, -4, 7, 100, "hello", -50]) 를 호출하여 반환하고 변수를 출력한 결과값 
+console.log(value); // 3
 var value = getMaxValue([-400, "world", 60, 0, {}, 1000]); //getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변수를 출력한 결과값
-console.log(value); //5
+console.log(value); // 5
