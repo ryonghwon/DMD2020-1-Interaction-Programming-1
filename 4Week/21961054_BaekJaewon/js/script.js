@@ -127,3 +127,14 @@ console.log(arr2); // 5
 
 /* 질문: array 배열 형식을 사용하여 풀었는데 제가 다른 내용도 따로 공부하던중 arguments라는 함수 전용 배열 객체가 있는 것을 알게 되었습니다.
 정확히 어떤 개념인지 잘 몰라 아직 제가 직접 적용해보지 못했지만, 이것을 이용해서 문제 3을 해결할 수도 있을까요? */
+
+// rh : 함수에서 arguments 라는 값을 출력해보면 위의 함수에서는 [arr] 로 확인이 됩니다.
+// 만약 매개변수가 여러개 있을 때 arguments 객체를 받아오면 정의되어있는 모든 매개변수들을 arguments 배열에 담아서 사용가능합니다. 즉, 함수에 내장되어있는 변수입니다.
+function test(param1, param2, param3){
+    // 여기에서 arguments 를 console 에 출력해보면 arguments[param1, param2, param3] 의 형식으로 받아올 수 있습니다.
+    // 그럼 마찬가지로 arguments[0]인 경우 전달된 param1 의 값을 받아오고, arguments[1]인 경우, 전달된 param2 의 값, arguments[2]인 경우, 전달된 param3 의 값을 받아올 수 있습니다.
+    // 또한, 배열이기 때문에 매개변수가 몇개까지 있는지 확인할 수도 있겠죠. arguments.length
+}
+test(1); //arguments[0] : 1, arguments[1] : undefined, arguments[2] : undefined, arguments[3] : 없음 ...
+test(1, 2); //arguments[0] : 1, arguments[1] : 2, arguments[2] : undefined, arguments[3] : 없음 ...
+test(1, 2, 3); //arguments[0] : 1, arguments[1] : 2, arguments[2] : 3, arguments[3] : 없음 ...
