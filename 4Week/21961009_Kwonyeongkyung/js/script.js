@@ -33,6 +33,7 @@ compareNumbers(10, 20) 를 호출한 경우 : "첫번째 매개변수에 할당�
 // Answer 1.
 
 //compareNumbers 라는 함수를 선언 후 2개의 매게변수를 지정합니다
+/*
 function compareNumbers (a, b) {
     if(typeof b === undefined){ //두번째 매개변수의 전달인자 값이 할당되지 않은 경우
         console.log("두번째 매개변수의 값을 찾을 수 없습니다.");
@@ -47,9 +48,9 @@ function compareNumbers (a, b) {
 
 compareNumbers("1번 문제의 답입니다");
 compareNumbers(10); //두번째 매개변수의 값을 찾을 수 없습니다.
-//compareNumbers(20, 10); //첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.
-//compareNumbers(10, 20); //첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.
-
+compareNumbers(20, 10); //첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.
+compareNumbers(10, 20); //첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.
+*/
 
 
 /*
@@ -74,8 +75,41 @@ getTotal(100) 를 호출하여 반환하고 변수를 출력한 결과값 : 0
 ----------
 */
 // Answer 2.
+c = 3;
+function getTotal (n1, st1) {
+    var total = 0;
+    if (st1 === "add") {
+        for (var i = 0; i <= n1; i++) {
+            total += i;
+        }
+    }
+    else if (st1 = "multiply") {
+        for (var e = 0; i <= n1; i++ ){
+            total *= i;
+        }
+    }
+    else  {
+         total = 0;
+    }
+    return total;
 
+}
+console.log("2번 문제입니다");
 
+var total = getTotal(5, "add")
+console.log(total);
+
+var total = getTotal(10, "add")
+console.log(total);
+
+var total = getTotal(5, "multiply")
+console.log(total);
+
+var total = getTotal(10, "multiply")
+console.log(total);
+
+var total = getTotal(100)
+console.log(total);
 
 /*
 Quest 3.
