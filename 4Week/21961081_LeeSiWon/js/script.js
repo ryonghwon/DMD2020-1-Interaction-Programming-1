@@ -144,3 +144,27 @@ getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변�
 ----------
 */
 // Answer 3.
+
+
+function getMaxValue (array) //함수 선언 후 매개변수를 지정하였다.
+{
+    var maxnum = array[0];
+    var a = 0;
+    for (var i = 0; i <= array.length; i++) //i가 배열의 수보다 작거나 같을 때까지 반복한다.
+    {
+        if(array[i] > maxnum ){
+            max = array[i];
+            a = i;
+        }
+
+    }
+    return a; //a값을 변환한다.
+}
+
+var answer = getMaxValue([10, -4, 7, 100, "hello", -50]);
+console.log(answer); //3 출력
+
+var answer = getMaxValue([-400, "world", 60, 0, {}, 1000]);
+console.log(answer); //5 출력
+
+//정상적으로 출력되었다.
