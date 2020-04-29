@@ -73,8 +73,8 @@ function getTotal(num, str){
     } else if( str === 'multiply'){
         var total = 1;
 
-        for(var i = 1; i <= num; i++){
-            total *= i;
+        for(var j = 1; j <= num; j++){
+            total *= j;
         }
     } else {
         total = 0;
