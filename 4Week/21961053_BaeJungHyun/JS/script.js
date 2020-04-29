@@ -124,7 +124,7 @@ function compareNumbers(a,b) {
   */
   // Answer 3.
   
-  /* 둘 다 5가 나와서 왜 그러지? 하고 살펴보았더니 if 다음 대괄호를 안 써 주었던 것 이었다,,,
+  /* 둘 다 5가 나와서 왜 그러지? 하고 살펴보았더니 if 다음 대괄호를 안 써 주었던 것이었습니다,,,
   function getMaxValue(e){ 
   var high = e[0]; 
     for(i = 0; i < e.length; i++){ 
