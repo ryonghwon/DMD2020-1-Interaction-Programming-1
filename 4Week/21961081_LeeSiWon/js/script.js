@@ -10,7 +10,6 @@ Quest 1.
 두번째 매개변수의 값을 찾을 수 없습니다.
 ----------
 3. 값이 할당된 경우 4(순서)에 이어서 작성합니다.
-
 4. 조건2 : 첫번째 매개변수의 전달인자 값과 두번째 매개변수의 전달인자 값을 비교하여 크거나 같은 경우, 아래와 같이 console 에 출력되도록 작성합니다.
 ----------
 첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.
@@ -32,24 +31,32 @@ compareNumbers(10, 20) 를 호출한 경우 : "첫번째 매개변수에 할당�
 ----------
 */
 // Answer 1.
-function compareNumbers(a , b){ //함수 compareNumbers 선언
 
-    if (typeof b === 'undefined'){ // b에 값이 할당되지 않은 경우
-        console.log('"두번째 매개변수의 값을 찾을 수 없습니다."');
+//함수 선언, 2개의 매개변수를 지정함.
+function compareNumbers(num1, num2){
 
-    }else if ( a >= b ){ // a가 b보다 크거나 같은 경우
-        console.log('"첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다."');
+    //함수가 호출될 때, num2 매개변수에 전달인자 값이 할당되지 않아 typeof의 결과가 undefined로 뜰 경우 문구를 출력함.
+    if (typeof num2 === "undefined")
+    {console.log("두번째 매개변수의 값을 찾을 수 없습니다.");}
 
-    }else if ( a < b ){
-        console.log('"첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다."');
-
+    //전달인자 값을 비교해 값이 크거나 같은 경우, 정해진 문구를 출력함.
+    if (num1 >= num2){
+        console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.");
     }
+
+    //전달인자 값을 비교해 값이 작을 경우, 정해진 문구를 출력함.
+    if (num1 < num2){
+        console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.");
+    }
+
 }
-compareNumbers(10)// 를 호출한 경우 : "두번째 매개변수의 값을 찾을 수 없습니다."
 
-compareNumbers(20, 10)// 를 호출한 경우 : "첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다."
+//함수 호출. 정상적으로 출력되는 것을 확인함.
+compareNumbers(10);
+compareNumbers(20, 10);
+compareNumbers(10, 20);
 
-compareNumbers(10, 20)// 를 호출한 경우 : "첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다."
+
 
 /*
 Quest 2.
@@ -73,45 +80,52 @@ getTotal(100) 를 호출하여 반환하고 변수를 출력한 결과값 : 0
 ----------
 */
 // Answer 2.
-function getTotal( c , d ){ //함수 getTotal 선언
-
-    var sum = 0; //합계를 반환하기 위한 변수 sum 선언
-
-    if ( d === "add" ){// d의 값이 "add"일 때
-
-    for( var e = 1; e <= c; e++ ) //숫자 1부터 c값까지 합할 for반복문 선언
-
-    sum += e; //합
 
 
-    }else if ( d === "multiply" ){ // d의 값이 "multiply"일 때
 
-    var sum = 1; //곱을 반환하기 위한 변수 sum 선언
-    
-    for( var e = 1; e <= c; e++ ) //숫자 1부터 c값까지 합할 for반복문 선언
+//함수 선언 후 숫자 타입, 문자 타입 매개변수를 선언함.
+function getTotal(num, str){
+    var total = 0;  //값을 담을 변수 생성
+    if (str == "add"){
+        total = 0; //total 변수 리셋.
+        for (var i = 0; i <= num; i++){ //str의 매개변수가 "add"일 시, i가 num보다 작거나 같을 때까지 total += i 를 반복함.
+            total = total + i;}
+        }
 
-    sum *= e; //곱
-
-
-    }else {
-        sum = 0; //sum이 0일 때,
+    else if (str == "multiply"){
+        total = 1; //값을 담을 변수 생성+리셋. total = 0; 할 시 0의 곱셈이 되기 때문에 1로 할당
+        for (var i = 1; i <= num; i++){ //str의 매개변수가 "multiply"일 시, i가 num보다 작거나 같을 때까지 total *= i 를 반복함.
+            total = total * i;}
     }
-    return sum; // sum을 반환
+    else { total = 0; } //어느 if조건문도 해당하지 않을 시 total에 0을 할당.
+    return total; //total 값을 반환.
 }
-total1 = getTotal(5, "add")
-console.log(total1); //를 호출하여 반환하고 변수를 출력한 결과값 : 15
 
-total2 = getTotal(10, "add")
-console.log(total2); //를 호출하여 반환하고 변수를 출력한 결과값 : 55
 
-total3 = getTotal(5, "multiply")
-console.log(total3); //를 호출하여 반환하고 변수를 출력한 결과값 : 120
+var answer;
 
-total4 = getTotal(10, "multiply") 
-console.log(total4); //를 호출하여 반환하고 변수를 출력한 결과값 : 3628800
+// 15
+answer = getTotal(5, "add");
+console.log(answer);
 
-total5 = getTotal(100)
-console.log(total5); //를 호출하여 반환하고 변수를 출력한 결과값 : 0
+// 55
+answer = getTotal(10, "add");
+console.log(answer);
+
+//120
+answer = getTotal(5, "multiply");
+console.log(answer);
+
+//3628800
+answer = getTotal(10, "multiply");
+console.log(answer);
+
+//0
+answer = getTotal(100);
+console.log(answer);
+
+//정상적으로 출력되는 것을 확인.
+
 
 /*
 Quest 3.
@@ -131,27 +145,26 @@ getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변�
 */
 // Answer 3.
 
-var arr1 = [10, -4, 7, 100, "hello", -50];
-var arr2 = [-400, "world", 60, 0, {}, 1000]
-function getMaxValue(array){
-    var max = 0; // 제일 큰 숫자를 출력하기 위한 변수 선언
-    var g = 0;
-    for( var f = 0; f < array.length; f++){
-            if (max < array[f]){ 
-                max = array[f]; // 변수 값이 최대로 늘어날 때까지 반복
-                var g = f; // rh : 조건문 내부에서 변수선언이 다시 되면 유효범위가 달라집니다.
-            }
-            console.log('2222', g);
-            return "getMaxValue" + g;
-            // rh : return 은 반복문이 완료된 후에 작성해주세요.
-            // 함수가 호출되고 실행되면서 return 이 발생되면 반환과 동시에 아랫부분의 코드는 활성화되지 않고 중지됩니다.
-            // 지금은 반복문 안에서 사용되고 있어서 코드가 끝나고 f 가 f++ 로 증가되야 하는데 0 값만 비교하고 반환되면서 함수가 중지되고 있는 중입니다.
-        }
-    }
-    //교수님...결과가 무슨 수단과 방법을 써도 둘 다 0이 나옵니다
-    //다른 학생 과제도 참고해봤는데 원인을 모르겠어요 죄송합니다 ㅠㅠㅠ
-var result1 = getMaxValue(arr1);
-console.log(result1);
 
-var result2 = getMaxValue(arr2);
-console.log(result2);
+function getMaxValue (array) //함수 선언 후 매개변수를 지정하였다.
+{
+    var maxnum = array[0];
+    var a = 0;
+    for (var i = 0; i <= array.length; i++) //i가 배열의 수보다 작거나 같을 때까지 반복한다.
+    {
+        if(array[i] > maxnum ){
+            max = array[i];
+            a = i;
+        }
+
+    }
+    return a; //a값을 변환한다.
+}
+
+var answer = getMaxValue([10, -4, 7, 100, "hello", -50]);
+console.log(answer); //3 출력
+
+var answer = getMaxValue([-400, "world", 60, 0, {}, 1000]);
+console.log(answer); //5 출력
+
+//정상적으로 출력되었다.
