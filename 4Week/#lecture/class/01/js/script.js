@@ -179,7 +179,7 @@ msg("안녕하세요", "김용원입니다.", "반갑습니다.");
 // 매개변수가 없는 부분에 해당하는 값은 탈락이 된다.
 
 // 매개변수의 유효성!
-*/
+
 
 
 /*
@@ -237,7 +237,7 @@ console.log(size1);
 console.log(size2);
 console.log(size3);
 */
-
+/*
 var _name = "전역변수";
 function getName() {
     // console.log(name); // "전역변수"
@@ -248,3 +248,4 @@ function getName() {
 }
 getName();
 console.log(name); // "전역변수"
+*/
