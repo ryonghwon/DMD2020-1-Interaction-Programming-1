@@ -32,23 +32,23 @@ compareNumbers(10, 20) 를 호출한 경우 : "첫번째 매개변수에 할당�
 */
 // Answer 1.
 
-function compareNumbers(a, b) {
-    if (typeof b === "undefined") {
+//compareNumbers 라는 함수를 선언 후 2개의 매게변수를 지정합니다
+
+function compareNumbers (a, b) {
+    if(typeof b === "undefined"){ //두번째 매개변수의 전달인자 값이 할당되지 않은 경우
         console.log("두번째 매개변수의 값을 찾을 수 없습니다.");
     }
-    if (a >= b){
+    else if(a >= b) {//첫번째 매게변수가 두번째 매게 변수보다 크거나 같을 경우 
         console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.");
-    }   
-    if (a < b){
+    }
+    else if(a < b) {//첫번째 매게변수가 두번째 배게변수보다 작을 경우
         console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.");
     }
 }
-compareNumbers(10);
-//두번째 매개변수의 값을 찾을 수 없습니다.
-compareNumbers(20,10);
-//첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.
-compareNumbers(10,20);
-//첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.
+
+compareNumbers(10); //두번째 매개변수의 값을 찾을 수 없습니다.
+compareNumbers(20, 10); //첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.
+compareNumbers(10, 20); //첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.
 
 
 
@@ -75,36 +75,42 @@ getTotal(100) 를 호출하여 반환하고 변수를 출력한 결과값 : 0
 */
 // Answer 2.
 
+function getTotal (n1, st1) { //getTotal 라는 함수를 선언 후 2개 매게변수 지정
+    var total = 0; 
+    if (st1 === "add") {
+        total = 0; //합산을 위해 0으로 지정
+        for (var i = 0; i <= n1; i++) {
+            total += i;
+        }
+    }
+    else if (st1 === "multiply") {//오류 더 정확한 값인 ===을 안매겨서 원하는 결과값이 다르게 나옴. > 해결 
+        total = 1; ////합산을 위해 1로 지정 > 0일 경우 곱해도 0이 나옴
+        for (var i = 1; i <= n1; i++ ){
+            total *= i;
+        }
+    }
+    else  {
+         total = 0; //위의 2가지 경우가 아닐 경우 0으로 출력
+    }
+    return total;
 
-function getTotal(number, string){
-    if (string === "add"){
-        var sum = 0;
-        for (var i = 1; i <= number; i++){
-            sum += i;
-        }
-    }
-    else if (string === "multiply"){
-        sum = 1;
-        for (var i = 1; i <= number; i++){
-            sum = sum *= i;
-        }
-    }
-    else {
-        sum = 0;
-    }
-    return sum;
 }
+console.log("2번 문제입니다");
+var test1;
+test1 = getTotal(5, "add");
+console.log(test1); //15
 
-console.log(getTotal(5, "add")); //15
-console.log(getTotal(10, "add")); //55
+test1 = getTotal(10, "add");
+console.log(test1); //55
 
-console.log(getTotal(5, "multiply")); //120
-console.log(getTotal(10, "multiply")); //3628800
+test1 = getTotal(5, "multiply");
+console.log(test1); //120
 
-console.log(getTotal(100)); //0
+test1 = getTotal(10, "multiply");
+console.log(test1); //3628800
 
-
-
+test1 = getTotal(100);
+console.log(test1); //0
 
 /*
 Quest 3.
@@ -119,37 +125,27 @@ Quest 3.
 
 getMaxValue([10, -4, 7, 100, "hello", -50]) 를 호출하여 반환하고 변수를 출력한 결과값 : 3
 
-getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변수를 출력한 결과값 : 2
+getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변수를 출력한 결과값 : 5
 ----------
 */
 // Answer 3.
 
-function getMaxValue(arr){
-    var Max = arr[0];
-    var MaxValue = 0;
-    for (var i = 0; i < 6; i++){
-        if (arr[i] > Max) {
-            MaxValue = i;
-            Max = arr[i];
+function getMaxValue(e) {
+    var high = e[0];
+    var num = 0;
+    for(var i = 0; i < e.length; i++) {
+        if(high < e[i]) {
+            high = e[i];
+            num = i;
         }
     }
-    return MaxValue;
+    return num;
 }
 
-var arr1 = [10, -4, 7, 100, "hello", -50]; 
-var arr2 = [-400, "world", 60, 0, {}, 1000];
+var test;
 
-console.log(getMaxValue(arr1)); //3
-console.log(getMaxValue(arr2)); //5
+test = getMaxValue([10, -4, 7, 100, "hello", -50]);
+console.log(test); //3
 
-/* 교수님 
-getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변수를 출력한 결과값 : 2 
-라고 하셨는데 제일 큰 숫자가 60인지 아니면 그냥 오탄지 궁금합니다... 8ㅅ8
--- 답변 해 주신걸 제출 후 확인 했습니다! 
-*/
-
-
-
-
-
-
+test = getMaxValue([-400, "world", 60, 0, {}, 1000]);
+console.log(test); //5

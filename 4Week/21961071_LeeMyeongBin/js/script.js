@@ -32,24 +32,29 @@ compareNumbers(10, 20) 를 호출한 경우 : "첫번째 매개변수에 할당�
 */
 // Answer 1.
 
-function compareNumbers(a, b) {
-    if (typeof b === "undefined") {
-        console.log("두번째 매개변수의 값을 찾을 수 없습니다.");
+// compareNumbers 라는 함수를 선언하고 2개의 매개변수 지정
+function compareNumbers(num1, num2) {
+    // 만약 두번째 매개변수 num2의 값이 할당되지 않았을때 (=undefined)
+    if(typeof num2 === 'undefined'){
+        // 해당 문구를 출력한다.
+        console.log('두번째 매개변수의 값을 찾을 수 없습니다.');
     }
-    if (a >= b){
-        console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.");
-    }   
-    if (a < b){
-        console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.");
+    // 만약 첫번째 매개변수 num1의 값이 num2 보다 크거나 같을때
+    else  if(num1 >= num2){
+        // 해당 문구를 출력한다.
+        console.log('첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.');
+    }
+    // 만약 첫번째 매개변수 num1이 num2 보다 작을때
+    else if(num1 < num2){
+        // 해당 문구를 출력한다.
+        console.log('첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.');
     }
 }
-compareNumbers(10);
-//두번째 매개변수의 값을 찾을 수 없습니다.
-compareNumbers(20,10);
-//첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.
-compareNumbers(10,20);
-//첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.
+// 모든 조건의 값을 볼 수 있도록 함수를 3개의 반환 값으로 호출한다.
 
+compareNumbers(1); // 두번째 매개변수의 값을 찾을 수 없습니다.
+compareNumbers(2,1); // 첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.
+compareNumbers(1,2); // 첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.
 
 
 /*
@@ -75,35 +80,41 @@ getTotal(100) 를 호출하여 반환하고 변수를 출력한 결과값 : 0
 */
 // Answer 2.
 
-
-function getTotal(number, string){
-    if (string === "add"){
+// 함수 getTotal을 선언하고 2개의 매개변수 지정
+function getTotal(num3, str1){
+    // str1 값이 "add"일때
+    if(str1 === "add"){
         var sum = 0;
-        for (var i = 1; i <= number; i++){
-            sum += i;
+        for(var a = 1; a <= num3; a++ ){
+            //  숫자 1부터 첫번째 매개변수 전달인자 값까지 덧셈하여 결과값을 반환한다.
+            sum += a;
         }
     }
-    else if (string === "multiply"){
-        sum = 1;
-        for (var i = 1; i <= number; i++){
-            sum = sum *= i;
+    // str1 값이 "multiply" 일때
+    else if(str1 === "multiply"){
+        var sum = 1;
+        for(var b = 1; b <= num3; b++){
+            //  숫자 1부터 첫번째 매개변수 전달인자 값까지 곱셈하여 결과값을 반환한다.
+            sum *= b;
         }
     }
-    else {
+    // 모든 조건이 아닐 경우
+    else{
+        // 결과값 숫자 0을 반환한다.
         sum = 0;
     }
     return sum;
 }
-
-console.log(getTotal(5, "add")); //15
-console.log(getTotal(10, "add")); //55
-
-console.log(getTotal(5, "multiply")); //120
-console.log(getTotal(10, "multiply")); //3628800
-
-console.log(getTotal(100)); //0
-
-
+var total = getTotal(5,"add");
+console.log(total); // 5
+total = getTotal(10,"add");
+console.log(total); // 55
+total = getTotal(5,"multiply");
+console.log(total); // 120
+total = getTotal(10,"multiply");
+console.log(total); // 3628800
+total = getTotal(100);
+console.log(total); // 0
 
 
 /*
@@ -119,37 +130,33 @@ Quest 3.
 
 getMaxValue([10, -4, 7, 100, "hello", -50]) 를 호출하여 반환하고 변수를 출력한 결과값 : 3
 
-getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변수를 출력한 결과값 : 2
+getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변수를 출력한 결과값 : 5
 ----------
 */
 // Answer 3.
 
-function getMaxValue(arr){
-    var Max = arr[0];
-    var MaxValue = 0;
-    for (var i = 0; i < 6; i++){
-        if (arr[i] > Max) {
-            MaxValue = i;
-            Max = arr[i];
-        }
-    }
-    return MaxValue;
-}
-
-var arr1 = [10, -4, 7, 100, "hello", -50]; 
+// 배열을 선언한다.
+var arr1 = [10, -4, 7, 100, "hello", -50];
 var arr2 = [-400, "world", 60, 0, {}, 1000];
 
-console.log(getMaxValue(arr1)); //3
-console.log(getMaxValue(arr2)); //5
+// getMaxValue라는 함수를 호출하고 배열을 매개변수로 지정한다.
+function getMaxValue(arr1){
+    var sum2 = 0;
+    // 매개변수 배열 원소들 중 가장 큰 숫자의 순서를 결과값으로 반환한다.
+    for(var i = 0; i < arr1.length; i++){
+        // 만약 배열 숫자가 가장 큰 경우
+        if(arr1[i] > sum2){
+            // sum2에 배열을 할당한다.
+            sum2 = arr1[i];
+        }
+    }
+    return arr1.indexOf(sum2);
+}
 
-/* 교수님 
-getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변수를 출력한 결과값 : 2 
-라고 하셨는데 제일 큰 숫자가 60인지 아니면 그냥 오탄지 궁금합니다... 8ㅅ8
--- 답변 해 주신걸 제출 후 확인 했습니다! 
-*/
+// max 값을 구하는 새로운 변수를 선언하고 함수에 매개변수를 지정한다.
+var maxValue = getMaxValue(arr1);
+console.log(maxValue); // 3
 
-
-
-
-
+maxValue = getMaxValue(arr2);
+console.log(maxValue); // 5
 
