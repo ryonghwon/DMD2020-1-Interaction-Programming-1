@@ -139,14 +139,15 @@ function getMaxValue(array){
     for( var f = 0; f < array.length; f++){
             if (max < array[f]){ 
                 max = array[f]; // 변수 값이 최대로 늘어날 때까지 반복
-                var g = f;
+                var g = f; // rh : 조건문 내부에서 변수선언이 다시 되면 유효범위가 달라집니다.
             }
-
+            console.log('2222', g);
             return "getMaxValue" + g;
-
+            // rh : return 은 반복문이 완료된 후에 작성해주세요.
+            // 함수가 호출되고 실행되면서 return 이 발생되면 반환과 동시에 아랫부분의 코드는 활성화되지 않고 중지됩니다.
+            // 지금은 반복문 안에서 사용되고 있어서 코드가 끝나고 f 가 f++ 로 증가되야 하는데 0 값만 비교하고 반환되면서 함수가 중지되고 있는 중입니다.
         }
     }
-
     //교수님...결과가 무슨 수단과 방법을 써도 둘 다 0이 나옵니다
     //다른 학생 과제도 참고해봤는데 원인을 모르겠어요 죄송합니다 ㅠㅠㅠ
 var result1 = getMaxValue(arr1);
