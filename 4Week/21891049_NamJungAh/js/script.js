@@ -32,25 +32,26 @@ compareNumbers(10, 20) 를 호출한 경우 : "첫번째 매개변수에 할당�
 */
 // Answer 1.
 
-function compareNumbers(a, b) {
-    if (typeof b === "undefined") {
-        console.log("두번째 매개변수의 값을 찾을 수 없습니다.");
-    }
-    if (a >= b){
-        console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.");
-    }   
-    if (a < b){
-        console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.");
-    }
-}
-compareNumbers(10);
-//두번째 매개변수의 값을 찾을 수 없습니다.
-compareNumbers(20,10);
-//첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.
-compareNumbers(10,20);
-//첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.
+//compareNumbers라는 이름의 함수 선언 //약간 배열의 느낌이 든다!
 
+// function compareNumbers(num1, num2){
+    
+//     //조건1에 의해 1번 함수가 호출될때 두번째 매개변수의 전달인가 값이 할당안되면
+//     //num1는 숫자의 값이 있지만 num2는 없다 => num2는 찾을 수 없다 
+//     if(typeof num2 === "undefined"){
+//         coosole.log("두번째 매개변수의 값을 찾을 수 없습니다.");
+//     }
+//     if(num1 >=num2){
+//         console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.");
+//     }
+//     if(num1<num2){
+//         console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.");
+//     }
+// }
 
+// //compareNumbers(10); //로그에 뜨지 않고 오류로 뜹니다..ㅠㅠ
+// compareNumbers(20,10);
+// compareNumbers(10,20);
 
 /*
 Quest 2.
@@ -75,35 +76,50 @@ getTotal(100) 를 호출하여 반환하고 변수를 출력한 결과값 : 0
 */
 // Answer 2.
 
+function getTotal (num, string){
 
-function getTotal(number, string){
-    if (string === "add"){
-        var sum = 0;
-        for (var i = 1; i <= number; i++){
-            sum += i;
+    var add = 0;
+    var multiply=1;
+
+    if(string=="add"){ //add 값이 적혀있을 경우
+
+        for(var i=0; i<=num; i++){ //for을 통해 앞의 숫자를 다 더한다
+            
+            add += i;
         }
+        return add;
     }
-    else if (string === "multiply"){
-        sum = 1;
-        for (var i = 1; i <= number; i++){
-            sum = sum *= i;
+    else if(string=="multiply"){ //multiply 값이 적혀있을 경우
+        //0만 나온다..??
+        //var을 1을 적었는데도 0이 나온다??
+        //아 변수의 기본 값이 0이면 0 * ?를 해도 다 0으로 나와서 그렇다. 
+        for (var i=1; i<=num; i++){
+        
+            multiply *= i; 
         }
+        return multiply;
     }
-    else {
-        sum = 0;
+    else //그 외에 string 값이 아무것도 없으면 0이 나온다.
+    {
+        return 0;
     }
-    return sum;
 }
+//값이 안나온다??
+//var을 통해 변수를 생성해서 하면 콘올에 나온당
+var sum1=getTotal(5,"add");
+console.log(sum1);
 
-console.log(getTotal(5, "add")); //15
-console.log(getTotal(10, "add")); //55
+var sum2=getTotal(10,"add");
+console.log(sum2);
 
-console.log(getTotal(5, "multiply")); //120
-console.log(getTotal(10, "multiply")); //3628800
+var multiply1=getTotal(5,"multiply");
+console.log(multiply1);
 
-console.log(getTotal(100)); //0
+var multiply1=getTotal(10,"multiply");
+console.log(multiply1);
 
-
+var one=getTotal(100);
+console.log(one);
 
 
 /*
@@ -119,37 +135,29 @@ Quest 3.
 
 getMaxValue([10, -4, 7, 100, "hello", -50]) 를 호출하여 반환하고 변수를 출력한 결과값 : 3
 
-getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변수를 출력한 결과값 : 2
+getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변수를 출력한 결과값 : 5
 ----------
 */
 // Answer 3.
 
-function getMaxValue(arr){
-    var Max = arr[0];
-    var MaxValue = 0;
-    for (var i = 0; i < 6; i++){
-        if (arr[i] > Max) {
-            MaxValue = i;
-            Max = arr[i];
+//가장 큰 숫자를 알아내자!
+
+function getMaxValue (_arry){ //getMaxValue 함수 선언 //
+    var max = 0;
+    var value = 0;
+
+    for(var n = 0; n < _arry.length; n++){ //배열의 갯수만큼 값을 반복하는 식 
+        if(_arry[n] > max){ //max=0의 값이 _arry 배열 값보다 작을 경우 max에 n 값을 대체한다 
+            max = _arry[n];
+            count = n;
         }
     }
-    return MaxValue;
+    return max + ", " + count;
 }
 
-var arr1 = [10, -4, 7, 100, "hello", -50]; 
-var arr2 = [-400, "world", 60, 0, {}, 1000];
+//3. 새로운 변수를 생성, 1(순서) 함수에 매개변수를 지정하여 호출하고 값을 반환받습니다.
+var arry1 = getMaxValue([10, -4, 7, 100, "hello", -50]) 
+console.log(arry1);
 
-console.log(getMaxValue(arr1)); //3
-console.log(getMaxValue(arr2)); //5
-
-/* 교수님 
-getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변수를 출력한 결과값 : 2 
-라고 하셨는데 제일 큰 숫자가 60인지 아니면 그냥 오탄지 궁금합니다... 8ㅅ8
--- 답변 해 주신걸 제출 후 확인 했습니다! 
-*/
-
-
-
-
-
-
+var arry2 = getMaxValue([-400, "world", 60, 0, {}, 1000]) 
+console.log(arry2);

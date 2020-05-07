@@ -32,23 +32,29 @@ compareNumbers(10, 20) 를 호출한 경우 : "첫번째 매개변수에 할당�
 */
 // Answer 1.
 
-function compareNumbers(a, b) {
-    if (typeof b === "undefined") {
-        console.log("두번째 매개변수의 값을 찾을 수 없습니다.");
-    }
-    if (a >= b){
+//함수 선언, 2개의 매개변수를 지정함.
+function compareNumbers(num1, num2){
+
+    //함수가 호출될 때, num2 매개변수에 전달인자 값이 할당되지 않아 typeof의 결과가 undefined로 뜰 경우 문구를 출력함.
+    if (typeof num2 === "undefined")
+    {console.log("두번째 매개변수의 값을 찾을 수 없습니다.");}
+
+    //전달인자 값을 비교해 값이 크거나 같은 경우, 정해진 문구를 출력함.
+    if (num1 >= num2){
         console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.");
-    }   
-    if (a < b){
+    }
+
+    //전달인자 값을 비교해 값이 작을 경우, 정해진 문구를 출력함.
+    if (num1 < num2){
         console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.");
     }
+
 }
+
+//함수 호출. 정상적으로 출력되는 것을 확인함.
 compareNumbers(10);
-//두번째 매개변수의 값을 찾을 수 없습니다.
-compareNumbers(20,10);
-//첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.
-compareNumbers(10,20);
-//첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.
+compareNumbers(20, 10);
+compareNumbers(10, 20);
 
 
 
@@ -76,34 +82,49 @@ getTotal(100) 를 호출하여 반환하고 변수를 출력한 결과값 : 0
 // Answer 2.
 
 
-function getTotal(number, string){
-    if (string === "add"){
-        var sum = 0;
-        for (var i = 1; i <= number; i++){
-            sum += i;
+
+//함수 선언 후 숫자 타입, 문자 타입 매개변수를 선언함.
+function getTotal(num, str){
+    var total = 0;  //값을 담을 변수 생성
+    if (str == "add"){
+        total = 0; //total 변수 리셋.
+        for (var i = 0; i <= num; i++){ //str의 매개변수가 "add"일 시, i가 num보다 작거나 같을 때까지 total += i 를 반복함.
+            total = total + i;}
         }
+
+    else if (str == "multiply"){
+        total = 1; //값을 담을 변수 생성+리셋. total = 0; 할 시 0의 곱셈이 되기 때문에 1로 할당
+        for (var i = 1; i <= num; i++){ //str의 매개변수가 "multiply"일 시, i가 num보다 작거나 같을 때까지 total *= i 를 반복함.
+            total = total * i;}
     }
-    else if (string === "multiply"){
-        sum = 1;
-        for (var i = 1; i <= number; i++){
-            sum = sum *= i;
-        }
-    }
-    else {
-        sum = 0;
-    }
-    return sum;
+    else { total = 0; } //어느 if조건문도 해당하지 않을 시 total에 0을 할당.
+    return total; //total 값을 반환.
 }
 
-console.log(getTotal(5, "add")); //15
-console.log(getTotal(10, "add")); //55
 
-console.log(getTotal(5, "multiply")); //120
-console.log(getTotal(10, "multiply")); //3628800
+var answer;
 
-console.log(getTotal(100)); //0
+// 15
+answer = getTotal(5, "add");
+console.log(answer);
 
+// 55
+answer = getTotal(10, "add");
+console.log(answer);
 
+//120
+answer = getTotal(5, "multiply");
+console.log(answer);
+
+//3628800
+answer = getTotal(10, "multiply");
+console.log(answer);
+
+//0
+answer = getTotal(100);
+console.log(answer);
+
+//정상적으로 출력되는 것을 확인.
 
 
 /*
@@ -119,37 +140,31 @@ Quest 3.
 
 getMaxValue([10, -4, 7, 100, "hello", -50]) 를 호출하여 반환하고 변수를 출력한 결과값 : 3
 
-getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변수를 출력한 결과값 : 2
+getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변수를 출력한 결과값 : 5
 ----------
 */
 // Answer 3.
 
-function getMaxValue(arr){
-    var Max = arr[0];
-    var MaxValue = 0;
-    for (var i = 0; i < 6; i++){
-        if (arr[i] > Max) {
-            MaxValue = i;
-            Max = arr[i];
+
+function getMaxValue (array) //함수 선언 후 매개변수를 지정하였다.
+{
+    var maxnum = array[0];
+    var a = 0;
+    for (var i = 0; i <= array.length; i++) //i가 배열의 수보다 작거나 같을 때까지 반복한다.
+    {
+        if(array[i] > maxnum ){
+            max = array[i];
+            a = i;
         }
+
     }
-    return MaxValue;
+    return a; //a값을 변환한다.
 }
 
-var arr1 = [10, -4, 7, 100, "hello", -50]; 
-var arr2 = [-400, "world", 60, 0, {}, 1000];
+var answer = getMaxValue([10, -4, 7, 100, "hello", -50]);
+console.log(answer); //3 출력
 
-console.log(getMaxValue(arr1)); //3
-console.log(getMaxValue(arr2)); //5
+var answer = getMaxValue([-400, "world", 60, 0, {}, 1000]);
+console.log(answer); //5 출력
 
-/* 교수님 
-getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변수를 출력한 결과값 : 2 
-라고 하셨는데 제일 큰 숫자가 60인지 아니면 그냥 오탄지 궁금합니다... 8ㅅ8
--- 답변 해 주신걸 제출 후 확인 했습니다! 
-*/
-
-
-
-
-
-
+//정상적으로 출력되었다.
