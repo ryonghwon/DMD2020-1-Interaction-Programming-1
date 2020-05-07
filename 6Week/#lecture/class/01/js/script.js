@@ -96,3 +96,95 @@ Array - 배열 객체.
 객체, 배열 객체는 사용빈도가 매우 높음.*
 */
 var _arr = [0, 1, 2, 100, 2000];
+
+function getMembers() {
+    return ["rh", "yyy", "mind"];
+}
+var member = getMembers();
+console.log(member);
+console.log(member[0]);
+console.log(member[1]);
+console.log(member[2]);
+
+// 배열 원소의 추가, 삭제, 수정, 정렬.
+// Array(배열) 의 메서드
+
+var _heros = ["Iron Man", "Hulk", "Thor", "Doctor Starage"];
+console.log(_heros);
+console.log(typeof _heros); // object
+
+// 추가, 삭제.
+// Array.unshift(); - 배열의 첫 번째에 원소값을 추가.
+_heros.unshift("Captain America"); // 원소값 기입.
+console.log(_heros);
+
+// Array.push(); - 배열의 마지막 번째에 원소값을 추가.
+_heros.push("Spider-Man"); // 원소값 기입.
+console.log(_heros);
+
+// Array.shift(); - 배열의 첫 번째 원소값을 삭제(1개만 삭제).
+_heros.shift();
+console.log(_heros);
+
+// Array.pop(); - 배열의 마지막 번째 원소값을 삭제(1개만 삭제).
+_heros.pop();
+console.log(_heros);
+
+// 병합.
+// Array.concat();
+// 배열 + 배열 = 배열 - 배열과 배열을 병합해서 하나의 배열로 만듦.
+var _addHeros = ["Black Panther", "Ant-Man"]; // 새로운 다른 배열을 생성.
+_heros.concat(_addHeros); // 배열 병합을 한 후에 변수에 값을 할당해줘야 함.
+// _heros = _heros.concat(_addHeros);
+// console.log(_heros);
+var _newHeros = _heros.concat(_addHeros);
+console.log(_newHeros);
+
+// 수정. (삭제하고 값을 추가)
+// Array.splice();
+// Array.splice(index(number), delete(number), value);
+_newHeros.splice(2, 0, "Vision"); // 2번째 원소에 원소값을 추가.
+console.log(_newHeros);
+_newHeros.splice(2, 1, "Loki"); // 2번째 원소에 하나의 값을 삭제하고 원소값 추가 = 수정
+// _newHeros.splice(2, 1, ["Loki", "Vision"]);
+console.log(_newHeros);
+// splice(시작하는 시점에 대한 순서, 삭제하려고 하는 원소의 개수, [배열]);
+
+// 정렬.
+// Array.sort();
+// _newHeros.sort(); // 원소의 순서 정렬(숫자, 알파벳 순서).
+// console.log(_newHeros);
+var _arr = ["안녕하세요", "A", 10, 0, false, {}];
+// console.log(_arr);
+// _arr.sort();
+// console.log(_arr);
+
+// Array.reverse(); // 원소의 순서를 반대로 정렬.
+_newHeros.reverse();
+console.log(_newHeros);
+
+/*
+Math 
+*/
+console.log(Math);
+// pow(); - 제곱 Math.pow(3, 2);
+// round(); * - 반올림 0.5 - 1, 0.4 - 0 정수로 만들기 위한 수학 Math.round(2.5);
+// ceil(); - 올림 0.4 - 1, 0.6 - 1 정수값으로 반환. Math.ceil(0.1);
+// floor(); - 내림 0.8 - 0, 0.9 - 0 정수값으로 반환. Math.floor(0.9);
+// sqrt(); - 제곱근 Math.sqrt(9) - 3
+// random(); * Math.random() 0 ~ 1.0 까지의 랜덤한 수 반환.
+// abs(); - 절대값 Math.abs(-100 + 50);
+// max(); * - Math.max(0, 10); 두가지 숫자 중 최대값 반환.
+// min(); * - Math.min(-100, -1000); 두가지 숫자 중 최소값 반환.
+
+// 배열의 최대값, 최대값.
+// console.log(Math.max.apply(null, [0, -10, 100, 20000, 1000])); // 20000
+// console.log(Math.min.apply(null, [-1000, -20000, 0, 10, 100])); // -20000
+
+var _random = Math.random(); // 0 ~ 1.0 까지의 랜덤한 숫자.
+console.log(_random);
+// 0 ~ 100 숫자 중 랜덤 값을 찾고 싶다.
+_random = _random * 100;
+console.log(_random);
+_random = Math.round(_random);
+console.log(_random); // 0 ~ 100 의 램덤한 수.
