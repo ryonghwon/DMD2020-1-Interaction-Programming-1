@@ -39,7 +39,7 @@ var numbers; //numbers 라는 변수를 선언
 numbers = [-1, 2, 85, 10, 3, -90, 18, 43]; //숫자 타입의 원소값들로 이뤄진 배열을 할당
 
 console.log(Math.max.apply(null, numbers)); //Math의 max를 사용하여 최댓값을 찾아냄. 85
-console.log(Math.min.apply(null, numbers)) //Math의 min을 사용하여 최솟값을 찾아냄.
+console.log(Math.min.apply(null, numbers)) //Math의 min을 사용하여 최솟값을 찾아냄. -90
 
 /*
 ### Quest 3.
