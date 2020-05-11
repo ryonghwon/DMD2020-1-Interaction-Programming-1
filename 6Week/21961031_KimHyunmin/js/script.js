@@ -15,7 +15,11 @@ Quest 1.
 Benz, Volvo, Audi, Tesla.
 ----------
 */
-// Answer 1.
+// Answer 1.+
+
+var cars = ['Tesla', 'Audi', 'Volvo', 'Benz'];
+cars.reverse(); // Array.reverse(); - 원소의 순서를 반대로 정렬.
+console.log(cars); // ["Benz", "Volvo", "Audi", "Tesla"]
 
 
 
@@ -30,6 +34,10 @@ Benz, Volvo, Audi, Tesla.
 3. 1(순서) 에서 선언한 변수의 배열 원소값 중 가장 작은 숫자를 console 에 출력되도록 작성합니다.
 */
 // Answer 2.
+
+var numbers = [-1, 2, 5, 10, 1, -10, 8, 4];
+console.log(Math.max.apply(null, numbers)); // 10
+console.log(Math.min.apply(null, numbers)); // -10
 
 
 
@@ -52,6 +60,25 @@ getStar(5) 를 호출하여 반환하고 변수를 출력한 결과값 : *****
 */
 // Answer 3.
 
+function getStar(num) {
+    if(typeof num !== "number") {
+        console.log("숫자만 입력 가능합니다.");
+        return false;
+    }
+    var s = "";
+    for(var i = 1; i <= num; i++) {
+        if(typeof num === "number") {
+            s += "*";
+        }
+    }
+    return s;
+}
+
+var star1 = getStar("text");
+console.log(star1); // "숫자만 입력 가능합니다." , false
+
+var star2 = getStar(5);
+console.log(star2); // *****
 
 
 /*
@@ -66,6 +93,17 @@ getStar(5) 를 호출하여 반환하고 변수를 출력한 결과값 : *****
 */
 // Answer 4.
 
+var fruit = ['Apple', 'Orange', 'Grape', 'Melon'];
+// console.log(fruit); // ["Apple", "Orange", "Grape", "Melon"]
+
+fruit.unshift("Mango"); // Array.unshift(); - 배열의 첫 번째에 원소값을 추가.
+// console.log(fruit); // ["Mango", "Apple", "Orange", "Grape", "Melon"]
+
+fruit.splice(3, 0, "Cherry"); // Array.splice(index(number), delete(number), []); - 3번째 원소에 "Cherry" 값을 추가.
+// console.log(fruit); // ["Mango", "Apple", "Orange", "Cherry", "Grape", "Melon"]
+
+fruit.reverse(); // Array.reverse(); - 원소의 순서를 반대로 정렬.
+console.log(fruit); // ["Melon", "Grape", "Cherry", "Orange", "Apple", "Mango"]
 
 
 /*
