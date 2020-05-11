@@ -16,6 +16,10 @@ Benz, Volvo, Audi, Tesla.
 ----------
 */
 // Answer 1.
+var cars; //cars 라는 변수를 선언
+cars = ['Tesla', 'Audi', 'Volvo', 'Benz']; //배열을 값으로 할당
+cars.reverse(); //원소의 순서를 반대로 정렬해주는 reverse 사용
+console.log(cars); //["Benz", "Volvo", "Audi", "Tesla"]
 
 
 
@@ -31,7 +35,11 @@ Benz, Volvo, Audi, Tesla.
 */
 // Answer 2.
 
+var numbers; //numbers 라는 변수를 선언
+numbers = [-1, 2, 85, 10, 3, -90, 18, 43]; //숫자 타입의 원소값들로 이뤄진 배열을 할당
 
+console.log(Math.max.apply(null, numbers)); //Math의 max를 사용하여 최댓값을 찾아냄. 85
+console.log(Math.min.apply(null, numbers)) //Math의 min을 사용하여 최솟값을 찾아냄. -90
 
 /*
 ### Quest 3.
@@ -52,6 +60,24 @@ getStar(5) 를 호출하여 반환하고 변수를 출력한 결과값 : *****
 */
 // Answer 3.
 
+function getStar(num){ //getStar 라는 함수를 선언하고, 1개의 매개변수(숫자 타입)를 지정
+    if (typeof num !== 'number'){ // 함수가 호출될 때, 매개변수의 전달인자 값이 숫자가 아닌 경우
+        console.log("숫자만 입력 가능합니다."); //console 에 출력
+        return false //false 반환
+    } else { //함수가 호출될 때, 매개변수의 전달인자가 숫자인 경우
+        var i = 0; //변수 i 선언
+        var str = ""; //문자열 '*'을 대입시킬 변수 str 선언
+        for (i; i<num; i++){ //i가 num보다 작을 때까지 증가,
+            str += "*"; //str에 * 대입.
+        }
+    }
+    return str; //str값 반환
+}
+
+var star1=getStar("text"); //star1 변수를 선언, getStar("text") 를 호출
+console.log(star1); //숫자만 입력 가능합니다., false
+star2=getStar(5); //star2 변수를 선언, getStar(5) 를 호출
+console.log(star2); //*****
 
 
 /*
@@ -65,24 +91,17 @@ getStar(5) 를 호출하여 반환하고 변수를 출력한 결과값 : *****
 4. fruit 배열 객체의 요소 순서를 반대로 변경하고 console 에 배열이 출력되도록 작성합니다.
 */
 // Answer 4.
+var fruit; //fruit 라는 변수를 선언
+fruit = ['Apple', 'Orange', 'Grape', 'Melon']; //배열을 값으로 할당
+console.log(fruit); //["Apple", "Orange", "Grape", "Melon"]
 
+fruit.unshift('Mango'); //배열의 첫번째 원소값을 추가하는 unshift를 사용하여 'Mango' 문자열 추가.
+console.log(fruit); //["Mango", "Apple", "Orange", "Grape", "Melon"]
 
+fruit.splice(3, 0, 'Cherry'); //fruit 배열 객체의 ‘Orange' 요소 뒤에 'Cherry' 라는 문자열을 요소로 추가
+//Array.splice(index(number), delete(number), []);
+console.log(fruit); //["Mango", "Apple", "Orange", "Cherry", "Grape", "Melon"]
 
-/*
-// BOM 에 해당되는 문제.
-### Quest 5.
-1. getSize 라는 함수를 선언합니다.
-2. 1(순서) 함수가 호출될 때, 윈도우 콘텐츠 영역의 가로 폭 값과 세로 높이 값을 아래의 객체 형식으로 반환합니다.
-----------
-객체 형식)
-{ winWidth : __윈도우 콘텐츠 영역의 가로 폭 값__, winHeight : __윈도우 콘텐츠 영역의 세로 높이 값__ }
-----------
-3. winSize 변수를 선언, 1(순서) 함수를 호출하고 반환값을 할당받아 아래와 같은 문자열 결과값으로 console 에 출력되도록 작성합니다.
-----------
-문자열)
-윈도우 콘텐츠의 영역 width : ____ px, height : ____ px 입니다.
-----------
-*/
-// Answer 5.
-
+fruit.reverse(); //원소의 순서를 반대로 정렬해주는 reverse 사용
+console.log(fruit); // ["Melon", "Grape", "Cherry", "Orange", "Apple", "Mango"]
 
