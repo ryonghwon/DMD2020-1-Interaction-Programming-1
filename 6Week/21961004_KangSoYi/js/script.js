@@ -17,6 +17,14 @@ Benz, Volvo, Audi, Tesla.
 */
 // Answer 1.
 
+var _cars = ["Tesla", "Audi", "Volvo", "Benz"];
+
+_cars.reverse();
+
+console.log(_cars); //Benz, Volvo, Audi, Tesla.
+
+
+
 
 
 /*
@@ -30,6 +38,11 @@ Benz, Volvo, Audi, Tesla.
 3. 1(순서) 에서 선언한 변수의 배열 원소값 중 가장 작은 숫자를 console 에 출력되도록 작성합니다.
 */
 // Answer 2.
+
+var numbers = [-1, 2, 5, 10, 1, -10, 8, 4];
+
+console.log(Math.max.apply(null,numbers)); //10
+console.log(Math.min.apply(null,numbers)); //-10
 
 
 
@@ -52,6 +65,26 @@ getStar(5) 를 호출하여 반환하고 변수를 출력한 결과값 : *****
 */
 // Answer 3.
 
+function getStar(number){
+    if (typeof number !== "number") {
+        console.log("숫자만 입력 가능합니다.");
+        return false;
+    }
+    if (typeof number === "number") {
+        var s = "";
+        for (var i = 1; i <= number; i++) {
+            s += "*";
+        }
+        return s;
+    }
+}
+
+var star1 = getStar("text");
+console.log(star1); //숫자만 입력 가능합니다. false
+
+var star2 = getStar(5);
+console.log(star2); //*****
+
 
 
 /*
@@ -65,8 +98,16 @@ getStar(5) 를 호출하여 반환하고 변수를 출력한 결과값 : *****
 4. fruit 배열 객체의 요소 순서를 반대로 변경하고 console 에 배열이 출력되도록 작성합니다.
 */
 // Answer 4.
+var fruit = ["Apple", "Orange", "Grape", "Melon"];
 
+fruit.unshift("Mango");
+//console.log(fruit);
 
+fruit.splice(3,0,"Cherry");
+//console.log(fruit);
+
+fruit.reverse();
+console.log(fruit); //["Melon", "Grape", "Cherry", "Orange", "Apple", "Mango"]
 
 /*
 // BOM 에 해당되는 문제.
