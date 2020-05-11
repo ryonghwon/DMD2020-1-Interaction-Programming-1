@@ -71,7 +71,7 @@ function getStar(num) {
     }
 }
 var star1 = getStar("text");
-console.log(star1); // false
+console.log(star1); // 숫자만 입력 가능합니다. // false
 var star2 = getStar(5);
 console.log(star2); // *****
 
