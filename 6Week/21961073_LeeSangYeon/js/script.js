@@ -17,8 +17,22 @@ Benz, Volvo, Audi, Tesla.
 */
 // Answer 1
 var cars = ['Tesla', 'Audi', 'Volvo', 'Benz'];
-cars.reverse();
-console.log(cars);
+cars.reverse(); 
+function lsy(){ //새로운 함수 lsy 생성
+    var carr = []; // 변수 carr 생성 - [] <-- cars의 변수들이 증가 +  누적되는 공간을 만들어 줌
+    for(var i = 0; i < cars.length; i++){ // 새로운 변수 i 생성, i가 for문으로 인해 증가하여 cars의 배열의 숫자보다 커지면 for문 종료
+        if(i < cars.length-1){
+            carr += cars[i] + ", "; // cars의 각 배열 뒤에 ", "가 출력되도록 함
+        }else{
+            carr += cars[i] + "."; // cars의 배열 뒤에 "."가 출력되도록 함
+        }
+    }
+   return carr;
+}
+// Benz, Volvo, Audi, Tesla. 
+console.log(lsy()); // Benz, Volvo, Audi, Tesla. - 출력
+
+
 
 
 
@@ -33,10 +47,35 @@ console.log(cars);
 3. 1(순서) 에서 선언한 변수의 배열 원소값 중 가장 작은 숫자를 console 에 출력되도록 작성합니다.
 */
 // Answer 2.
-var number = [-1, 2, 5, 10, 1, -10, 8, 4];
+var numbers = [-1, 2, 5, 10, 1, -10, 8, 4];
 // var number과 [-1, 2, 5, 10, 1, -10, 8, 4]; 이 같기 때문에 둘 다 사용해 보았습니다.
+// 6주차 수업 복습
 console.log(Math.max.apply(null,[-1, 2, 5, 10, 1, -10, 8, 4])); // 10
-console.log(Math.min.apply(null, number)); // -10
+console.log(Math.min.apply(null, numbers)); // -10
+
+// 4주차 수업 복습
+function maxmin(numbers) {// getMaxValue 함수를 선언. 매개변수(배열타입) 지정.
+    // 최대값을 담아줄 high 라는 변수를 생성한 뒤 값을 [0]으로 설정.
+      var high = numbers[0]; 
+    // 최소값을 담아줄 row 라는 변수를 생성한 뒤 값을  [0]으로 설정.
+      var row = numbers[0]; 
+    //for문을 사용. 새로운 변수 l 을 생성한 후, 값 0 지정. 증감 연산으로 인해 값이 되는 것을 볼 수 있을 것.
+      for (var l = 0; l < numbers.length; l++) { 
+        if (numbers[l] > high) {
+            high = numbers[l]; // 최대값 저장
+
+        }else if(numbers[l] < row) {
+            row = numbers[l]; // 최소값 저장
+
+        }
+        mxm_number = "가장 큰 숫자는 " + high + "," + " 가장 작은 숫자는 " + row + " 입니다.";
+        
+      }
+      return mxm_number; // 최대값+최소값 반환
+    }
+    var bbm = maxmin(numbers);
+    console.log(bbm); 
+    
 
 
 /*
