@@ -16,6 +16,9 @@ Benz, Volvo, Audi, Tesla.
 ----------
 */
 // Answer 1.
+var cars = ['Tesla', 'Audi', 'Volvo', 'Benz'];
+cars.reverse();
+console.log(cars); // ["Benz", "Volvo", "Audi", "Tesla"]
 
 
 
@@ -30,6 +33,9 @@ Benz, Volvo, Audi, Tesla.
 3. 1(순서) 에서 선언한 변수의 배열 원소값 중 가장 작은 숫자를 console 에 출력되도록 작성합니다.
 */
 // Answer 2.
+var numbers = [-1, 2, 5, 10, 1, -10, 8, 4];
+console.log(Math.max.apply(null, numbers)); // 10
+console.log(Math.min.apply(null, numbers)); // -10
 
 
 
@@ -51,6 +57,23 @@ getStar(5) 를 호출하여 반환하고 변수를 출력한 결과값 : *****
 ----------
 */
 // Answer 3.
+function getStar(num) {
+    if (typeof num !== "number") {
+        console.log("숫자만 입력 가능합니다.");
+        return false;
+    }
+    else if (typeof num === "number") {
+        var star = "";
+        for (var i = 1; i <= num; i++) {
+            star += "*";
+        }
+        return star;
+    }
+}
+var star1 = getStar("text");
+console.log(star1); // 숫자만 입력 가능합니다. // false
+var star2 = getStar(5);
+console.log(star2); // *****
 
 
 
@@ -65,24 +88,9 @@ getStar(5) 를 호출하여 반환하고 변수를 출력한 결과값 : *****
 4. fruit 배열 객체의 요소 순서를 반대로 변경하고 console 에 배열이 출력되도록 작성합니다.
 */
 // Answer 4.
-
-
-
-/*
-// BOM 에 해당되는 문제.
-### Quest 5.
-1. getSize 라는 함수를 선언합니다.
-2. 1(순서) 함수가 호출될 때, 윈도우 콘텐츠 영역의 가로 폭 값과 세로 높이 값을 아래의 객체 형식으로 반환합니다.
-----------
-객체 형식)
-{ winWidth : __윈도우 콘텐츠 영역의 가로 폭 값__, winHeight : __윈도우 콘텐츠 영역의 세로 높이 값__ }
-----------
-3. winSize 변수를 선언, 1(순서) 함수를 호출하고 반환값을 할당받아 아래와 같은 문자열 결과값으로 console 에 출력되도록 작성합니다.
-----------
-문자열)
-윈도우 콘텐츠의 영역 width : ____ px, height : ____ px 입니다.
-----------
-*/
-// Answer 5.
+var fruit = ['Apple', 'Orange', 'Grape', 'Melon'];
+fruit.unshift('Mango');
+fruit.splice(3, 0, 'Cherry');
+console.log(fruit.reverse()); // ["Melon", "Grape", "Cherry", "Orange", "Apple", "Mango"]
 
 
