@@ -16,8 +16,6 @@ Benz, Volvo, Audi, Tesla.
 ----------
 */
 // Answer 1.
-
-
 /*
 ### Quest 2.
 1. numbers 라는 변수를 선언하고 숫자 타입의 원소값들로 이뤄진 배열을 할당합니다.
