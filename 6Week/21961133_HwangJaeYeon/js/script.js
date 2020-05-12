@@ -16,6 +16,18 @@ Benz, Volvo, Audi, Tesla.
 ----------
 */
 // Answer 1.
+var _cars = ['Tesla', 'Audi', 'Volvo', 'Benz'];
+var car = '';
+for (var i = 0; i < 4; i++){
+    if (i !== 0){
+        say += '';
+    };
+    say += _cars[i];
+    if (i === 3){
+        say += '.';
+    };
+}
+console.log(car);
 
 
 /*
