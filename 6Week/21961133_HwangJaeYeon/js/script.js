@@ -106,5 +106,3 @@ console.log(fruit); // "Mango", "Apple", "Orange", "Cherry", "Grape", "Melon"
 
 fruit.reverse();
 console.log(fruit); // "Melon", "Grape", "Cherry", "Orange", "Apple", "Mango"
-
-
