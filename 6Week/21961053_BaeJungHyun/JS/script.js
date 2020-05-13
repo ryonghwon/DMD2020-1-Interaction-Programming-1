@@ -1,8 +1,4 @@
 /*
-문제 풀이.
-*/
-
-/*
 Quest 1.
 1. cars 라는 변수를 선언하고 아래의 배열을 값으로 할당합니다.
 ----------
@@ -16,19 +12,16 @@ Benz, Volvo, Audi, Tesla.
 ----------
 */
 // Answer 1.
-var cars = ['Tesla', 'Audi', 'Volvo', 'Benz'];
-var car = '';
-cars.reverse();
-for (var i = 0; i < 4; i++){
-    if (i !== 0){
-        car += '';
-    };
-    car += cars[i];
-    if (i === 3){
-        car += '.';
-    };
-};
-console.log(car); // BenzVolvoAudiTesla
+
+// cars 라는 변수를 선언, ['Tesla', 'Audi', 'Volvo', 'Benz'] 배열을 값으로 할당
+var _cars = ['Tesla', 'Audi', 'Volvo', 'Benz']; 
+
+// 배열의 순서를 반대로 해주는 reverse
+_cars.reverse();
+
+// console 에 출력
+console.log(car); //  ["Benz", "Volvo", "Audi", "Tesla"]
+
 
 
 /*
@@ -42,9 +35,15 @@ console.log(car); // BenzVolvoAudiTesla
 3. 1(순서) 에서 선언한 변수의 배열 원소값 중 가장 작은 숫자를 console 에 출력되도록 작성합니다.
 */
 // Answer 2.
-var numbers = [-1, 2, 5, 10, 1, -10, 8, 4];
-console.log(Math.max.apply(null, numbers));   // 10
-console.log(Math.min.apply(null, numbers));   // -10
+
+// numbers 라는 변수를 선언, 숫자 타입의 [-1, 2, 5, 10, 1, -10, 8, 4] 배열을 할당
+var _numbers = [-1, 2, 5, 10, 1, -10, 8, 4];
+
+// _numbers 변수의 배열 원소값 중 가장 큰 숫자를 console 에 출력
+console.log(Math.max.apply(null,_numbers)); // 10
+
+// _numbers 변수의 배열 원소값 중 가장 작은 숫자를 console 에 출력
+console.log(Math.min.apply(null,_numbers)); // -10
 
 
 /*
@@ -65,23 +64,40 @@ getStar(5) 를 호출하여 반환하고 변수를 출력한 결과값 : *****
 ----------
 */
 // Answer 3.
-function getStar(num){
-    if (typeof num !== "number"){
-        console.log("숫자만 입력 가능합니다");
+
+// getStar 라는 함수를 선언, 1개의 매개변수(number)를 지정
+function getStar(num)
+{
+    // 함수가 호출될 때, 매개변수의 전달인자 값이 숫자가 아닌 경우, 아래와 같이 console 에 출력되도록 작성하고 false 를 반환
+    if (typeof num !== "number")
+    {
+        console.log("숫자만 입력 가능합니다.");
         return false;
     }
-    if (typeof num === "number"){
-        var s = "1";
-        for (var i = 1; i <= num; i++){
-            s += "*";
+    // 함수가 호출될 때, 매개변수의 전달인자가 숫자인 경우 전달인자의 수만큼 '*' 가 반복되는 문자열을 결과값으로 반환
+    if (typeof num === "number") 
+    {
+        var a = "";
+        for (var i = 1; i <= num; i++) 
+        {
+            a += "*";
         }
-        return s;
+        return a;
     }
 }
+
+// star1 변수를 선언
 var star1 = getStar("text");
+// getStar("text") 를 호출하여 반환하고 변수를 출력한 결과값이 false가 console 에 출력되도록 작성
 console.log(star1); // false
+
+// star2 변수를 선언
 var star2 = getStar(5);
+// getStar(5) 를 호출하여 반환하고 변수를 출력한 결과값이 *****가 console 에 출력되도록 작성
 console.log(star2); // *****
+
+
+
 
 
 /*
@@ -95,14 +111,20 @@ console.log(star2); // *****
 4. fruit 배열 객체의 요소 순서를 반대로 변경하고 console 에 배열이 출력되도록 작성합니다.
 */
 // Answer 4.
-var fruit = ['Apple', 'Orange', 'Grape', 'Melon'];
-console.log(fruit); // "Apple", "Orange", "Grape", "Melon"
 
-fruit.unshift('Mango');
-console.log(fruit); // "Mango", "Apple", "Orange", "Grape", "Melon"
+// fruit 라는 변수를 선언하고 ['Apple', 'Orange', 'Grape', 'Melon'] 배열을 값으로 할당
+var _fruit = ['Apple', 'Orange', 'Grape', 'Melon'];
 
-fruit.splice(3, 0, 'Cherry');
-console.log(fruit); // "Mango", "Apple", "Orange", "Cherry", "Grape", "Melon"
+// unshift(추가)를 사용하여 'Mango' 라는 문자열을 fruit 배열 객체의 첫 번째에 요소로 추가
+_fruit.unshift('Mango'); 
+// console.log(_fruit); // ["Mango", "Apple", "Orange", "Grape", "Melon"]
 
-fruit.reverse();
-console.log(fruit); // "Melon", "Grape", "Cherry", "Orange", "Apple", "Mango"
+// splice(수정)을 사용하여 fruit 배열 객체의 ‘Orange' 요소 뒤에 'Cherry' 라는 문자열을 요소로 추가
+_fruit.splice(3, 0, 'Cherry');
+// console.log(_fruit); // ["Mango", "Apple", "Cherry", "Orange", "Grape", "Melon"]
+
+// revers(배열을 반대로 보여줌)를 사용하여fruit 배열 객체의 요소 순서를 반대로 변경
+_fruit.reverse();
+// console 에 배열이 출력
+console.log(_fruit); // ["Melon", "Grape", "Cherry", "Orange", "Apple", "Mango"]
+

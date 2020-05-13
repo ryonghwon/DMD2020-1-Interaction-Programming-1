@@ -16,6 +16,12 @@ Benz, Volvo, Audi, Tesla.
 ----------
 */
 // Answer 1.
+
+var cars = ['Tesla', 'Audi', 'Volvo', 'Benz']; //cars라는 변수를 선언하고, 배열합니다.
+cars.reverse(); //cars원소의 순서를 반대로  정렬시킵니다.
+console.log(cars); //["Benz", "Volvo", "Audi", "Tesla"]출력
+
+
 /*
 ### Quest 2.
 1. numbers 라는 변수를 선언하고 숫자 타입의 원소값들로 이뤄진 배열을 할당합니다.
@@ -28,6 +34,9 @@ Benz, Volvo, Audi, Tesla.
 */
 // Answer 2.
 
+var numbers = [-1, 2, 5, 10, 1, -10, 8, 4]; //numbers 라는 변수를 선언하고 숫자 타입의 원소값들로 이뤄진 배열을 할당합니다.
+console.log(Math.max.apply(null, numbers)); //10
+console.log(Math.min.apply(null, numbers)); //-10
 
 
 /*
@@ -49,7 +58,26 @@ getStar(5) 를 호출하여 반환하고 변수를 출력한 결과값 : *****
 */
 // Answer 3.
 
+function getStar (num) {
+    if (typeof num !== "number") {
+        console.log('숫자만 입력가능합니다.');
+        return false; //숫자가 아닐경우 false출력 //false
+    }
 
+    var a = "";
+    for (var i = 1; i <= num; i++) {
+        if(typeof num === "number") {
+            a += "*"; //숫자일 경우 *출력
+        }
+    }
+    return a;
+}
+
+var star1 = getStar("text");
+console.log(star1); //숫자가 아닐 경우 - false
+
+var star2 = getStar(5);
+console.log(star2); //숫자라서 - *****
 
 /*
 ### Quest 4.
@@ -63,23 +91,17 @@ getStar(5) 를 호출하여 반환하고 변수를 출력한 결과값 : *****
 */
 // Answer 4.
 
+var fruit = ['Apple', 'Orange', 'Grape', 'Melon']
+//console.log(fruit); //['Apple', 'Orange', 'Grape', 'Melon']
 
+fruit.unshift("Mango"); //배열의 첫번째에 원소값 추가
+console.log(fruit); //["Mango", "Apple", "Orange", "Grape", "Melon"]
 
-/*
-// BOM 에 해당되는 문제.
-### Quest 5.
-1. getSize 라는 함수를 선언합니다.
-2. 1(순서) 함수가 호출될 때, 윈도우 콘텐츠 영역의 가로 폭 값과 세로 높이 값을 아래의 객체 형식으로 반환합니다.
-----------
-객체 형식)
-{ winWidth : __윈도우 콘텐츠 영역의 가로 폭 값__, winHeight : __윈도우 콘텐츠 영역의 세로 높이 값__ }
-----------
-3. winSize 변수를 선언, 1(순서) 함수를 호출하고 반환값을 할당받아 아래와 같은 문자열 결과값으로 console 에 출력되도록 작성합니다.
-----------
-문자열)
-윈도우 콘텐츠의 영역 width : ____ px, height : ____ px 입니다.
-----------
-*/
-// Answer 5.
+fruit.splice(3, 0, "Cherry"); //원소값 추가
+console.log(fruit); //["Mango", "Apple", "Orange", "Cherry", "Grape", "Melon"]
 
+fruit.reverse() //반대로 정렬
+console.log(fruit); //["Melon", "Grape", "Cherry", "Orange", "Apple", "Mango"]
 
+//아직 많이 어렵지만 친절하고 자세한 수업 감사합니다 :)
+//열심히 복습하겠습니다!

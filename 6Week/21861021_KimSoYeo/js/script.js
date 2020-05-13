@@ -71,7 +71,7 @@ getStar(5) 를 호출하여 반환하고 변수를 출력한 결과값 : *****
 */
 
 // function getStar(num){
-//     if ( typeof num !== "number")
+//     if ( typeof num !== "number") // rh : 이 부분에 if( ) { 중괄호가 열리지 않고 진행되었습니다.
 //     console.log("숫자만 입력 가능합니다.");
 //     return false;
 //     }
