@@ -31,7 +31,38 @@ compareNumbers(10, 20) 를 호출한 경우 : "첫번째 매개변수에 할당�
 ----------
 */
 // Answer 1.
-
+function compareNumbers(number1, number2) {
+    // 조건 1.
+    /*
+    if (number2 === undefined) { // number2 의 값을 비교(일치 여부)
+        // console.log('1');
+    }
+    if (typeof number2 === "undefined") { // number2 의 데이터 타입을 비교.
+        // console.log('2');
+        console.log("두번째 매개변수의 값을 찾을 수 없습니다.");
+    } else {
+        // 조건 2.
+        if (number1 >= number2) {
+            console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.");
+        } else {
+            console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.");
+        }
+    }
+    */
+    if (typeof number2 === "undefined") {
+        console.log("두번째 매개변수의 값을 찾을 수 없습니다.");
+        return; // 함수 반환을 하기도 하지만... 함수를 종료 시키는 기능도 포함.
+        // undefined 의 값이 확인된 경우, 이후의 코드를 실행하지 않음.
+    }
+    if (number1 >= number2) {
+        console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.");
+    } else {
+        console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.");
+    }
+}
+compareNumbers(10);
+compareNumbers(20, 10);
+compareNumbers(10, 20);
 
 
 /*
@@ -56,6 +87,47 @@ getTotal(100) 를 호출하여 반환하고 변수를 출력한 결과값 : 0
 ----------
 */
 // Answer 2.
+function getTotal(number, string) {
+    var result = null; // 결과값을 받기 위한 변수.
+    if (string === "add") {
+        // 1 ~ number 까지의 모든 수를 덧셈 연산. - 반복문.
+        for (var i = 1; i <= number; i++) { // number 의 값까지 반복되도록 구문 작성.
+            if (i === 1) {
+                // 초기값을 대입.
+                result = i; // 반복문이 첫번 째 동작할 때, result 값에 1 이 대입.
+            } else {
+                // 이후부터 연산이 될 수 있게 코드작성.
+                result += i;
+                // result = result + i;
+            }
+        }
+        // console.log(result); // 1 ~ number 까지 덧셈 연산 완료한 결과 값.
+    } else if (string === "multiply") {
+        // 1 ~ number 까지의 모든 수를 곱셈 연산.
+        for (var i = 1; i <= number; i++) {
+            if (i === 1) {
+                result = i;
+            } else {
+                result *= i;
+                // === result = result * i;
+            }
+        }
+    } else {
+        result = 0;
+    }
+    return result;
+}
+var totalResult = null;
+totalResult = getTotal(5, "add");
+console.log(totalResult);
+totalResult = getTotal(10, "add");
+console.log(totalResult);
+totalResult = getTotal(5, "multiply");
+console.log(totalResult);
+totalResult = getTotal(10, "multiply");
+console.log(totalResult);
+totalResult = getTotal(100);
+console.log(totalResult);
 
 
 
@@ -76,5 +148,55 @@ getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변�
 ----------
 */
 // Answer 3.
-
-
+function getMaxValue(array) {
+    var max = array.length; // 배열의 원소 개수.
+    // 숫자를 비교하기 위한 변수 - 반복문이 동작될 때, 최대값 담아 두기 위한 변수.
+    // 반복 시, maxValue 와 array[?] 원소 값을 비교해서 원소 값이 크면 maxValue 의 값을 대체.
+    var maxValue = null; // null - 숫자로서 준비.
+    var maxOrder = null; // 최대값인 원소의 순서를 찾기 위한 변수.
+    for (var i = 0; i < max; i++) { // 배열의 반복문을 작성.
+        if (typeof array[i] === "number") { // 원소 값이 숫자인 경우에만 비교하겠다는 조건.
+            if (i === 0) {
+                maxValue = array[i]; // 반복문 구문이 처음 실행될 때, array 의 0번째 원소값을 대입.
+                maxOrder = i;
+            } else {
+                if (maxValue < array[i]) {
+                    maxValue = array[i];
+                    maxOrder = i;
+                }
+            }
+        }
+    }
+    console.log(maxValue, maxOrder);
+    return maxOrder;
+}
+var maxValueResult = null;
+maxValueResult = getMaxValue([10, -4, 7, 100, "hello", -50]);
+console.log(maxValueResult); // 3
+maxValueResult = getMaxValue([-400, "world", 60, 0, {}, 1000]);
+console.log(maxValueResult); // 5
+function getMaxValue2(array) {
+    var max = array.length;
+    var maxValue = null;
+    var maxOrder = null;
+    var isFirst = false; // Boolean 원소의 값이 숫자가 되는 처음 시점을 확인하기 위한 Boolean 변수.
+    for (var i = 0; i < max; i++) {
+        if (typeof array[i] === "number") {
+            if (!isFirst) { //////////// ---- 첫 0번째가 숫자가 아닐 때 문제가 된다.
+                // isFirst 라는 Boolean 상태를 비교하여 처음 숫자가 비교되는 시점에 코드 시작.
+                maxValue = array[i];
+                maxOrder = i;
+                isFirst = true; // 초기값 설정이 완료된 상태로 변경.
+            } else {
+                if (maxValue < array[i]) {
+                    maxValue = array[i];
+                    maxOrder = i;
+                }
+            }
+        }
+    }
+    console.log(maxValue, maxOrder);
+    return maxOrder;
+}
+maxValueResult = getMaxValue2([{}, ":)", [], 100, 2000, -1000, 10]);
+console.log(maxValueResult); // 4
