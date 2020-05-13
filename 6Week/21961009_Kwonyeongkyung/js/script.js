@@ -74,7 +74,7 @@ function getStar (num) {
 }
 
 var star1 = getStar("text");
-console.log(star1); //수자가 아닐 경우 - false
+console.log(star1); //숫자가 아닐 경우 - false
 
 var star2 = getStar(5);
 console.log(star2); //숫자라서 - *****
@@ -92,12 +92,12 @@ console.log(star2); //숫자라서 - *****
 // Answer 4.
 
 var fruit = ['Apple', 'Orange', 'Grape', 'Melon']
-//console.log(fruit);
+//console.log(fruit); //['Apple', 'Orange', 'Grape', 'Melon']
 
 fruit.unshift("Mango"); //배열의 첫번째에 원소값 추가
 console.log(fruit); //["Mango", "Apple", "Orange", "Grape", "Melon"]
 
-fruit.splice(3, 0, "Cherry"); // 원소값 추가
+fruit.splice(3, 0, "Cherry"); //원소값 추가
 console.log(fruit); //["Mango", "Apple", "Orange", "Cherry", "Grape", "Melon"]
 
 fruit.reverse() //반대로 정렬
