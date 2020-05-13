@@ -20,7 +20,7 @@ var _cars = ['Tesla', 'Audi', 'Volvo', 'Benz'];
 _cars.reverse();
 
 // console 에 출력
-console.log(car); //  ["Benz", "Volvo", "Audi", "Tesla"]
+console.log(_cars); //  ["Benz", "Volvo", "Audi", "Tesla"]
 
 
 
