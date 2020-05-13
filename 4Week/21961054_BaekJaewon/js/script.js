@@ -69,12 +69,11 @@ getTotal(100) 를 호출하여 반환하고 변수를 출력한 결과값 : 0
 // Answer 2.
 function getTotal(i, s){
     var sum = null;
-    if (s == "add") {
-        sum = 0;
+    if (s === "add") {
         for (var index = 1; index <= i; index++) {
             sum += index;
         } 
-    } else if (s == "multiply") {
+    } else if (s === "multiply") {
         sum = 1;
         for (var index = 1; index <= i; index++) {
             sum *= index;
