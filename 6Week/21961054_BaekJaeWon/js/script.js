@@ -37,8 +37,8 @@ for (var i = 0; i < cars.length; i++)
     // 배열 길이 - 1(즉, 배열의 마지막 순서일 때)가 i와 같을 때
     else if (i == cars.length - 1)
     {
-        // _cars에 "요소"만 할당
-        _cars += cars[i];
+        // _cars에 "요소."만 할당
+        _cars += cars[i] + ".";
     }
 }
 // 결과 출력
