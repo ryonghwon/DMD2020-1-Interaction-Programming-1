@@ -32,23 +32,57 @@ compareNumbers(10, 20) 를 호출한 경우 : "첫번째 매개변수에 할당�
 // Answer 1.
 
 
-function compareNumbers(num1, num2){
+// function compareNumbers(num1, num2){
 
-    if(typeof num2 === "undefined"){ // 2번째 값을 지정을 안했다면
-        console.log("두번째 매개변수의 값을 찾을 수 없습니다.") // 이게뜬다
+//     if(typeof num2 === "undefined"){ // 2번째 값을 지정을 안했다면
+//         console.log("두번째 매개변수의 값을 찾을 수 없습니다.") // 이게뜬다
+//     }
+
+//     if(num1 >= num2){ //첫번째가 2번째보다 크거나 같으면
+//         console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다."); //이게뜨고
+//     }else if(num1 < num2){ // 첫번째가 2번째보다 작으면
+//         console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.");  // 이게 뜬다.
+//     }
+// }
+// compareNumbers(10);
+// compareNumbers(20, 10);
+// compareNumbers(10, 20);
+
+
+//수업시간 복습
+/*
+function compareNumbers(num1,num2){
+    // if(num2 === "undefined"){ // num2 의 값을 비교 (일치 여부)
+    //     console.log('1');
+    // }
+    if(typeof num2 === "undefined"){ // num2의 데이터 타입을 비교.
+        //console.log('2');
+        console.log("두번째 매개변수의 값을 찾을 수 없습니다.");
+    } else{
+        //조건 2.
+        if ((num1 >= num2)){
+        console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.");
+        } else {
+            console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.");
+        }
     }
-
-    if(num1 >= num2){ //첫번째가 2번째보다 크거나 같으면
-        console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다."); //이게뜨고
-    }else if(num1 < num2){ // 첫번째가 2번째보다 작으면
-        console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.");  // 이게 뜬다.
+}
+*/
+function compareNumbers(num1,num2){
+    if(typeof num2 === "undefined"){
+        console.log("두번째 매개변수의 값을 찾을 수 없습니다.");
+        return; // 함수 반환을 하기도 하지만 ... 함수를 종료 시키는 기능도 포함.
+        // undefined 의 갑시 확인된 경우, 이후의 코드를 실행하지 않음.
+    }
+    if (num1 >= num2){
+        console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 크거나 같습니다.");
+    } else {
+        console.log("첫번째 매개변수에 할당된 전달인자의 값이 두번째 매개변수에 할당된 전달인자의 값보다 작습니다.");
     }
 }
 compareNumbers(10);
-compareNumbers(20, 10);
+compareNumbers(20,10);
 compareNumbers(10, 20);
-
-
 
 
 
@@ -84,6 +118,7 @@ getTotal(100) 를 호출하여 반환하고 변수를 출력한 결과값 : 0
 */
 // Answer 2.
 
+/*
 function getTotal(num, string){ //2개의 매개변수를 지정
     var sum = 0;  
     if(string === "add"){ // 2번째 문자값이 "add" 이면 
@@ -112,6 +147,49 @@ console.log(result); //3628800
 result = getTotal(100); //지정해준건 문자밖에 없어서 100을 호출?하면 다른 경우에 지정한 0 이 뜬다
 console.log(result); //0
 
+*/
+
+function getTotal(number, string){
+    var result = null; // 결과값을 받기 위한 변수.
+    if (string === "add"){
+        // 1 ~ number 까지의 모든 수를 덧셈 연산.
+        for (var i = 1; i <= number; i++){// number 의 값까지 반복되도록 구문 작성.
+            if (i === 1){
+                // 초기값을 대입.
+                result = i; // 반복문이 첫번째 동작할 때, result 값에 1이 대입.
+            }else{
+                // 이후부터 연산이 될 수 있게.
+                result += i;
+                // result = result + i;
+            }
+        }
+        //console.log(result); //1 ~ number 까지 덧셈 연산 완료한 결과 값.
+    } else if (string === "multiply"){
+        //1 ~number 까지의 모든 수를 곱셈 연산.
+        for (var i = 1; i <= number; i++){
+            if ( i === 1){
+                result = i;
+            } else{
+                result *= i;
+                // === result = result * i;
+            }
+        }
+    } else {
+        result = 0;
+        //0
+    }
+    return result;
+}
+var totalResult = null;
+totalResult = getTotal(5, "add")
+console.log(totalResult);
+totalResult = getTotal(10, "add")
+console.log(totalResult);
+totalResult = getTotal(10, "multiply")
+console.log(totalResult);
+totalResult = getTotal(100)
+console.log(totalResult);
+
 
 
 
@@ -131,7 +209,7 @@ getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변�
 ----------
 */
 // Answer 3.
-
+/*
 function getMaxValue(arr){
     var maxnum = arr[0]; //배열의 첫번째 순서부터 뭐가 제일큰지 알기위해 maxnum 변수를 지정
     var num = 0; //제일 큰수가 몇번째인지 알기위해서 변수를 지정
@@ -150,3 +228,67 @@ test = getMaxValue([10, -4, 7, 100, "hello", -50]); //3
 console.log(test);
 test = getMaxValue([-400, "world", 60, 0, {}, 1000]) //5
 console.log(test);
+
+*/
+
+function getMaxValue(array){
+    var max = array.length; // 배열의 원소 개수.
+    // 숫자를 비교하기 위한 변수 - 반복문이 동작될 때, 최대값을 담아두기 위한 변수.
+    // 반복 시 , maxValue 와 array[?] 원소 값을 비교해서 원소 값이 크면 maxValue 의 값을 대체.
+    var maxValue = null; // 숫자로서 준비.
+    var maxOrder = null; // 최대값인 원소의 순서를 찾기 위한 변수.
+    for(var i = 0; i < max; i++){ // 배열의 반복문을 작성.
+        if (typeof array[i] === "number"){
+            if (i === 0){
+                maxValue = array[i]; // 반복문 구문이 처음 실행될 때, array 의 0번째 원소값을 대입.
+                maxOrder = i;
+            } else {
+                if(maxValue < array[i]) {
+                    maxValue = array[i];
+                    maxOrder = i;
+                }
+            }
+        }
+    }
+    console.log(maxValue, maxOrder);
+    return maxOrder;
+}
+
+var maxValueResult = null;
+maxValueResult = getMaxValue([10, -4, 7, 100, "hello", -50]);
+console.log(maxValueResult);
+maxValueResult = getMaxValue([-400, "world", 60, 0, {}, 1000]);
+console.log(maxValueResult);
+
+
+
+
+function getMaxValue2(array){
+    var max = array.length; // 배열의 원소 개수.
+    // 숫자를 비교하기 위한 변수 - 반복문이 동작될 때, 최대값을 담아두기 위한 변수.
+    // 반복 시 , maxValue 와 array[?] 원소 값을 비교해서 원소 값이 크면 maxValue 의 값을 대체.
+    var maxValue = null; // 숫자로서 준비.
+    var maxOrder = null; // 최대값인 원소의 순서를 찾기 위한 변수.
+    var isfirst = false; //Boolean 원소의 값이 숫자가 되는 처음 시점을 확인하기 위한 boolean 변수.
+    for(var i = 0; i < max; i++){ // 배열의 반복문을 작성.
+        if (typeof array[i] === "number"){
+            if (!isfirst){ ///////// ----- 첫 0번째 숫자가 아닐 때 문제가 된다.
+                // isfirst 라는 boolean 상태를 비교하여 처음 숫자가 비교되는 시점에 코드 시작.
+                maxValue = array[i]; // 반복문 구문이 처음 실행될 때, array 의 0번째 원소값을 대입.
+                maxOrder = i;
+                isfirst = true; // 초기값 설정이 완료된 상태로 변경.
+            } else {
+                if(maxValue < array[i]) {
+                    maxValue = array[i];
+                    maxOrder = i;
+                }
+            }
+        }
+    }
+    console.log(maxValue, maxOrder);
+    return maxOrder;
+}
+
+
+maxValueResult = getMaxValue2([{}, ":)", 100, 20000, -1000, 10]);
+console.log(maxValueResult);
