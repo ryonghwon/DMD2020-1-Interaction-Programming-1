@@ -68,13 +68,12 @@ getTotal(100) 를 호출하여 반환하고 변수를 출력한 결과값 : 0
 */
 // Answer 2.
 function getTotal(i, s){
-    var sum;
-    if (s == "add") {
-        sum = 0;
+    var sum = null;
+    if (s === "add") {
         for (var index = 1; index <= i; index++) {
             sum += index;
         } 
-    } else if (s == "multiply") {
+    } else if (s === "multiply") {
         sum = 1;
         for (var index = 1; index <= i; index++) {
             sum *= index;
@@ -109,9 +108,9 @@ getMaxValue([-400, "world", 60, 0, {}, 1000]) 를 호출하여 반환하고 변�
 */
 // Answer 3.
 console.log("Answer 3 :");
-function getMaxValue(arr)
-{
+function getMaxValue(arr) {
     var max = arr[0];
+    var maxOrder;
         for (var index = 0; index < arr.length; index++) {
             if (arr[index] > max) {
                 max = arr[index];
