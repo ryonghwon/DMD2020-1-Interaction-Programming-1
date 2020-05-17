@@ -5,6 +5,10 @@
 }
 body {
   font-family: "Noto Sans KR", sans-serif;
+  /* width:100%; */
+  width:2000px;
+  height:2000px;
+  background-color:#000
 }
 h1 {
   color: #333;
