@@ -159,6 +159,7 @@ Quest 8.
 // 아무 변화가 없었던 이유2 : 식 뒤에 ;을 붙이지 않았다. 아직도 이런 실수를...
 // 오류가 난 이유 : getElementById() 앞에 document.를 입력해주지 않아서.. error
 // LastElementChild.classList 오류가 뜸.... - last로 수정. 
+
 var articleId = document.getElementById('article');
 articleId.firstElementChild.classList.add('red');
 articleId.lastElementChild.classList.remove('row');
