@@ -16,7 +16,60 @@ Benz, Volvo, Audi, Tesla.
 ----------
 */
 // Answer 1.
+var cars = ['Tesla', 'Audi', 'Volvo', 'Benz'];
+//반복문.
+var max = cars.length; // cars 배열의 개수. - 4
+/*
+for(var i = 0; i < max; i++) {
+    console.log(cars[i]);
+}
+*/
+// 방법 1.
+var result = "";
+for(var i = max - 1; i >= 0; i--) {
+    if (i < max - 1) {
+        result += ", ";
+    }
+    result += cars[i];
+    if (i === 0) {
+        result += ".";
+    }
+}
+//console.log(result);
 
+// 방법 2.
+result = "";
+cars.reverse(); // 원소값을 반대로 정렬.
+for(var i = 0; i < max; i++) {
+    if(i > 0) {
+        result += ", ";
+    }
+    result += cars[i];
+    if(i === max - 1) {
+        result += ".";
+    }
+}
+// console.log(result);
+
+// for ... in 반복문. (객체를 반복시킬 때 사용)
+/*
+for(var _원소순서(색인-key)_ in _배열(객체)_) {
+}
+*/
+result = "";
+for(var i in cars) {
+    // console.log(i); // 0, 1, 2, 3 - 문자열 타입으로 값이 설정됨.
+    // console.log(cars[i]); // 각 원소들의 값.
+    i = parseInt(i, 10); // number 타입으로 치환. parseInt(치환하려는 값, 진법);
+    if(i > 0) {
+        result += ", ";
+    }
+    result += cars[i];
+    if(i === max - 1) {
+        result += ".";
+    }
+}
+console.log(result);
 
 
 /*
@@ -30,7 +83,16 @@ Quest 2.
 3. 1(순서) 에서 선언한 변수의 배열 원소값 중 가장 작은 숫자를 console 에 출력되도록 작성합니다.
 */
 // Answer 2.
-
+var numbers = [-1, 2, 5, 10, 1, -10, 8, 4];
+// Math 수학.
+// call.
+// Math.min(-10, 1); // 최소값. -10
+// Math.max(-1, 10); // 최대값. 10
+// apply(this, {}); // 객체가 있다면 객체들을 this 의 값으로 할당.
+var max = Math.max.apply(null, numbers);
+console.log(max);
+var min = Math.min.apply(null, numbers);
+console.log(min);
 
 
 /*
@@ -51,7 +113,35 @@ getStar(5) 를 호출하여 반환하고 변수를 출력한 결과값 : *****
 ----------
 */
 // Answer 3.
+function getStar(number){
+    if(typeof number !== "number") { // 매개변수가 숫자타입이 아닌 경우.
+        console.log("숫자만 입력 가능합니다.");
+        return false; // 함수에서 반환이 되는 시점 부터는 내부의 코드가 실행되지 않는다.
+        console.log("반환 이후 실행...");
+    }
+    var result = "";
+    for(var i = 0; i < number; i++){
+        result += "*";
+    }
+    return result;
+}
+var star1 = getStar("text");
+console.log(star1);
+var star2 = getStar(5);
+console.log(star2);
+var star3 = getStar(100);
+console.log(star3);
 
+/*
+\n
+
+*****
+****
+***
+**
+*
+
+*/
 
 
 /*
@@ -65,5 +155,8 @@ Quest 4.
 4. fruit 배열 객체의 요소 순서를 반대로 변경하고 console 에 배열이 출력되도록 작성합니다.
 */
 // Answer 4.
-
-
+var fruit = ['Apple', 'Orange', 'Grape', 'Melon'];
+fruit.unshift("Mango");
+fruit.splice(3, 0, "Cherry");
+fruit.reverse();
+console.log(fruit);
