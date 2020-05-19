@@ -3,7 +3,7 @@ Quest 1.
 1. 문서의 title을 '학번_이름' 으로 변경합니다.
 */
 // Answer 1.
-
+Document.title = '21961009_권영경';
 
 
 /*
@@ -21,6 +21,13 @@ Quest 2.
 ----------
 */
 // Answer 2.
+function getSize() {
+    winWidth = window.innerWidth;
+    winHeight = window.innerHeight;
+}
+
+var winSize = getSize();
+console.log("윈도우 콘텐츠의 영역 width : " + winWidth + "px, height : " + winHeight + "px 입니다.")
 
 
 
@@ -51,6 +58,9 @@ row class의 개수는 __개 입니다.
 ----------
 */
 // Answer 5.
+function getRowCount () {
+    
+}
 
 
 
