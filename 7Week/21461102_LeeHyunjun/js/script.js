@@ -3,8 +3,8 @@ Quest 1.
 1. 문서의 title을 '학번_이름' 으로 변경합니다.
 */
 // Answer 1.
-Document.title = '21961009_권영경';
 
+document.title = "21461102_이현준";
 
 /*
 Quest 2.
@@ -21,15 +21,16 @@ Quest 2.
 ----------
 */
 // Answer 2.
-function getSize() {
-    winWidth = window.innerWidth;
-    winHeight = window.innerHeight;
+
+function getSize()
+{
+    winWidth = window.innerWidth
+    winHeghit = window.innerHeight
 }
 
 var winSize = getSize();
-console.log("윈도우 콘텐츠의 영역 width : " + winWidth + "px, height : " + winHeight + "px 입니다.")
 
-
+console.log("윈도우 콘텐츠 영역 width : " + winWidth + "px, height : " + winHeghit +  "px 입니다." );
 
 /*
 Quest 3.
@@ -37,11 +38,8 @@ Quest 3.
 */
 // Answer 3.
 
-var id_title = document.getElementById("title");
-id_title.innerText = "Hello World";
-console.log(id_title);
-
-
+document.getElementById('title').innerHTML = 'Hello World';
+// 문자열  title에 ''추가 안해서 오류...수정완료.
 
 /*
 Quest 4.
@@ -49,15 +47,13 @@ Quest 4.
 */
 // Answer 4.
 
-var Title = document.getElementsByClassName("Title");
 
-for (var i = 0; i < Title.length; i++)
+var ct = document.getElementsByClassName('title')
+
+for (var i = 2; i < ct.length; i++) // 3번 추가 되서 0 -> 2로 수정.
 {
-    Title[i].innerHTML = "안녕하세요";
+    ct[i].innerHTML = "안녕하세요.";
 }
-
-
-
 /*
 Quest 5.
 1. getRowCount 이라는 함수를 선언합니다.
@@ -69,14 +65,15 @@ row class의 개수는 __개 입니다.
 ----------
 */
 // Answer 5.
-function getRowCount () {
-    var rowclass = document.getElementsByClassName("row");
-    return rowclass.length;
+
+function getRowCount ()
+{
+    var rowClass = document.getElementsByClassName('row');
+    return rowClass.length;
 }
 
-var rowCount = getRowCount();
-console.log("row class의 개수는" + rowCount + "개 입니다.")
-
+var rowCount = getRowCount ();
+console.log("row class의 개수는" + rowCount + "개 입니다.");
 
 /*
 Quest 6.
@@ -86,7 +83,14 @@ Quest 6.
 */
 // Answer 6.
 
-
+var count = 1; // 카운트를 1초
+var sayHello = setInterval(function (){ //setInterval - 부여된 시간 간격 이후로 주기적으로 실행.
+    console.log(count + ".");
+    count++; // console에 아래로 출력.
+    if (count > 10) { // 
+        clearInterval(sayHello);
+    }
+}, 1000); // 1초
 
 /*
 Quest 7.
@@ -94,10 +98,9 @@ Quest 7.
 2. 1(순서) 요소의 위치를 x : 400px, y : 0px 로 좌표이동합니다.
 */
 // Answer 7.
-var scroll = document.getElementById("scroll")
-scroll.classList.add("scroll");
-scroll.scrollTo(400, 0);
 
+document.getElementById("scroll").classList.add("scroll");
+document.getElementById("scroll").scrollTo(400, 0);
 
 /*
 Quest 8.
@@ -107,7 +110,8 @@ Quest 8.
 */
 // Answer 8.
 
-
+document.getElementById("article");
+/// 잘 이해가 안됩니다.....
 
 /*
 Quest 9.
@@ -129,6 +133,16 @@ Quest 9.
 */
 // Answer 9.
 
-function enterName(){
-    
+function enterName() {
+    var click = window.prompt('이름을 입력해주세요.');
+
+    if (click === null) {
+        console.log('입력이 취소되었습니다.');
+    } else if (click === "") { // {} 반대로 입력되어서 오류 수정.
+        window.alert('이름을 정확히 입력해주세요.');
+        enterName();
+    } else if (click) {
+        document.write(click);
+    }
 }
+enterName(); // enterName 함수를 호출
