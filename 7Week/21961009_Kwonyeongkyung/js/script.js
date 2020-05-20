@@ -36,7 +36,6 @@ Quest 3.
 1. id 가 'title' 인 요소에 'Hello World' 문자열이 포함되도록 작성합니다.
 */
 // Answer 3.
-
 var id_title = document.getElementById("title");
 id_title.innerText = "Hello World";
 console.log(id_title);
@@ -85,7 +84,14 @@ Quest 6.
 3. 10 번의 출력 후 해당 기능이 실행되지 않도록 작성합니다.
 */
 // Answer 6.
-
+var count = 1;
+var Hello = setInterval(function() {
+    console.log(count + "번째 hello");
+    count++;
+    if (count == 11){
+        clearInterval(Hello);
+    }
+},1000);
 
 
 /*
@@ -106,7 +112,10 @@ Quest 8.
 3. 1(순서) 요소의 자식 중 세번째 요소(.row)를 삭제합니다.
 */
 // Answer 8.
-
+var article = document.getElementById("article");
+article.firstElementChild.classList.add("red");
+var row = article.getElementsByClassName("row");
+article.removeChild(row[2]);
 
 
 /*
@@ -128,7 +137,17 @@ Quest 9.
 7. enterName 함수를 호출합니다.
 */
 // Answer 9.
-
 function enterName(){
-    
+    var name = prompt("이름을 입력해주세요");
+    if (name === null) {
+        console.log("입력이 취소되었습니다");
+    }
+    else if (name === "") {
+        alert("이름을 정확히 입력해주세요");
+        enterName();
+    }
+    else {
+        document.write(name);
+    }
 }
+enterName();
