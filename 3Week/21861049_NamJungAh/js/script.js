@@ -204,8 +204,9 @@ var story= {
     mygraduation:"졸업"};
 
 console.log(talk.hi+" 저는 "+info[1]+"년생 "+info[2]+"살 "+info[3]+"학년 "+info[4]+"반 "+info[0]+"입니다.");
+console.log("저는"+info[5]+" 를 보면서 뒹구는걸 좋아해요.");
 console.log(story.myrest+"년을 "+story.myreason+"하고 돌아왔는데 "+story.pandemic+" 때문에 온라인 수업을 하게 된것은 너무 슬프지만");
-console.log("그래도 열심히"+story.mystudy+"하며 무사히"+story.mygraduation+"하고 싶습니다.");
+console.log("그래도 열심히"+story.mystudy+"하며 무사히 "+story.mygraduation+"하고 싶습니다.");
 console.log("앞으로 "+talk.bye);
 
 
