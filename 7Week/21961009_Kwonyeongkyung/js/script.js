@@ -37,6 +37,10 @@ Quest 3.
 */
 // Answer 3.
 
+var id_title = document.getElementById("title");
+id_title.innerText = "Hello World";
+console.log(id_title);
+
 
 
 /*
@@ -44,6 +48,13 @@ Quest 4.
 1. class 가 'title' 인 요소들에 '안녕하세요.' 문자열이 포함되도록 작성합니다.
 */
 // Answer 4.
+
+var Title = document.getElementsByClassName("Title");
+
+for (var i = 0; i < Title.length; i++)
+{
+    Title[i].innerHTML = "안녕하세요";
+}
 
 
 
@@ -59,9 +70,12 @@ row class의 개수는 __개 입니다.
 */
 // Answer 5.
 function getRowCount () {
-    
+    var rowclass = document.getElementsByClassName("row");
+    return rowclass.length;
 }
 
+var rowCount = getRowCount();
+console.log("row class의 개수는" + rowCount + "개 입니다.")
 
 
 /*
@@ -80,7 +94,9 @@ Quest 7.
 2. 1(순서) 요소의 위치를 x : 400px, y : 0px 로 좌표이동합니다.
 */
 // Answer 7.
-
+var scroll = document.getElementById("scroll")
+scroll.classList.add("scroll");
+scroll.scrollTo(400, 0);
 
 
 /*
@@ -113,4 +129,6 @@ Quest 9.
 */
 // Answer 9.
 
-
+function enterName(){
+    
+}
