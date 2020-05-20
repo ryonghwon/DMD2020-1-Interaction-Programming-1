@@ -37,7 +37,6 @@ Quest 3.
 // Answer 3.
 var idtitle = document.getElementById('title');
 idtitle.innerText ='Hello World';
-// console.log(idtitle);
 
 /*
 Quest 4.
@@ -135,12 +134,12 @@ Quest 9.
 */
 // Answer 9.
  function enterName(){
-    var Name = prompt("이름을 입력해주세요.");
+    var Name = prompt('이름을 입력해주세요.');
     if(Name == null){
-        console.log("입력이 취소되었습니다.");
+        console.log('입력이 취소되었습니다.');
     }
-    else if(Name == ""){
-        alert("이름을 정확히 입력해주세요.");
+    else if(Name == ''){
+        alert('이름을 정확히 입력해주세요.');
         enterName();
     }
     else if(Name){
