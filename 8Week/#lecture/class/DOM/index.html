@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./css/style.css"/> 
 </head>
 <body>
-<h1 id="title" class="title">Hello World!</h1>
+<h1 id="title" class="title hello">Hello World!</h1>
 <div id="box-div">div</div>
 <div class="box">box1</div>
 <div class="box">box2</div>
@@ -14,12 +14,18 @@
 <div class="box">box4</div>
 <div class="box">box5</div>
 <input id="user-id" type="text" name="user_id" value="ID" placeholder="아이디를 입력해주세요."/>
+
+<article>아티클.</article>
+
 <input id="user-pass" type="password" name="user_pass" value="" placeholder="비밀번호를 입력해주세요." onclick="console.log('Input Click');"/>
 <a href="http://google.com" target="_blank" class="link">Link</a>
 <ul id="list" class="list">
-    <li class="item">item 1</li>
-    <li class="item size">item 2</li>
-    <li class="item">item 3</li>
+    <li class="item">item 1
+        <ul class="sub-list">
+            <!-- li.item*10>span.subject>b -->
+            <li class="item">sub item 1</li>
+        </ul>
+    </li><li class="item size">item 2</li><li class="item">item 3</li>
 </ul>
 <script type="text/javascript" src="./js/script.js"></script>
 </body>
