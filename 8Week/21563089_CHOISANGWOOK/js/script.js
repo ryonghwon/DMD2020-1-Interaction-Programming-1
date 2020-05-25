@@ -28,6 +28,7 @@ var span2El = document.getElementById("student-name"); //학번 입력 위치
 // 클릭하면 아래 함수 호출!
 function Click(evernt)
   {
+     event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록  
      spanEl.innerText = "21563089";
      alert("학번이 입력되었습니다.")
        //console.log("확인용");
@@ -38,6 +39,7 @@ bottonEl.addEventListener("click",Click); // 학번 이벤트 함수 호출
 // 클릭하면 아래 함수 호출!
 function Click2(evernt)
   {
+     event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록  
      span2El.innerText = "최상욱";
      alert("이름이 입력되었습니다.")
        //console.log("확인용");
@@ -67,7 +69,8 @@ var ww = window.innerWidth; // 현재 윈도우 높이 값을 변수안에 넣�
 
 //이벤트 핸들러 함수 정의
 function windows(event)
-{
+{    
+     event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록
      console.log("윈도우 콘텐츠 영역 width :" + ww +"px , height : " + wh +"px 입니다");
 }
 //호출
@@ -87,32 +90,38 @@ input#user_id - value 속성 값의 문자열 개수는 ____ 입니다.
 */
 // Answer 3.
 
-////다시 풀어라
-////다시 풀어라
-////다시 풀어라
-////다시 풀어라
-////다시 풀어라
-////다시 풀어라
-////다시 풀어라
-////다시 풀어라
-////다시 풀어라
-////다시 풀어라
-////다시 풀어라
-//20200522 금요일
+// var bhi = document.getElementById("btn-check-id"); //btn-check-id 를 찾아서 변수값으로 넣는다.
+
+//  function idcheck(event)
+//  {    
+     
+//       var bui = document.getElementById("user_id"); //  id가 "user_id" 인 요소를 찾아 bui 변수 값에 넣는다.
+//       var bui1 = bui.value; //bui 의 value 값을 bui1에 넣는다.
+      
+//       //console.log(bid);
+//       console.log("input#user_id - value 속성 값의 문자열 개수는" + bui1 + "입니다.");
+//  }
+
+// bhi.addEventListener("click",idcheck); 
+
+// 자꾸 이벤트 함수 호출 후 콘솔창에 출력된 값이 사라진다. 새로고침 됨
+
+// event.preventDefault(); 이 코드를 빼먹었구나
+
+
 var bhi = document.getElementById("btn-check-id"); //btn-check-id 를 찾아서 변수값으로 넣는다.
 
-function idcheck(event)
-{    
-     var bid = document.getElementsById("user_id");
-     console.log(bid);
-     // var did1 = bid.id.length;
-     //  console.log("input#user_id - value 속성 값의 문자열 개수는입니다.");
-}
+ function idcheck(event)
+ {    
+     event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록
+      var bui = document.getElementById("user_id"); //  id가 "user_id" 인 요소를 찾아 bui 변수 값에 넣는다.
+      var bui1 = bui.value; //bui 의 value 값을 bui1에 넣는다.
+      
+      //console.log(bid);
+      console.log("input#user_id - value 속성 값의 문자열 개수는" + bui1 + "입니다.");
+ }
 
 bhi.addEventListener("click",idcheck); 
-
-
-
 
 
 
@@ -130,6 +139,7 @@ var bc = document.getElementById("btn-cancel");
 //이벤트 핸들러 함수 정의
 function cancel(event)
 {
+     event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록
      // 클릭시 새로고침(작성했던 내용 사라짐)
      window.location.reload();
 }
@@ -156,13 +166,21 @@ var btnapply = document.getElementById("btn-apply");
 
 function apply(event)
 {
-     var name1 = prompt("가입하시겠습니까?");
-     if(name1 ==null)
-     {
-          
-     }
+     event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록
+     var name1 = confirm("가입하시겠습니까?");
+      if(name1 == true) // 확인 누르면
+      {
+          alert("가입을 환영합니다.")
+          //console.log("가입확인");
+      }
+      else // 취소 누르면
+      {
+           alert("가입을 취소하였습니다.")
+          //console.log("취소확인");
+      }
 }
 
+btnapply.addEventListener("click",apply); 
 
 /*
 Quest 6.
@@ -171,9 +189,28 @@ Quest 6.
 3. 사용자가 100을 정확하게 입력할 경우, input#user_id 와 input#user_pass 요소의 value 속성이 빈 값으로 초기화 되도록 작성합니다.
 */
 // Answer 6.
+var btnreset = document.getElementById("btn-reset");
 
+var inputreset1 = document.querySelector("input#user_id"); // id 값을 받아와 변수에 넣음
+var inputreset2 = document.querySelector("input#user_pass");// pass  값을 받아와 변수에 넣음
 
+function reset(event)
+{    
+     event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록
+     var reset1 = prompt("초기화하시려면 100을 입력하세요.");
+     if(reset1 = 100)//입력값이 100 이라면
+     {
+          inputreset1.setAttribute("value",""); // 값을 "" 빈값으로 변경 ()
+          inputreset2.setAttribute("value","");  // 값을 "" 빈값으로 변경 
+     }
+     else // 그외 취소나, 다른값
+     {
+          alert("초기화를 종료하였습니다");
+     }
+     
+}
 
+btnreset.addEventListener("click",reset); 
 /*
 Quest 7.
 1. button#btn-odd 요소에 클릭 이벤트를 추가하고 이벤트 핸들러를 할당합니다.
