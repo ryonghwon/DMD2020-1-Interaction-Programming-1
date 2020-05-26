@@ -191,31 +191,41 @@ Quest 6.
 // Answer 6.
 var btnreset = document.getElementById("btn-reset");
 
-var inputreset1 = document.querySelector("input#user_id"); // id 값을 받아와 변수에 넣음
-var inputreset2 = document.querySelector("input#user_pass");// pass  값을 받아와 변수에 넣음
+var inputreset1 = document.getElementById("user_id"); // id 값을 받아와 변수에 넣음
+var inputreset2 = document.getElementById("user_pass");// pass  값을 받아와 변수에 넣음
 
 function reset(event)
 {    
      event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록
-     var reset1 = prompt("초기화하시려면 100을 입력하세요.");
-     if(reset1 = 100)//입력값이 100 이라면
+     var reset1 = prompt("초기화하시려면 100을 입력하세요."); // 다이얼로그 창 출력
+     if(reset1 == 100)//입력값이 100 이라면
      {
-          inputreset1.setAttribute("value",""); // 값을 "" 빈값으로 변경 ()
-          inputreset2.setAttribute("value","");  // 값을 "" 빈값으로 변경 
+          //inputreset1.removeAttribute("inputreset1"); 
+          //inputreset2.removeAttribute("inputreset1");
+          inputreset1.setAttribute("value",""); // 값을 "" 빈값으로 변경
+          inputreset2.setAttribute("value","");  // 값을 "" 빈값으로 변경
+          // console.log(inputreset1.getAttribute("value"));
+          // console.log(inputreset2.getAttribute("value"));
      }
      else // 그외 취소나, 다른값
-     {
-          alert("초기화를 종료하였습니다");
-     }
+      {
+           alert("초기화를 종료하였습니다");
+      }
      
 }
 
 btnreset.addEventListener("click",reset); 
+//재확인 필요
+
+
+
+
 /*
 Quest 7.
 1. button#btn-odd 요소에 클릭 이벤트를 추가하고 이벤트 핸들러를 할당합니다.
 2. 1(순서) 이벤트 호출 시 '숫자를 입력해주세요.' 라는 문구와 입력창이 포함된 다이얼로그창을 출력합니다.
-3. 사용자가 입력한 수를 기준으로 0부터 해당 숫자까지의 숫자 중 홀수인 숫자를 아래와 같이 문자열 연산하여 결과를 div#odd-result 의 내부에 입력될 수 있도록 작성합니다.
+3. 사용자가 입력한 수를 기준으로 0부터 해당 숫자까지의 숫자 중 홀수인 숫자를 아래와 같이 문자열 연산하여 결과를
+    div#odd-result 의 내부에 입력될 수 있도록 작성합니다.
 ----------
 메시지)
 문자열 연산 예시)
@@ -224,6 +234,76 @@ Quest 7.
 ----------
 */
 // Answer 7.
+
+//var odd = document.getElementById("btn-odd");
+//function odd1(event)
+//{
+    // event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록
+     //var odd2 = prompt("숫자를 입력해주세요."); // 다이얼로그 창 출력
+     // var odd3 = "1"; // 문자값을 집어넣을 변수 선언 홀수 기본값 1 셋팅
+     // for(var i = 1; i<=odd2; ++i)
+     // {
+     //      if(i < odd2)
+     //      {
+     //           //var odd4 = i + 2;
+     //           i += 2;
+     //           odd3 += "," + i;
+     //      }
+     //      else
+     //      {
+     //           odd3 += ".";
+     //           console.log(odd3);
+     //                }
+     // }
+     // var odd3 = odd2 / 2;
+     // //console.log(typeof odd3);
+     // var odd4 = 0.0;
+     // odd4 = odd2 / 3 ;
+     // console.log(typeof odd3);
+     //  if(typeof odd3 == typeof int)
+     //  {
+     //       console.log("정수")
+     //  }
+     //  else
+     //  {
+     //       console.log("그외")
+     //  }
+//}
+//odd.addEventListener("click",odd1); 
+//실패작
+
+
+var odd = document.getElementById("btn-odd"); // 클릭 버튼
+var odd5 = document.querySelector("div#odd-result"); // 홀수값 넣는곳  
+//getElementById로 찾아봤는데 안찾아져서 다른방법을 써봤다. 이게 더 짧고 편한것같기도
+
+function odd1(event)
+{
+     event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록
+     var odd2 = prompt("숫자를 입력해주세요."); // 다이얼로그 창 출력
+     var odd3 = "1"; // 문자값을 집어넣을 변수 선언 홀수 기본값 1 셋팅
+     for(var i = 1; i<=odd2;)
+     {
+           if(i < odd2)
+           {
+                //var odd4 = i + 2;
+                i += 2;
+                odd3 += "," + i; // 기본값 1, + ,3 + ,5  ...... odd2 값까지
+           }
+           else
+           {
+                odd3 += "."; // 위 조건문이 해당하지않을경우 마지막에 . 을 넣고 끝낸다.
+                //console.log(odd3);
+                break;
+                     }
+     }
+     odd5.innerText = odd3; // 반복문이 종료되면 odd5변수 값에 넣는다.
+}
+
+odd.addEventListener("click",odd1); 
+
+
+
 
 
 
@@ -234,7 +314,12 @@ Quest 8.
 3. 사용자가 도시명을 입력할 경우, ul#city-list 자식인 li 요소에 도시명 문자열이 추가되도록 작성합니다.
 */
 // Answer 8.
+var add1 = document.querySelector("button#btn-add-city");
 
+function add2(event)
+{
+     
+}
 
 
 /*
