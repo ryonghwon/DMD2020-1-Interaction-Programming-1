@@ -133,18 +133,17 @@ Quest 4.
 */
 // Answer 4.
 
-// 요소를 찾아서 변수값에 넣고
-var bc = document.getElementById("btn-cancel");
 
-//이벤트 핸들러 함수 정의
-function cancel(event)
+var bc = document.getElementById("btn-cancel");// 요소를 찾아서 변수값에 넣고
+
+
+function cancel(event)//이벤트 핸들러 함수 정의
 {
      event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록
-     // 클릭시 새로고침(작성했던 내용 사라짐)
-     window.location.reload();
+     window.location.reload();// 클릭시 새로고침(작성했던 내용 사라짐)
 }
-// 이벤트 부착
-bc.addEventListener("click",cancel); 
+
+bc.addEventListener("click",cancel); // 이벤트 부착
 
 /*
 Quest 5.
@@ -191,21 +190,21 @@ Quest 6.
 // Answer 6.
 var btnreset = document.getElementById("btn-reset");
 
-var inputreset1 = document.getElementById("user_id"); // id 값을 받아와 변수에 넣음
-var inputreset2 = document.getElementById("user_pass");// pass  값을 받아와 변수에 넣음
-
 function reset(event)
 {    
      event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록
      var reset1 = prompt("초기화하시려면 100을 입력하세요."); // 다이얼로그 창 출력
      if(reset1 == 100)//입력값이 100 이라면
      {
+          var inputreset1 = document.getElementById("user_id"); // id 값을 받아와 변수에 넣음
+var inputreset2 = document.getElementById("user_pass");// pass  값을 받아와 변수에 넣음
           //inputreset1.removeAttribute("inputreset1"); 
           //inputreset2.removeAttribute("inputreset1");
           inputreset1.setAttribute("value",""); // 값을 "" 빈값으로 변경
           inputreset2.setAttribute("value","");  // 값을 "" 빈값으로 변경
           // console.log(inputreset1.getAttribute("value"));
           // console.log(inputreset2.getAttribute("value"));
+          // value 값 변경 확인
      }
      else // 그외 취소나, 다른값
       {
@@ -215,7 +214,7 @@ function reset(event)
 }
 
 btnreset.addEventListener("click",reset); 
-//재확인 필요
+
 
 
 
