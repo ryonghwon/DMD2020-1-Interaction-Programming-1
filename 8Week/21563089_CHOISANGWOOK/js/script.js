@@ -118,7 +118,7 @@ var bhi = document.getElementById("btn-check-id"); //btn-check-id 를 찾아서 
       var bui1 = bui.value; //bui 의 value 값을 bui1에 넣는다.
       
       //console.log(bid);
-      console.log("input#user_id - value 속성 값의 문자열 개수는" + bui1 + "입니다.");
+      console.log("input#user_id - value 속성 값의 문자열 개수는" + bui1.length + "입니다.");
  }
 
 bhi.addEventListener("click",idcheck); 
@@ -314,20 +314,33 @@ Quest 8.
 3. 사용자가 도시명을 입력할 경우, ul#city-list 자식인 li 요소에 도시명 문자열이 추가되도록 작성합니다.
 */
 // Answer 8.
-var add1 = document.querySelector("button#btn-add-city");
+
+var add1 = document.querySelector("button#btn-add-city"); // 버튼
 
 function add2(event)
 {
+     event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록
+     var add4 = prompt("도시명을 입력하세요"); // 다이얼로그 창 출력
      
+     var city = document.querySelector("ul#city-list"); //ul#city-list 값을 city 변수에 넣고
+     //city.innerhtml ="<li>add4</li>";
+    //city.appendChild("<li>add4</li>");
+     var city2 = document.createElement("li"); // li태그 생성 값을 city2에 넣고 
+     city.appendChild(city2);//ul#city-list - 아래 li 가 생성되고
+     city2.innerText = add4;// 생성된 li 에 add4(입력값)을 넣음
+    //확인완료
 }
 
+add1.addEventListener("click",add2); // 클릭으로 이벤트 호출
 
 /*
 Quest 9.
 1. button#btn-color 요소에 클릭 이벤트를 추가하고 이벤트 핸들러를 할당합니다.
 2. 1(순서) 이벤트 호출 시 sentence 라는 클래스 이름을 가진 모든 p 요소의 글자 색 스타일을 'red' 로 변경합니다.
-3. 단, 1(순서) 이벤트 호출 시 클릭된 횟수를 체크하여 현재 횟수에 위치하는 p 요소만 예외로 글자 색 스타일을 'black' 으로 변경합니다.(아래 예시 참고)
-4. 1(순서) 이벤트가 여러 번 호출되어 마지막 p 요소가 예외 처리된 상황(글자 색 스타일 'black')에서 1(순서) 이벤트 호출 시 처음 위치한 p 요소부터 예외 처리 되도록 작성합니다.
+3. 단, 1(순서) 이벤트 호출 시 클릭된 횟수를 체크하여 현재 횟수에 위치하는 p 요소만 예외로 글자 
+     색 스타일을 'black' 으로 변경합니다.(아래 예시 참고)
+4. 1(순서) 이벤트가 여러 번 호출되어 마지막 p 요소가 예외 처리된 상황(글자 색 스타일 'black'
+     )에서 1(순서) 이벤트 호출 시 처음 위치한 p 요소부터 예외 처리 되도록 작성합니다.
 ----------
 * 예시 - p요소의 전체 개수가 4개일 때, button#btn-color 클릭 횟수에 따른 p 요소 스타일 변경
 
@@ -343,6 +356,66 @@ Quest 9.
 */
 // Answer 9.
 
+var color1 = document.getElementById("btn-color"); ;// 버튼
+//var color5 = color4.querySelector("p.sentence");
+//var colorlist = document.querySelector("div#sentence"); // p 태그 리스트 
+var count = 0; // 횟수
+
+function color2(evernt)
+{
+     event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록
+     //colorlist[1].style.Color = "red";
+     //color3[4].style.color = "red";
+     
+     //color5[3].style.color = "black";
+     //color5[0].classlist.toggle("red"); // add, remove 반복
+     //color5[0].classlist.toggle("red", true); // add
+     //color5[0].classlist.toggle("red", false); // remove
+
+
+     var color3 = document.getElementsByClassName("sentence"); // 클래스
+     var color4 = document.getElementsByClassName("section"); // 클래스
+     color4[1].style.color = "red"; // p 태그 부모인 div 의 색을 우선 변경해준다.
+     
+     /*
+     for(var count = 0; i<=color3.length; ++count)
+     {
+          color3[i].style.color = "red";   
+     } // 반복문으로 하니까 한번에 다 생겨버림
+
+     */
+     // 되긴하는데 초기화가 안된다..
+     
+     if(count == 0)
+     {
+          color3[count].style.color = "black";
+          count += 1; // 클릭할때 마다 카운트 올라감
+          //console.log(count);
+     }
+     else if(count == 1)
+     {
+          color3[count].style.color = "black";
+          count += 1; // 클릭할때 마다 카운트 올라감
+     }
+     else if(count == 2)
+     {
+          color3[count].style.color = "black";
+          count += 1; // 클릭할때 마다 카운트 올라감
+     }
+     else if(count == 3)
+     {
+          color3[count].style.color = "black";
+          count += 1; // 클릭할때 마다 카운트 올라감
+     }
+     else
+     {
+          count = 1; // 다시 돌아가기
+          color3[count].style.color = "black";
+     }
+     //최선입니다...
+}
+color1.addEventListener("click",color2); // 클릭으로 이벤트 호출
+
 
 
 /*
@@ -352,4 +425,12 @@ Quest 10.
 */
 // Answer 10.
 
+var top = document.getElementById("btn-go-top");
 
+function top1(event)
+{
+     event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록
+     scrollTo(0, 0); // x,y 값을 0 으로 입력함으로써 상단으로 이동
+}
+
+top.addEventListener("click",top1); // 클릭으로 이벤트 호출
