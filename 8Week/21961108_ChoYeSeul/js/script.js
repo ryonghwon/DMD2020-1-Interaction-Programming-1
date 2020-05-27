@@ -186,6 +186,26 @@ Quest 7.
 // var Snum2 = document.querySelector("div#odd-result");
 // Snum2.innerText = num();
 
+// var Btnodd = document.querySelector("button#btn-odd");
+// Btnodd.addEventListener("click", X);
+
+// function X(){
+//     prompt("숫자를 입력해주세요");
+//        var v = prompt("숫자를 입력해주세요");
+//     //그 안에 하나의 배열을 만들어준다.
+//     var _cars = [];
+//     for(var i = 0; i < v; i++){
+//         if(i < v - 1){
+//         _cars += v + ",";
+//         }
+//         else{
+//             _cars += v + ".";
+//         }
+//     }
+//     return _cars;
+// }
+// var Snum2 = document.querySelector("div#odd-result");
+// Snum2.innerText = X();
 
 /*
 Quest 8.
