@@ -14,26 +14,24 @@ Quest 1.
 ----------
 */
 // Answer 1.
-var btnstunum = document.querySelector("button#btn-student-number");
-var spannum = document.querySelector("span#student-number"); 
-btnstunum.addEventListener("click", Onbtnstunum); 
-function Onbtnstunum(e)
-{ 
-    e.preventDefault(); 
-    spannum.innerText = "21961065"; 
+var btnNum = document.querySelector("button#btn-student-number");
+var spanNum = document.querySelector("span#student-number");
+btnNum.addEventListener("click", onClickBtnNum);
+function onClickBtnNum(evt){
+    evt.preventDefault();
+    btnNum.innerText = "21961089";
     alert("학번이 입력되었습니다.");
 }
 
-var btnstuname = document.querySelector("button#btn-student-name");
-var spanname = document.querySelector("span#student-name"); 
-btnstuname.addEventListener("click", Onbtnstuname);
-
-function Onbtnstuname(e)
-{ 
-    e.preventDefault();
-    spanname.innerText = "원희윤";
+var btnName = document.querySelector("button#btn-student-name");
+var spanName = document.querySelector("span#student-name");
+btnName.addEventListener("click", onClickBtnName);
+function onClickBtnName(evt){
+    evt.preventDefault();
+    btnName.innerText = "이은서";
     alert("이름이 입력되었습니다.");
 }
+
 
 
 /*
@@ -46,16 +44,15 @@ Quest 2.
 ----------
 */
 // Answer 2.
-var winh = window.innerHeight;
-var winw = window.innerWidth;
-var btnws = document.querySelector("button#btn-window-size");
-btnws.addEventListener("click", onClickbtnws);
-
-function onClickbtnws(e)
-{
-    e.preventDefault();
-    console.log("윈도우 콘텐츠의 영역 width : " + winw + "px, height : " + winh + "px 입니다.");
+var btnWinSize = document.querySelector("button#btn-window-size");
+btnWinSize.addEventListener("click", onClickBtnWinSize);
+function onClickBtnWinSize(evt){
+    evt.preventDefault();
+    winWidth = window.innerWidth;
+    winHeight = window.innerHeight;
+    console.log("윈도우 콘텐츠의 영역 width : " + winWidth + " px, height : " + winHeight + " px 입니다.");
 }
+
 
 
 /*
@@ -68,16 +65,14 @@ input#user_id - value 속성 값의 문자열 개수는 ____ 입니다.
 ----------
 */
 // Answer 3.
-var btncid = document.querySelector("button#btn-check-id");
-btncid.addEventListener("click", onClickbtncid);
-
-function onClickbtncid(e)
-{
-    e.preventDefault();
-    var uid = document.getElementById("user_id");
-    var uidatt = uid.value;
-    console.log("input#user_id - value 속성 값의 문자열 개수는 " + uidatt.length + " 입니다.");
+var btnCheckId = document.querySelector("button#btn-check-id");
+btnCheckId.addEventListener("click", onClickBtnCheckId);
+function onClickBtnCheckId(evt){
+    evt.preventDefault();
+    var userId = document.getElementById("user_id");
+    console.log("input#user_id - value 속성 값의 문자열 개수는 " + userId.value.length + " 입니다.");
 }
+
 
 
 /*
@@ -86,14 +81,13 @@ Quest 4.
 2. 1(순서) 이벤트 호출 시 현재 브라우저 창이 새로고침 되도록 작성합니다.
 */
 // Answer 4.
-var btncancel = document.querySelector("button#btn-cancel");
-btncancel.addEventListener("click", onClickbtncancel);
-
-function onClickbtncancel(e)
-{
-    e.preventDefault();
-    window.location.reload();
+var btnCancel = document.querySelector("button#btn-cancel");
+btnCancel.addEventListener("click", onClickBtnCancel);
+function onClickBtnCancel(evt){
+    evt.preventDefault();
+    location.reload();
 }
+
 
 
 /*
@@ -112,21 +106,18 @@ Quest 5.
 ----------
 */
 // Answer 5.
-var btnapply = document.querySelector("button#btn-apply");
-btnapply.addEventListener("click", onClickbtnapply);
-
-function onClickbtnapply(e)
-{
-    e.preventDefault();
-    var join = window.confirm("가입하시겠습니까?");
-    if(join === true){
-        inuid.setAttribute("value", inuid.value);
-        inupass.setAttribute("value", inupass.value);
-        window.alert("가입을 환영합니다!");
-    }else if(join === false){ 
-        window.alert("가입을 취소하였습니다.")
+var btnApply = document.querySelector("button#btn-apply");
+btnApply.addEventListener("click", onClickBtnApply);
+function onClickBtnApply(evt){
+    evt.preventDefault();
+    var isApply = confirm("가입하시겠습니까?");
+    if(isApply){
+        alert("가입을 환영합니다!");
+    }else if(!isApply){
+        alert("가입을 취소하였습니다.");
     }
 }
+
 
 
 /*
@@ -136,23 +127,19 @@ Quest 6.
 3. 사용자가 100을 정확하게 입력할 경우, input#user_id 와 input#user_pass 요소의 value 속성이 빈 값으로 초기화 되도록 작성합니다.
 */
 // Answer 6.
-var btnreset = document.querySelector("button#btn-reset");
-btnreset.addEventListener("click", onClickbtnreset);
-var inuid = document.querySelector("input#user_id");
-var inupass = document.querySelector("input#user_pass");
-
-function onClickbtnreset(e)
-{
-    e.preventDefault();
-    var reset = window.prompt("초기화하시려면 100을 입력하세요.");
-    if(reset == 100){
-        
-        inuid.setAttribute("value", "");
-        inupass.setAttribute("value", "");
-        console.log(inuid.getAttribute("value"));
-        console.log(inupass.getAttribute("value"));
+var btnReset = document.querySelector("button#btn-reset");
+var userId = document.querySelector("input#user_id");
+var userPw = document.querySelector("input#user_pass");
+btnReset.addEventListener("click", onClickBtnReset);
+function onClickBtnReset(evt){
+    evt.preventDefault();
+    var isCorrect = prompt("초기화하시려면 100을 입력하세요.");
+    if(isCorrect == 100){
+        userId.value = null;
+        userPw.value = null;
     }
 }
+
 
 
 /*
@@ -168,26 +155,26 @@ Quest 7.
 ----------
 */
 // Answer 7.
-var btnodd = document.querySelector("button#btn-odd");
-btnodd.addEventListener("click", onClickbtnodd);
-
-function onClickbtnodd(e)
-{
-    e.preventDefault();
-    var odd = window.prompt("숫자를 입력해주세요.");
-    var result = ""; 
-    for(var i = 1; i <= odd; i++)
-    {
-        if(i <= odd - 2){
-            result += i + ", ";
-        }else{
-            result += i + ".";
+var btnOdd = document.querySelector("button#btn-odd");
+var oddResult = document.querySelector("div#odd-result");
+var oddList = "";
+btnOdd.addEventListener("click", onClickBtnOdd);
+function onClickBtnOdd(evt){
+    evt.preventDefault();
+    var inputNum = prompt("숫자를 입력해주세요.");
+    for(var i = 0; i <= inputNum; i++){
+        if(i % 2 == 1){ // inputNum 가 홀수일 때.
+            if(i < inputNum - 1){
+                oddList += i + ", ";
+            }else{
+                oddList += i + ".";
+            }
         }
-        i += 1;
+        // console.log(oddList);
     }
-    var divodd = document.querySelector("div#odd-result");
-    divodd.innerText = result;
+    oddResult.innerText = oddList;
 }
+
 
 
 /*
@@ -197,18 +184,19 @@ Quest 8.
 3. 사용자가 도시명을 입력할 경우, ul#city-list 자식인 li 요소에 도시명 문자열이 추가되도록 작성합니다.
 */
 // Answer 8.
-var btnaddcity = document.querySelector("button#btn-add-city"); 
-btnaddcity.addEventListener("click", onClickbtnaddcity);
-
-function onClickbtnaddcity(e)
-{
-    e.preventDefault(); 
-    var cityprompt = window.prompt("도시명을 입력하세요.");
-    var ulcitylist = document.querySelector("ul#city-list"); 
-    var element = document.createElement("li");
-    ulcitylist.appendChild(element);
-    element.innerText = cityprompt;
+var btnAddCity = document.querySelector("button#btn-add-city");
+btnAddCity.addEventListener("click", onClickBtnAddCity);
+function onClickBtnAddCity(evt){
+    evt.preventDefault();
+    var inputCity = prompt("도시명을 입력하세요.");
+    if(inputCity){
+        var cityList = document.querySelector("ul#city-list");
+        var addCity = document.createElement("li");
+        addCity.innerText = inputCity;
+        cityList.appendChild(addCity);
+    }
 }
+
 
 
 /*
@@ -231,23 +219,23 @@ Quest 9.
 ----------
 */
 // Answer 9.
-var btncolor = document.querySelector("button#btn-color");
-var sentence = document.getElementsByClassName("sentence");
-btncolor.addEventListener("click", onClickbtncolor);
-var click = 0;
-
-function onClickbtncolor(e)
-{
-    e.preventDefault(); 
-    for(var i = 0; i < sentence.length; i++){
-        sentence[i].style.color = "red";
-        sentence[click].style.color = "black";
+var btnColor = document.querySelector("button#btn-color");
+var classEls = document.getElementsByClassName("sentence");
+var count = 0;
+var size = classEls.length;
+btnColor.addEventListener("click", onClickBtnColor);
+function onClickBtnColor(evt){
+    evt.preventDefault();
+    for(var i = 0; i < size; i++){
+        classEls[i].style.color = "red";
+        classEls[count].style.color = "black";
     }
-    click++;
-    if(click == sentence.length){
-        click = 0;
+    count++;
+    if(count == size){
+        count = 0;
     }
 }
+
 
 
 /*
@@ -256,12 +244,11 @@ Quest 10.
 2. 1(순서) 이벤트 호출 시 스크롤이 현재 화면의 최상단으로 이동되도록 작성합니다.
 */
 // Answer 10.
-var btngotop = document.querySelector("button#btn-go-top");
-btngotop.addEventListener("click", onClickbtngotop);
-
-function onClickbtngotop(e)
-{ 
-    e.preventDefault();
-    window.scrollTo(0, 0);
+var btnGoTop = document.querySelector("button#btn-go-top");
+btnGoTop.addEventListener("click", onClickBtnGoTop);
+function onClickBtnGoTop(evt){
+    evt.preventDefault();
+    scrollTo(0, 0);
 }
+
 

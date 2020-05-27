@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>8Week</title>
+    <link rel="stylesheet" href="./css/style.css"/>
+</head>
+<body>
+<h1 class="blind">8Week</h1>
+<section>
+    <span>학번</span> : #<span id="student-number"></span> <button id="btn-student-number">학번출력</button>
+</section>
+<section>
+    <span>이름</span> : <span id="student-name"></span> <button id="btn-student-name">이름출력</button>
+</section>
+<section>
+    <button id="btn-window-size">윈도우 사이즈 호출하기</button>
+</section>
+<section>
+    <form id="sign-in" action="index.html">
+        <fieldset class="form-fields">
+            <legend>가입 정보 입력</legend>
+            <div class="form-row">
+                <div class="form-title"><label for="user_id">아이디</label></div>
+                <div class="form-input"><input id="user_id" type="text" name="user_id" placeholder="아이디 입력" value="User ID"/></div>
+                <div class="form-button"><button id="btn-check-id">아이디 확인</button></div>
+            </div>
+            <div class="form-row">
+                <div class="form-title"><label for="user_pass">비밀번호</label></div>
+                <div class="form-input"><input id="user_pass" type="password" name="user_pass" placeholder="비밀번호 입력" value=""/></div>
+            </div>
+        </fieldset>
+        <div class="form-util">
+            <button id="btn-cancel">취소</button><button id="btn-apply">가입</button><button id="btn-reset">초기화</button>
+        </div>
+    </form>
+</section>
+<section>    
+    <h2>홀수 결과</h2>
+    <div id="odd-result" class="section"></div>
+    <button id="btn-odd">홀수 구하기</button>
+</section>
+<section>
+    <div id="cities">
+        <h2>도시 리스트</h2>
+        <ul id="city-list">
+            <li>Seoul</li>
+            <li>Tokyo</li>
+            <li>Beijing</li>
+        </ul>
+        <button id="btn-add-city">도시 추가하기</button>
+    </div>
+</section>
+<section>
+    <h2>스타일</h2>
+    <div class="section">
+        <p class="sentence">첫번째 문장</p>
+        <p class="sentence">두번째 문장</p>
+        <p class="sentence">세번째 문장</p>
+        <p class="sentence">네번째 문장</p>
+    </div>
+    <button id="btn-color">스타일 바꾸기</button>
+</section>
+<section>
+    <button id="btn-go-top">맨 위로 가기</button>
+</section>
+<script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>
