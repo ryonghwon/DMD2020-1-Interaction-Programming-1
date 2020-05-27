@@ -25,7 +25,6 @@ function btnStudentNumberClick(event)
     window.alert("학번이 입력되었습니다."); // window와 alert 태그를 사용해 메시지 결과값을 경고창으로 출력합니다.
 }; //버튼을 누르니 내 학번이 입력되면서 '학번이 입력되었습니다.'가 뜹니다. 앞에 #은 원래 붙어있는 건가요??
 
-// 학번 입력 끝
 
 var btnStudentName = document.querySelector("button#btn-student-name"); // button#btn-student-name에 클릭 이벤트를 추가하고, 이벤트 핸들러를 할당할 것입니다.
 var StudentName = document.querySelector("span#student-name");
