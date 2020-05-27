@@ -267,6 +267,26 @@ Quest 9.
 ----------
 */
 // Answer 9.
+var bColor = document.getElementById("btn-color"); // btn-color 요소 불러오기, button# 을 빼고 해야함...
+bColor.addEventListener("click", ClickColor); // bColor 에 addEventListener 함수를 통해 클릭 이벤트 추가
+var clickNumber = 0; // 클릭횟수를 저장할 변수, ClickColor 함수 안에 쓰면 한 번만 실행됨
+function ClickColor (event) // 클릭 이벤트(함수) 내용, 매개변수 event 를 넣어줌
+{
+    event.preventDefault(); // 기존 이벤트를 발생하지 않게 해주는 preventDefault 함수
+    var cSen = document.getElementsByClassName("sentence"); // getElementByClassName 를 통해 sentence 의 이름을 가진 요소 찾기
+    //var clicknumber = 0;
+    for (var i = 0; i < cSen.length; i++) 
+    {
+        cSen[i].style.color = "#ff0000"; // cSen 의 글씨 색을 빨간색으로 변경
+        cSen[clickNumber].style.color = "#000000"; // cSen 중 클릭한 횟수의 숫자에 해당하는 배열의 글씨 색을 검정색으로 변경
+    }
+    clickNumber++ // 클릭할 때 마다 1 씩 증가
+
+    if (clickNumber == cSen.length) // 클릭 횟수가 cSen 의 갯수와 같다면
+    {
+        clickNumber = 0; // 0을 대입
+    }
+}
 
 
 
