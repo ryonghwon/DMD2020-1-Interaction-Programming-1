@@ -182,6 +182,20 @@ Quest 8.
 3. 사용자가 도시명을 입력할 경우, ul#city-list 자식인 li 요소에 도시명 문자열이 추가되도록 작성합니다.
 */
 // Answer 8.
+var bCity = document.querySelector("button#btn-add-city"); // button#btn-add-city 요소 불러오기
+bCity.addEventListener("click", ClickCity); // bCity 에 addEventListener 함수를 통해 클릭 이벤트 추가
+function ClickCity(event) // 클릭 이벤트(함수) 내용, 매개변수 event 를 넣어줌
+{
+    event.preventDefault(); // 기존 이벤트를 발생하지 않게 해주는 preventDefault 함수
+    var proCity = prompt("도시명을 입력하세요"); // 직접 메세지를 입력하는 다이얼 로그 prompt 함수 창을 출력
+    var ulCity = document.querySelector("ul#city-list"); // ul#city-list 요소 불러오기
+    //ulCity.li.innerText = vCity; // 바로 될 줄 알고 썼음... 결과적으로 안됨...
+
+    // ul#city-list 자식인 li 요소에 도시명 문자열이 추가 임으로
+    var liCity = document.createElement("li"); // createElement 를 통해 li 추가
+    ulCity.appendChild(liCity); // ul#city-list 에 새로운 li 을 추가하기 위해 appendChild 함수 사용
+    liCity.innerText = proCity; // liCity 에 innerText 변수를 통해 proCity 에 적은 도시 추가
+}
 
 
 
