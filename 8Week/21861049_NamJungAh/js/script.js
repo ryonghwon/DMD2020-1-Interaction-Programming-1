@@ -213,12 +213,20 @@ Quest 8.
 */
 // Answer 8.
 
-// var city = document.querySelector("button#btn-add-city");
+var city = document.querySelector("button#btn-add-city");
 
-// city.addEventListener("click", function(){
-//     var inputCity = prompt("도시명을 입력하세요.");
-//     inputCity.class
-// });
+var cityLi=document.querySelector("ul#city-list");
+
+city.addEventListener("click", function(){
+    var inputCity = prompt("도시명을 입력하세요.");
+    //console.log(inputCity);
+    var createLi = document.createElement("li");
+    //createElement를 입력하는 순간 바로 <li></li>태그가 생성
+    //console.log(createLi);
+    cityLi.appendChild(createLi);
+    //ul#city-list 에 Li를 생성하는 요소 노드 넣기
+    createLi.innerText=inputCity;
+});
 
 /*
 Quest 9.
@@ -249,5 +257,11 @@ Quest 10.
 2. 1(순서) 이벤트 호출 시 스크롤이 현재 화면의 최상단으로 이동되도록 작성합니다.
 */
 // Answer 10.
+var top = document.querySelector("button#btn-go-top");
+// [맨 위로 가기] 버튼
 
-
+top.addEventListener("click", function(top){
+    window.scrollTo(0,0);
+    top.preventDefault(); 
+});
+//근데 이걸 적용하면 다른 버튼을 눌러도 다 top으로 이동함...왜지
