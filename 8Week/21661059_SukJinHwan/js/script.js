@@ -15,8 +15,26 @@ Quest 1.
 */
 // Answer 1.
 
+var btnSnumber = document.querySelector("button#btn-student-number");
+btnSnumber.addEventListener("click", onClickbtnSnumber);
+var sSnumber = document.querySelector("span#student-number"); 
 
+function onClickbtnSnumber(event){ 
+    event.preventDefault();
+    sSnumber.innerText = "21661059";
+    window.alert("학번이 입력되었습니다.");
+}
 
+var btnSname = document.querySelector("button#btn-student-name"); 
+btnSname.addEventListener("click", onClickbtnSname); 
+
+var sSname = document.querySelector("span#student-name"); 
+
+function onClickbtnSname(event){ 
+    event.preventDefault(); 
+    sSname.innerText = "석진환";  
+    window.alert("이름이 입력되었습니다");
+}
 
 /*
 Quest 2.
@@ -29,7 +47,15 @@ Quest 2.
 */
 // Answer 2.
 
+var wih = window.innerHeight;
+var wiw = window.innerWidth;
 
+var btnWsize = document.querySelector("button#btn-window-size"); 
+btnWsize.addEventListener("click", onClickbtnWsize); 
+function onClickbtnWsize(event){
+    event.preventDefault();
+    console.log("윈도우 콘텐츠의 영역 width : " + wiw + "px, height : " + wih + "px 입니다."); // 콘솔에 윈도우 콘텐츠의 영역의 너비, 높이값을 문자열로 출력.
+}
 
 
 /*
@@ -43,7 +69,19 @@ input#user_id - value 속성 값의 문자열 개수는 ____ 입니다.
 */
 // Answer 3.
 
+var bh = document.getElementById("btn-check-id"); //btn-check-id 를 찾아서 변수값으로 넣는다.
 
+ function idcheck(event)
+ {    
+     event.preventDefault(); //태그 요소가 가지고 있는 기본 이벤트를 발생하지 않도록
+      var bu = document.getElementById("user_id"); //  id가 "user_id" 인 요소를 찾아 bui 변수 값에 넣는다.
+      var bu1 = bu.value; //bui 의 value 값을 bui1에 넣는다.
+      
+      //console.log(bid);
+      console.log("input#user_id - value 속성 값의 문자열 개수는" + bu1.length + "입니다.");
+ }
+
+bhi.addEventListener("click",idcheck); 
 
 /*
 Quest 4.
@@ -52,7 +90,15 @@ Quest 4.
 */
 // Answer 4.
 
+var cancel = document.getElementById("btn-cancel");
 
+cancel.addEventListener("click", onClickCancel); 
+
+function onClickCancel(o) {
+ 
+  o.preventDefault();
+  window.location.reload();
+}
 
 /*
 Quest 5.
@@ -71,7 +117,22 @@ Quest 5.
 */
 // Answer 5.
 
+var ab = document.getElementById("btn-apply");
 
+ab.addEventListener("click", onClickApply); 
+
+function onClickApply(e) {
+  
+  e.preventDefault();
+  var lg = confirm("가입하시겠습니까?"); 
+  if (lg) {
+   
+    alert("가입을 환영합니다!");
+  } else {
+
+    alert("가입을 취소하셨습니다.");
+  }
+}
 
 /*
 Quest 6.
@@ -81,7 +142,21 @@ Quest 6.
 */
 // Answer 6.
 
-
+var btr = document.querySelector("button#btn-reset"); 
+btr.addEventListener("click", ClickReset); 
+function ClickReset(event) 
+{
+    event.preventDefault(); 
+    var hundred = prompt("초기화 하시려면 100을 입력하세요."); 
+    if(hundred === 100)
+    {
+        var ir = document.querySelector("input#user_id"); 
+        var pr = document.querySelector("input#user_pass"); 
+        
+        ir.value = ""; 
+        pr.value = ""; 
+    }
+}
 
 /*
 Quest 7.
@@ -97,6 +172,29 @@ Quest 7.
 */
 // Answer 7.
 
+var oddb = document.getElementById("btn-odd"),
+  ort = document.getElementById("odd-result");
+
+  oddb.addEventListener("click", onClickOdd); 
+
+function onClickOdd(z) {
+  z.preventDefault();
+  var nm = prompt("숫자를 입력해주세요."); 
+  var result = "";
+
+  for (var i = 0; i <= nm; i++) {
+    if (i % 2 == 1) {
+      
+      if (i <= nm - 2) {
+
+        result += i + ", ";
+      } else {
+        result += i + ".";
+      }
+    }
+  }
+  ort.textContent = result; 
+}
 
 
 /*
@@ -107,6 +205,17 @@ Quest 8.
 */
 // Answer 8.
 
+var act = document.querySelector("button#btn-add-city"); 
+act.addEventListener("click", ClickCity);
+function ClickCity(event) 
+{
+    event.preventDefault(); 
+    var pct = prompt("도시명을 입력하세요"); 
+    var uct = document.querySelector("ul#city-list");
+    var lct = document.createElement("li");
+    uct.appendChild(lct); 
+    lct.innerText = pct;
+}
 
 
 /*
@@ -117,7 +226,6 @@ Quest 9.
 4. 1(순서) 이벤트가 여러 번 호출되어 마지막 p 요소가 예외 처리된 상황(글자 색 스타일 'black')에서 1(순서) 이벤트 호출 시 처음 위치한 p 요소부터 예외 처리 되도록 작성합니다.
 ----------
 * 예시 - p요소의 전체 개수가 4개일 때, button#btn-color 클릭 횟수에 따른 p 요소 스타일 변경
-
 횟수 1 : p요소(0) - 'black', p요소(1) - 'red', p요소(2) - 'red', p요소(3) - 'red'
 횟수 2 : p요소(0) - 'red', p요소(1) - 'black', p요소(2) - 'red', p요소(3) - 'red'
 횟수 3 : p요소(0) - 'red', p요소(1) - 'red', p요소(2) - 'black', p요소(3) - 'red'
@@ -130,13 +238,38 @@ Quest 9.
 */
 // Answer 9.
 
+var crb = document.getElementById("btn-color"),
+  stc = document.getElementsByClassName("sentence"),
+  click = 0;
 
+  crb.addEventListener("click", onClickColor); 
+
+function onClickColor(e) {
+
+  e.preventDefault();
+  for (var i = 0; i <= stc.length - 1; i++) {
+    stc[i].style.color = "red"; 
+
+    stc[click].style.color = "black"; 
+  }
+  click++; 
+
+  if (click == stc.length) {
+   
+    click = 0; 
+  }
+}
 
 /*
 Quest 10.
 1. button#btn-go-top 요소에 클릭 이벤트를 추가하고 이벤트 핸들러를 할당합니다.
 2. 1(순서) 이벤트 호출 시 스크롤이 현재 화면의 최상단으로 이동되도록 작성합니다.
 */
-// Answer 10.
 
-
+var bgt = document.querySelector("button#btn-go-top");
+bgt.addEventListener("click", ClickGoTop); 
+function ClickGoTop(event) 
+{
+    event.preventDefault(); 
+    window.scrollTo(0, 0);
+}

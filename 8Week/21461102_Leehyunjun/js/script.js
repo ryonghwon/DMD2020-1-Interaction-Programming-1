@@ -15,9 +15,25 @@ Quest 1.
 */
 // Answer 1.
 
+var sNumBtn = document.getElementById("btn-student-number"), sNum = document.getElementById("student-number");
 
+sNumBtn.addEventListener("click", onClickSNum);
 
+function onClickSNum(e) {
+    e.preventDefault();
+    sNum.textContent = "21461102";
+    alert("학번이 입력되었습니다.");
+}
 
+var sNameBtn = document.getElementById("btn-student-name"), sName = document.getElementById("student-name");
+
+sNameBtn.addEventListener("click", onClickSName);
+
+function onClickSName(e) {
+    e.preventDefault();
+    sName.textContent = "이현준";
+    alert("이름이 입력되었습니다.");
+}
 /*
 Quest 2.
 1. button#btn-window-size 요소에 클릭 이벤트를 추가하고 이벤트 핸들러를 할당합니다.
@@ -29,8 +45,14 @@ Quest 2.
 */
 // Answer 2.
 
+var wSizeBtn = document.getElementById("btn-window-size"), w = window.innerHeight, h = window.innerWidth;  ;
 
+wSizeBtn.addEventListener("click", onClickWSize);
 
+function onClickWSize(e) {
+    e.preventDefault();
+    console.log("윈도우 콘텐츠 영역 width :" + w +"px , height : " + h +"px 입니다");
+}
 
 /*
 Quest 3.
@@ -43,8 +65,15 @@ input#user_id - value 속성 값의 문자열 개수는 ____ 입니다.
 */
 // Answer 3.
 
+var checkIdBtn = document.getElementById("btn-check-id");
+var userId = document.getElementById("user_id");
 
+checkIdBtn.addEventListener("click", onClickCheckId);
 
+function onClickCheckId(e) {
+    e.preventDefault();
+    console.log(`input#user_id value 속성 값의 문자열 개수는 ${userId.value.length} 입니다.`);
+}
 /*
 Quest 4.
 1. button#btn-cancel 요소에 클릭 이벤트를 추가하고 이벤트 핸들러를 할당합니다.
@@ -52,7 +81,14 @@ Quest 4.
 */
 // Answer 4.
 
+var cancelBtn = document.getElementById("btn-cancel");
 
+cancelBtn.addEventListener("click", onClickCancel);
+
+function onClickCancel(e) {
+    e.preventDefault();
+    window.location.reload();
+}
 
 /*
 Quest 5.
@@ -71,6 +107,19 @@ Quest 5.
 */
 // Answer 5.
 
+var applyBtn = document.getElementById("btn-apply");
+
+applyBtn.addEventListener("click", onClickApply);
+
+function onClickApply(e) {
+    e.preventDefault();
+    var cf = confirm("가입하시겠습니까?"); 
+    if (cf) {
+      alert("가입을 환영합니다!");
+    } else {
+      alert("가입을 취소하셨습니다.");
+    }
+  }
 
 
 /*
@@ -81,8 +130,18 @@ Quest 6.
 */
 // Answer 6.
 
+var resetBtn = document.getElementById("btn-reset"), userPw = document.getElementById("user_pass");
 
+resetBtn.addEventListener("click", onClickReset);
 
+function onClickReset(e) {
+    e.preventDefault();
+    var plz100 = prompt("초기화하시려면 100을 입력하세요.");
+    if (plz100 == 100) {
+      userId.value = null;
+      userPw.value = null; 
+    }
+}
 /*
 Quest 7.
 1. button#btn-odd 요소에 클릭 이벤트를 추가하고 이벤트 핸들러를 할당합니다.
@@ -139,4 +198,11 @@ Quest 10.
 */
 // Answer 10.
 
+var top = document.getElementById("btn-go-top");
 
+top.addEventListener("click", goTop);
+
+function goTop(e){
+    e.preventDefault();
+    scrollTo(0, 0);
+}
