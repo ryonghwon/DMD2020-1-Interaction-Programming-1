@@ -15,34 +15,55 @@ Quest 1.
 */
 // Answer 1.
 
+// 변수 btn_std1에 id 가 btn-student-number 인 요소를 저장한다.
 var btn_std1 = document.querySelector("button#btn-student-number");
 // console.log(btn_std1);
 
+// 변수 span_std1 에 id 가 student-number 인 요소를 저장한다.
 var span_std1 = document.querySelector("span#student-number");
 // console.log(span_std1);
 
-function onClick_std1(event){
-    event.preventDefault();
-    // console.log("이름이 입력되었습니다.");
-    span_std1.innerText = "21961071";
-    window.alert("학번이 입력되었습니다.");
-}
+// btn_std1에 클릭 이벤트를 추가하고 이벤트 헨들러를 할당한다.
 btn_std1.addEventListener("click", onClick_std1);
 
+// 함수 onClick_std1를 선언하고 매개변수 event를 추가한다.
+function onClick_std1(event){
+
+    // 기본 이벤트 기능을 되돌린다.
+    event.preventDefault();
+
+    // span_std1에 내부 텍스트로 학번(21961071)을 저장한다.
+    span_std1.innerText = "21961071";
+
+    // alert 로 메세지를 경고창에 띄운다.
+    window.alert("학번이 입력되었습니다.");
+}
+
 // ---------------------------------------------
+
+// 변수 btn_std2에 id 가 btn-student-name 인 요소를 저장한다.
 var btn_std2 = document.querySelector("button#btn-student-name");
 // console.log(btn_std);
 
+// 변수 span_std2 에 id 가 student-name 인 요소를 저장한다.
 var span_std2 = document.querySelector("span#student-name");
 // console.log(span_std);
 
+// btn_std2에 클릭 이벤트를 추가하고 이벤트 헨들러를 할당한다.
+btn_std2.addEventListener("click", onClick_std2);
+
+// 함수 onClick_std2를 선언하고 매개변수 event를 추가한다.
 function onClick_std2(event){
+
+    // 기본 이벤트 기능을 되돌린다.
     event.preventDefault();
-    // console.log("이름이 입력되었습니다.");
+
+    // span_std1에 내부 텍스트로 이름(이명빈)을 저장한다.
     span_std2.innerText = "이명빈";
+
+    // alert 로 메세지를 경고창에 띄운다.
     window.alert("이름이 입력되었습니다.");
 }
-btn_std2.addEventListener("click", onClick_std2);
 
 
 /*
@@ -56,16 +77,27 @@ Quest 2.
 */
 // Answer 2.
 
+// 변수 btn_size에 id 가 btn-window-size 인 요소를 저장한다.
 var btn_size = document.querySelector("button#btn-window-size");
+
+// btn_size에 클릭 이벤트를 추가하고 이벤트 헨들러를 할당한다.
+btn_size.addEventListener("click", onClick_size);
+
+// 변수 width 에 현재 브라우저 화면의 innerWidth 값을 저장한다.
 var width = window.innerWidth;
+// 변수 height 에 현재 브라우저 화면의 innerHeight 값을 저장한다.
 var height = window.innerHeight;
 // console.log(width, height);
 
+// 함수 onClick_size를 선언하고 매개변수 event를 추가한다.
 function onClick_size(event){
+
+    // 기본 이벤트 기능을 되돌린다.
     event.preventDefault();
+
+    // 콘솔창에 width와 height 값과 함께 문구를 출력한다.
     console.log("윈도우 콘텐츠의 영역 width : " + width + " px, height : "+ height +" px 입니다.");
 }
-btn_size.addEventListener("click", onClick_size);
 
 /*
 Quest 3.
@@ -78,16 +110,27 @@ input#user_id - value 속성 값의 문자열 개수는 ____ 입니다.
 */
 // Answer 3.
 
+// id 가 btn-check-id인 버튼 요소를 변수 btn_checkId에 저장한다.
 var btn_checkId = document.querySelector("button#btn-check-id");
 
+// btn_checkId에 클릭 이벤트를 추가하고 이벤트 헨들러를 할당한다.
+btn_checkId.addEventListener("click", onClick_Id);
+
+// 함수 onClick_Id를 선언하고 매개변수 event를 추가한다.
 function onClick_Id(event){
+    // 기본 이벤트 기능을 되돌린다.
     event.preventDefault();
+
+    // 변수 user 에 id 가 user_id 인 요소를 저장한다.
     var user = document.getElementById("user_id");
+
+    // 변수 user.attri 에 변수 user의 value 값을 저장한다.
     var user_attri = user.value;
-    // console.log(user_attri.length);
+    // console.log(user_attri.length); // 7 출력.
+
+    // 콘솔 창에 user_attri의 길이와 함께 문구가 출력되도록한다.
     console.log("input#user_id - value 속성 값의 문자열 개수는 " + user_attri.length + " 입니다.")
 }
-btn_checkId.addEventListener("click", onClick_Id);
 
 /*
 Quest 4.
@@ -96,12 +139,20 @@ Quest 4.
 */
 // Answer 4.
 
+// id 가 btn-cancel인 버튼 요소를 변수 btn_can에 저장한다.
 var btn_can = document.querySelector("button#btn-cancel");
 
+// 함수 onClick_can을 선언하고 매개변수 event를 추가한다.
 function onClick_can(event){
+
+    // 기본 이벤트 기능을 되돌린다.
     event.preventDefault();
+
+    // location.reload 로 현재 브라우저 창이 새로고침 되도록 한다.
     window.location.reload();
 }
+
+// btn_can에 클릭 이벤트를 추가하고 이벤트 헨들러를 할당한다.
 btn_can.addEventListener("click", onClick_can);
 
 /*
@@ -121,19 +172,30 @@ Quest 5.
 */
 // Answer 5.
 
+// id 가 btn-apply인 버튼 요소를 변수 btn_app에 저장한다.
 var btn_app = document.querySelector("button#btn-apply");
 
+// 함수 onClick_app을 선언하고 매개변수 event를 추가한다.
 function onClick_app(event){
+
+    // 기본 이벤트 기능을 되돌린다.
     event.preventDefault();
+
+    // 변수 apply를 선언하고 confirm(확인 창)을 저장한다.
     var apply = window.confirm("가입하시겠습니까?");
+
+    // 만약 apply 가 true(확인선택) 일 경우,
     if(apply === true){
+        // 경고창에 "가입을 환영합니다!"를 출력.
         window.alert("가입을 환영합니다!");
     }
+    // apply 가 false(취소선택) 일 경우,
     else{
+        // 경고창에 "가입을 취소하였습니다."를 출력.
         window.alert("가입을 취소하였습니다.");
     }
 }
-
+// btn_app에 클릭 이벤트를 추가하고 이벤트 헨들러를 할당한다.
 btn_app.addEventListener("click", onClick_app);
 
 /*
@@ -144,22 +206,35 @@ Quest 6.
 */
 // Answer 6.
 
+// id 가 btn-reset인 버튼 요소를 변수 btn_reset에 저장한다.
 var btn_reset = document.querySelector("button#btn-reset");
+// id 가 user_id인 인풋 요소를 변수 inId에 저장한다.
 var inId  = document.querySelector("input#user_id");
+// id 가 user_pass인 인풋 요소를 변수 inPass에 저장한다.
 var inPass = document.querySelector("input#user_pass");
 
+// 함수 onClick_re을 선언하고 매개변수 event를 추가한다.
 function onClick_re(event){
+
+    // 기본 이벤트 기능을 되돌린다.
     event.preventDefault();
+
+    // 변수 num 에 prompt(입력창) 을 저장한다.
     var num = window.prompt("초기화 하시려면 100을 입력하세요.");
 
+    // 만약 num 값이 100 일 경우
     if (num == 100){
+        // inId에 "value" 와 ""(빈 값) 을 속성으로 저장한다.
         inId.setAttribute("value", "");
+        // inPass에 "value" 와 ""(빈 값) 을 속성으로 저장한다.
         inPass.setAttribute("value", "");
 
+        // 콘솔 창에 inId와 inPass의 value 값을 출력.
         console.log(inId.getAttribute("value"));
         console.log(inPass.getAttribute("value"));
     }
 }
+// btn_reset에 클릭 이벤트를 추가하고 이벤트 헨들러를 할당한다.
 btn_reset.addEventListener("click", onClick_re);
 
 /*
@@ -176,23 +251,40 @@ Quest 7.
 */
 // Answer 7.
 
+// id 가 btn-odd인 버튼 요소를 변수 btn_odd에 저장한다.
 var btn_odd = document.querySelector("button#btn-odd");
 
+// 함수 onClick_odd을 선언하고 매개변수 event를 추가한다.
 function onClick_odd (event){
+
+    // 기본 이벤트 기능을 되돌린다.
+    event.preventDefault();
+
+    // 변수 odd에 prompt(입력창) 을 저장한다.
     var odd = window.prompt("숫자를 입력해주세요");
+
+    // 변수 result 에 빈 값을 저장한다.
     var result = "";
 
+    // 반복문으로 변수 i에 값 0을 저장하고 i 가 odd 보다 작을때까지 반복한다.
     for (var i  = 0; i < odd; i++){
+        // 만약 i를 2로 나눈 나머지가 1일 때 (홀수)
         if ( i % 2 == 1){
+            // result에 result + i + ", "를 한 값을 저장한다.
             result += i + ", "
         }
+        // 만약 i를 2로 나눈 나머지가 0일때 (짝수)
         else { 
+            // result에 result + i + "."를 한 값을 저장한다.
             result += i + ".";
         }
     }
+    // id 가 odd-result인 버튼 요소를 변수 oddResult에 저장한다.
     var oddResult = document.querySelector("div#odd-result");
+    // oddResult의 내부 텍스트에 result 값을 저장한다.
     oddResult.innerText = result;
 }
+// btn_odd에 클릭 이벤트를 추가하고 이벤트 헨들러를 할당한다.
 btn_odd.addEventListener("click", onClick_odd);
 
 /*
@@ -203,19 +295,38 @@ Quest 8.
 */
 // Answer 8.
 
+// id 가 btn-add-city인 버튼 요소를 변수 btn_city에 저장한다.
 var btn_city = document.querySelector("button#btn-add-city");
+
+// 함수 onClick_city를 선언하고 매개변수 event를 추가한다.
 function onClick_city(event){
+
+    // 기본 이벤트 기능을 되돌린다.
     event.preventDefault();
+
+    // 변수 city 에 prompt(입력창) 을 저장한다.
     var city = window.prompt("도시명을 입력하세요.");
+
+    // 조건문으로 해야하는 줄 알았는데 그럴 필요가 없었습니다..
     // if (city = ""){
     //     var city_list = document.querySelector("ul#city-list");
     //     city_list.innerText = city;
     // }
+    // id 가 btn-reset인 버튼 요소를 변수 btn_reset에 저장한다.
+
+    // id가 city-list인 ul 요소를 변수 city_list에 저장한다.
     var city_list = document.querySelector("ul#city-list");
+
+    // 새로운 li 요소를 나타내기 위해 변수 newCityEl에 createElement로 새로운 li 요소를 저장한다.
     var newCityEl = document.createElement("li");
+
+    // city_list의 자식 요소로 newCityEl를 저장한다.
     city_list.appendChild(newCityEl);
+
+    // newCityEl의 내부 텍스트에 city를 저장한다.
     newCityEl.innerText = city;
 }
+// btn_city에 클릭 이벤트를 추가하고 이벤트 헨들러를 할당한다.
 btn_city.addEventListener("click", onClick_city);
 
 /*
@@ -239,22 +350,39 @@ Quest 9.
 */
 // Answer 9.
 
+// id 가 btn-color인 버튼 요소를 변수 btn_color에 저장한다.
 var btn_color = document.querySelector("button#btn-color");
+
+// class 이름이 btn-sentence인 요소를 변수 btn_sen에 저장한다.
 var sen = document.getElementsByClassName("sentence");
+
+// 횟수를 체크할 변수 time을 선언하고 값으로 0을 저장한다.
 var time = 0;
 
+// 함수 onClick_color을 선언하고 매개변수 event를 추가한다.
 function onClick_color(event){
+
+    // 기본 이벤트 기능을 되돌린다.
     event.preventDefault();
+
+    // 반복문으로 변수 i에 0을 저장하고 i 가 sen의 길이보다 작을때까지 반복한다.
     for(var i = 0; i <= sen.length - 1; i++){
+
+        // 배열 i 번째 sen 요소에 스타일로 컬러 "red"를 저장한다.
         sen[i].style.color = "red";
+        // 배열 time 번째 sen 요소에 스타일로 컬러 "black"를 저장한다.
         sen[time].style.color = "black";
     }
+    // time (클릭 횟수) 가 증가한다.
     time++;
 
+    // 만약 time이 sen의 길이와 같을때
     if(time == sen.length){
+        // time에 0을 할당한다.
         time = 0;
     }
 }
+// btn_color에 클릭 이벤트를 추가하고 이벤트 헨들러를 할당한다.
 btn_color.addEventListener("click", onClick_color);
 
 /*
@@ -264,10 +392,20 @@ Quest 10.
 */
 // Answer 10.
 
+// id 가 btn-go-top인 버튼 요소를 변수 btn_top에 저장한다.
 var btn_top = document.querySelector("#btn-go-top");
+
+// 함수 onClick_top을 선언하고 매개변수 event를 추가한다.
 function onClick_top(event){
+
+    // 기본 이벤트 기능을 되돌린다.
     event.preventDefault();
+
+    // 아무런 변화가 없었다.
     // window.location.screenTop;
+
+    // 현재 브라우저의 스크롤 x, y 값이 0인 곳으로 이동하도록 한다.
     window.scrollTo(0,0);
 }
+// btn_top에 클릭 이벤트를 추가하고 이벤트 헨들러를 할당한다.
 btn_top.addEventListener("click", onClick_top);

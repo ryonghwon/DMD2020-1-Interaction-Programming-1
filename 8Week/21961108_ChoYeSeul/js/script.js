@@ -15,6 +15,23 @@ Quest 1.
 */
 // Answer 1.
 
+var Btn = document.querySelector("button#btn-student-number");
+Btn.addEventListener("click", onClickA);
+
+function onClickA(){
+    var Snum = document.querySelector("span#student-number");
+    Snum.innerText = '21961108';
+    alert('학번이 입력되었습니다.');
+}
+
+var Btnsname = document.querySelector("button#btn-student-name");
+Btnsname.addEventListener("click", Btnstuname);
+
+function Btnstuname(){
+    var StuName = document.querySelector("span#student-name");
+    StuName.innerText = '조예슬';
+    alert('이름이 입력되었습니다.');
+}
 
 
 
@@ -28,6 +45,12 @@ Quest 2.
 ----------
 */
 // Answer 2.
+
+var Winsize = document.querySelector("button#btn-window-size");
+Winsize.addEventListener("click", Widhei);
+function Widhei(){
+    console.log("윈도우 콘텐츠의 영역 width : " + innerWidth +" px, height : " + innerHeight + " px 입니다.")
+}
 
 
 
@@ -43,6 +66,14 @@ input#user_id - value 속성 값의 문자열 개수는 ____ 입니다.
 */
 // Answer 3.
 
+var Checkid = document.querySelector("button#btn-check-id");
+Checkid.addEventListener("click", Usrid);
+function Usrid(){
+    // 계속 깜빡거림 콘솔이
+    event.preventDefault();
+    var usrid = document.getElementById('user_id');
+    console.log('input#user_id - value 속성 값의 문자열 개수는 '+usrid.value.length +' 입니다.')
+}
 
 
 /*
@@ -52,6 +83,13 @@ Quest 4.
 */
 // Answer 4.
 
+var BtnCl = document.querySelector("button#btn-cancel");
+BtnCl.addEventListener("click", Re);
+function Re(){
+    event.preventDefault();
+    location.reload();
+    console.log('새로고침 완료');
+}
 
 
 /*
@@ -71,6 +109,18 @@ Quest 5.
 */
 // Answer 5.
 
+var Btnapy = document.querySelector("button#btn-apply");
+Btnapy.addEventListener("click", con);
+
+function con(){
+    event.preventDefault();
+    var a = confirm('가입하시겠습니까?');
+    if(a){
+        alert('가입을 환영합니다!');
+    }else if(!a){
+        alert('가입을 취소하였습니다.');
+    }
+}
 
 
 /*
@@ -81,6 +131,21 @@ Quest 6.
 */
 // Answer 6.
 
+var Btnreset = document.querySelector("button#btn-reset");
+Btnreset.addEventListener("click", prom);
+
+function prom(){
+    event.preventDefault();
+    prompt('초기화하시려면 100을 입력하세요.');
+    if(prompt === 100){
+        var inputId = document.querySelector("input#user_id");
+        var inputPass = document.querySelector("input#user_pass");
+
+        inputId = "";
+        inputPass = "";
+    }
+
+}
 
 
 /*
@@ -97,7 +162,50 @@ Quest 7.
 */
 // Answer 7.
 
+// 어려워여....계속 오류남ㅠㅠㅠㅠ
 
+// var Btnodd = document.querySelector("button#btn-odd");
+// Btnodd.addEventListener("click", num);
+
+// function num(){
+//     event.preventDefault();
+//     prompt("숫자를 입력해주세요");
+    
+//     if(prompt > 0){
+//        if(prompt / 2 === 1){
+//             for(a = 0; a < prompt && a / 2 === 0; a++){
+//                 return a;
+//             }
+//        }else{
+//             for(b = 0; b < prompt && b / 2 === 1; b++){
+//                 return b;
+//         }
+//        }
+//     }
+// }
+// var Snum2 = document.querySelector("div#odd-result");
+// Snum2.innerText = num();
+
+// var Btnodd = document.querySelector("button#btn-odd");
+// Btnodd.addEventListener("click", X);
+
+// function X(){
+//     prompt("숫자를 입력해주세요");
+//        var v = prompt("숫자를 입력해주세요");
+//     //그 안에 하나의 배열을 만들어준다.
+//     var _cars = [];
+//     for(var i = 0; i < v; i++){
+//         if(i < v - 1){
+//         _cars += v + ",";
+//         }
+//         else{
+//             _cars += v + ".";
+//         }
+//     }
+//     return _cars;
+// }
+// var Snum2 = document.querySelector("div#odd-result");
+// Snum2.innerText = X();
 
 /*
 Quest 8.
@@ -106,6 +214,19 @@ Quest 8.
 3. 사용자가 도시명을 입력할 경우, ul#city-list 자식인 li 요소에 도시명 문자열이 추가되도록 작성합니다.
 */
 // Answer 8.
+
+var Btncity = document.querySelector("button#btn-add-city");
+Btncity.addEventListener("click", city);
+
+function city(){
+    event.preventDefault();
+    var c = prompt('도시명을 입력하세요.')
+    var city2 = document.querySelector("ul#city-list");
+    // city2.innerText = prompt;
+    var cityli = document.createElement("li");
+    city2.appendChild(cityli);
+    cityli.innerText = c;
+}
 
 
 
@@ -130,7 +251,13 @@ Quest 9.
 */
 // Answer 9.
 
+var Btncolor = document.querySelector("button#btn-color");
+Btncolor.addEventListener("click", col);
 
+function col(){
+    var sen = document.getElementsByClassName('sentence');
+    // sen.style.color = '#ff0000'; 왜 안되는거지.........
+}
 
 /*
 Quest 10.
@@ -139,4 +266,10 @@ Quest 10.
 */
 // Answer 10.
 
+var Btntop = document.querySelector("button#btn-go-top");
+Btntop.addEventListener("click", topp);
+
+function topp(){
+    scrollTo(0,0);
+}
 
