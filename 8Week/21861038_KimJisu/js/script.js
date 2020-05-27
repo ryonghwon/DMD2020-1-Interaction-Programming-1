@@ -82,7 +82,7 @@ function ClickCheck() // 클릭 이벤트(함수) 내용
     //idUser.value;
     // value 속성 값 가져오는 두 가지 방법
     // 첫번째 변수명.setAttribute("value", "값");
-    // 두번째 변수명.value = "value 값"; 이 있고 두번째 방법을 사용 
+    // 두번째 변수명.value = "값"; 이 있고 두번째 방법을 사용 
 
     // 문제 2번처럼 코드를 바로 적용해 console 창에 문자열 결과값으로 출력
     console.log("input#user_id - value 속성 값의 문자열 개수는 " + idUser.value.length + "개 입니다.");
@@ -156,6 +156,25 @@ Quest 6.
 3. 사용자가 100을 정확하게 입력할 경우, input#user_id 와 input#user_pass 요소의 value 속성이 빈 값으로 초기화 되도록 작성합니다.
 */
 // Answer 6.
+var bReset = document.querySelector("button#btn-reset"); // button#btn-reset 요소 불러오기
+bReset.addEventListener("click", ClickReset); // bReset 에 addEventListener 함수를 통해 클릭 이벤트 추가
+function ClickReset(event) // 클릭 이벤트(함수) 내용, 매개변수 event 를 넣어줌
+{
+    event.preventDefault(); // 기존 이벤트를 발생하지 않게 해주는 preventDefault 함수
+    var hundred = prompt("초기화 하시려면 100을 입력하세요."); // 직접 메세지를 입력하는 다이얼 로그 prompt 함수 창을 출력
+    if(hundred === 100) // 숫자 100 을 입력했을 때
+    {
+        var idReset = document.querySelector("input#user_id"); // input#user_id 요소 불러오기
+        var passReset = document.querySelector("input#user_pass"); // input#user_pass 요소 불러오기
+        
+        // value 속성 값 가져오는 두 가지 방법
+        // 첫번째 변수명.setAttribute("value", "값");
+        // 두번째 변수명.value = "값"; 이 있고 두번째 방법을 사용
+        // 초기화 임으로 "안에 아무것도 쓰지 않는다."
+        idReset.value = ""; 
+        passReset.value = ""; 
+    }
+}
 
 
 
@@ -172,6 +191,35 @@ Quest 7.
 ----------
 */
 // Answer 7.
+var bOdd = document.querySelector("button#btn-odd"); // button#btn-odd 요소 불러오기
+bOdd.addEventListener("click", ClickOdd); // bOdd 에 addEventListener 함수를 통해 클릭 이벤트 추가
+function ClickOdd(event) // 클릭 이벤트(함수) 내용, 매개변수 event 를 넣어줌
+{
+    event.preventDefault(); // 기존 이벤트를 발생하지 않게 해주는 preventDefault 함수
+    var oddNum = prompt("숫자를 입력해주세요."); // 직접 메세지를 입력하는 다이얼 로그 prompt 함수 창을 출력
+    if(oddNum >= 0) // oddNum 이 0보다 클 때 if 문 안 코드 실행
+    {
+        var oddResult = document.querySelector("div#odd-result"); // div#odd-result 요소 불러오기
+        var numText = ""; // 계산해서 나온 값을 문자열로 저장하기 위해 쓴 변수
+        for(var i = 1; i <= oddNum; /*i++*/) // 변수 i 가 1이고 i 가 oddNum 보다 작을 때
+        {
+            // 처음에 for 문에 들어올 때는 1이므로 첫번째 조건문으로 들어감
+            if(i < oddNum - 1) // i 가 oddNum - 1 보다 작을 때 if 문 안 코드 실행
+            {
+                numText += i + ", "; // numText = numText + i + ", "
+            }
+            else if(i == oddNum || i == oddNum - 1) // i 가 oddNum 과 같거나 oddNum - 1 과 같을 때 if 문 안 코드 실행
+            {
+                numText += i + "."; // numText = numText + i + "."
+            }
+            i += 2; // if 문들을 거친 후 2씩 증가
+        }
+        oddResult.innerText = numText; // oddResult 에 innerText 변수를 통해 numText 대입
+        // 되는 줄 알았는데 짝수만 되고 홀수는 안 되는 경우가 생겼다...
+        // 그래서 코드를 고쳐보았는데 알고보니 for 문에 못 들어가서 그런 것이였다!
+        // for 문의 범위를 작거나 같을 때로 바꾸었다.( i < oddNum -> i <= oddNum ) 
+    }
+}
 
 
 
@@ -219,6 +267,26 @@ Quest 9.
 ----------
 */
 // Answer 9.
+var bColor = document.getElementById("btn-color"); // btn-color 요소 불러오기, button# 을 빼고 해야함...
+bColor.addEventListener("click", ClickColor); // bColor 에 addEventListener 함수를 통해 클릭 이벤트 추가
+var clickNumber = 0; // 클릭횟수를 저장할 변수, ClickColor 함수 안에 쓰면 한 번만 실행됨
+function ClickColor (event) // 클릭 이벤트(함수) 내용, 매개변수 event 를 넣어줌
+{
+    event.preventDefault(); // 기존 이벤트를 발생하지 않게 해주는 preventDefault 함수
+    var cSen = document.getElementsByClassName("sentence"); // getElementByClassName 를 통해 sentence 의 이름을 가진 요소 찾기
+    //var clicknumber = 0;
+    for (var i = 0; i < cSen.length; i++) 
+    {
+        cSen[i].style.color = "#ff0000"; // cSen 의 글씨 색을 빨간색으로 변경
+        cSen[clickNumber].style.color = "#000000"; // cSen 중 클릭한 횟수의 숫자에 해당하는 배열의 글씨 색을 검정색으로 변경
+    }
+    clickNumber++ // 클릭할 때 마다 1 씩 증가
+
+    if (clickNumber == cSen.length) // 클릭 횟수가 cSen 의 갯수와 같다면
+    {
+        clickNumber = 0; // 0을 대입
+    }
+}
 
 
 
