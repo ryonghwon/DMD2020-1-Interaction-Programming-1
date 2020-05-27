@@ -14,29 +14,26 @@ Quest 1.
 ----------
 */
 // Answer 1.
-var btnSnum = document.querySelector(" button#btn-student-number");
-var spanSnum = document.querySelector("span#student-number");
+var btsnumber = document.querySelector("button#btn-student-number");
+btsnumber.addEventListener("click", onClickbtnSnumber); 
 
-btnSnum.addEventListener("click",onClickbtnSnum);
+var span = document.querySelector("span#student-number");
 
-function onClickbtnSnum(event){
-    event.preventDefault();
-    spanSnum.innerText = "21961098";
-    alert ("학번이 입력되었습니다.");
+function onClickbtnSnumber(event){
+    event.preventDefault(); 
+    span.innerText = "21661064"; 
+    window.alert("학번이 입력되었습니다."); 
 }
+var btsname = document.querySelector("button#btn-student-name"); 
+btsname.addEventListener("click", onClickbtnSname); 
 
-var btnSname = document.querySelector("button#btn-student-name");
-var spanSname = document.querySelector("span#student-name");
+var span = document.querySelector("span#student-name"); 
 
-
-function onClickbtSname(event){
-    event.preventDefault();
-    spanSname.innerText = "전화영";
-    alert ("이름이 입력되었습니다.");
+function onClickbtnSname(event){ 
+    event.preventDefault(); 
+    span.innerText = "송인";  
+    window.alert("이름이 입력되었습니다");
 }
-btnSname.addEventListener("click",onClickbtSname);
-
-
 
 /*
 Quest 2.
@@ -48,17 +45,16 @@ Quest 2.
 ----------
 */
 // Answer 2.
-var winiH = window.innerHeight;
-var winiW = window.innerWidth;
+var buttonsize = document.querySelector("button#btn-window-size"); 
+buttonsize.addEventListener("click", onClicksize); 
 
-var btnwinsize = document.querySelector("button#btn-window-size");
+var winw = window.innerWidth; 
+var winh = window.innerHeight; 
 
-function onClickbtnwinsize(event){
-    event.preventDefault();
-    console.log("윈도우 콘텐츠의 영역 width : ", +winiW + " px, height : " + winiH + "px 입니다.");
+function onClicksize(event){
+    event.preventDefault(); 
+    console.log("윈도우 콘텐츠의 영역 width : " + winw + "px, height : " + winh + "px 입니다.");
 }
-
-btnwinsize.addEventListener("click", onClickbtnwinsize);
 
 /*
 Quest 3.
@@ -70,17 +66,16 @@ input#user_id - value 속성 값의 문자열 개수는 ____ 입니다.
 ----------
 */
 // Answer 3.
-var btnCid = document.querySelector("button#btn-check-id");
-
-function id(event){
+var bth = document.querySelector("button#btn-check-id"); 
+bth.addEventListener("click", onClickid);
+function onClickid(event)
+{
     event.preventDefault();
-
-    var userId = document.getElementById("user_id");
-    var userIdAttri = btnCid.value;
-
-    console.log("input#user_id - value 속성 값의 문자열 개수는" + userIdAttri.length + " 입니다.");
+    var Buu = document.getElementById("user_id"); 
+    var buu1 = Buu.value; 
+    console.log("input#user_id - value 속성 값의 문자열 개수는 " + buu1.length + " 입니다.");
 }
-btnCid.addEventListener("click", id);
+
 
 /*
 Quest 4.
@@ -88,13 +83,13 @@ Quest 4.
 2. 1(순서) 이벤트 호출 시 현재 브라우저 창이 새로고침 되도록 작성합니다.
 */
 // Answer 4.
-var btnCancel = document.querySelector("button#btn-cancel");
 
-function onClickbtnCancel(event){
-    event.preventDefault();
-    window.location.reload();
+var bc = document.getElementById("btn-cancel");
+bc.addEventListener("click", onClickCancel); 
+function onClickCancel(event) {
+  event.preventDefault();
+  window.location.reload();
 }
-btnCancel.addEventListener("click", onClickbtnCancel);
 
 
 /*
@@ -113,20 +108,23 @@ Quest 5.
 ----------
 */
 // Answer 5.
-var btnApply = document.querySelector("button#btn-apply");
 
-function onClickbtnApply(event){
-    event.preventDefault();
+var btnapply = document.getElementById("btn-apply");
+btnapply .addEventListener("click", onClickApply); 
 
-    var applyIn = window.confirm("가입하시겠습니까?");
-    if(applyIn === true){
-        alert("가입을 환영합니다!")
-    }
-    else{
-        alert("가입을 취소하였습니다.")
-    }
+function onClickApply(event) {
+  
+  event.preventDefault();
+  var apply = confirm("가입하시겠습니까?"); 
+  if (apply)
+   {
+    alert("가입을 환영합니다!");
+  } 
+  else
+   {
+    alert("가입을 취소하셨습니다..");
+  }
 }
-btnApply.addEventListener("click", onClickbtnApply);
 
 /*
 Quest 6.
@@ -135,26 +133,21 @@ Quest 6.
 3. 사용자가 100을 정확하게 입력할 경우, input#user_id 와 input#user_pass 요소의 value 속성이 빈 값으로 초기화 되도록 작성합니다.
 */
 // Answer 6.
-var btnreset = document.querySelector("button#btn-reset");
-btnreset.addEventListener("click",onClickbtnreset);
 
-function onClickbtnreset(event){
-    event.preventDefault();
-    var btnreset = window.prompt("초기화 하시려면 100을 입력하세요.");
-
-    if(btnreset === 100){
-        var inputuserid = document.querySelector("input#user_id");
-        var inputuserid2 = document.querySelectord("input#user_pass");
-
-        inuid.setAtrribute("value", "");
-        inupass.setAtrribute("value", "");
-
-        console.log(inuid.getAttribute("value"));
-        console.log(inupass.getAttribute("value"));
+var btreset = document.querySelector("button#btn-reset"); 
+btreset.addEventListener("click", ClickReset); 
+function ClickReset(event) 
+{
+    event.preventDefault(); 
+    var ten = prompt("초기화 하시려면 100을 입력하세요."); 
+    if(ten === 100)
+    {
+        var ri = document.querySelector("input#user_id"); 
+        var rp = document.querySelector("input#user_pass"); 
+        ri.value = null; 
+        rp.value = null; 
     }
 }
-
-
 
 /*
 Quest 7.
@@ -169,25 +162,6 @@ Quest 7.
 ----------
 */
 // Answer 7.
-var btnodd = document.querySelector("button#btn-odd");
-btnodd.addEventListener("click",onClickbtnodd);
-
-function onClickbtnodd(event){
-    event.preventDefault();
-    var enternum = window.prompt("숫자를 입력해주세요.");
-    var divodd = document.querySelector("div#odd-result")
-    var result = "";
-    for(var i = 1; i<= enternum; i++){
-        if(i < enternum -1){
-            result += i + ", ";
-        }else{
-            result += i +".";
-        }
-        i += 1;
-    }
-    divodd.innerText = result;
-}
-
 
 /*
 Quest 8.
@@ -196,16 +170,16 @@ Quest 8.
 3. 사용자가 도시명을 입력할 경우, ul#city-list 자식인 li 요소에 도시명 문자열이 추가되도록 작성합니다.
 */
 // Answer 8.
-var btnacity = document.querySelector("button#btn-add-city");
-btnacity.addEventListener("click",onClickbtnacity);
-var cityul = document.querySelector("ul#city-list");
-
-function onClickbtnacity(event){
-    event.preventDefault();
-    var city = window.prompt("도시명을 입력하세요");
-    var cityEl = document.createElement("li");
-    cityEl.innerText = city;
-    cityul.appendChild(cityEl);
+var nac = document.querySelector("button#btn-add-city"); 
+nac.addEventListener("click", ClickCity);
+function ClickCity(event) 
+{
+    event.preventDefault(); 
+    var acity = prompt("도시명을 입력하세요"); 
+    var ucity = document.querySelector("ul#city-list");
+    var lcity = document.createElement("li");
+    ucity.appendChild(lcity); 
+    lcity.innerText = acity;
 }
 
 /*
@@ -228,34 +202,18 @@ Quest 9.
 ----------
 */
 // Answer 9.
-var btncolor = document.querySelector("button#btn-color");
-btncolor.addEventListener("click", onclickbtncolor);
-var sentence = document.getElementsByClassName("sentence");
-var click = 0;
 
-function onclickbtncolor(event){
-    event.preventDefault();
-
-    for(var i = 0; i < sentence.length; i ++){
-        sentence[i].style.color = 'red';
-    }
-    sentence[click].style.color = 'black';
-    click++;
-    if(click == sentence.length){
-        click = 0 ;
-    }
-}
 /*
 Quest 10.
 1. button#btn-go-top 요소에 클릭 이벤트를 추가하고 이벤트 핸들러를 할당합니다.
 2. 1(순서) 이벤트 호출 시 스크롤이 현재 화면의 최상단으로 이동되도록 작성합니다.
 */
 // Answer 10.
-var btngotop = document.querySelector(" button#btn-go-top");
-btngotop.addEventListener("click", onClickbtngotop);
 
-function onClickbtngotop(event){
-    event.preventDefault();
-    window.scrollTo(0,0);
+var bgt = document.querySelector("button#btn-go-top");
+bgt.addEventListener("click", ClickGoTop); 
+function ClickGoTop(event) 
+{
+    event.preventDefault(); 
+    window.scrollTo(0, 0);
 }
-

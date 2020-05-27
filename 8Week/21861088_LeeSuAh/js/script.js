@@ -14,27 +14,22 @@ Quest 1.
 ----------
 */
 // Answer 1.
-var btnSnum = document.querySelector(" button#btn-student-number");
+var btnSnum = document.querySelector("button#btn-student-number");
+btnSnum.addEventListener("click", OnclickSnum);
 var spanSnum = document.querySelector("span#student-number");
-
-btnSnum.addEventListener("click",onClickbtnSnum);
-
-function onClickbtnSnum(event){
+function OnclickSnum(event){
     event.preventDefault();
-    spanSnum.innerText = "21961098";
-    alert ("학번이 입력되었습니다.");
+    spanSnum.innerText = "21861088";
+    window.alert("학번이 입력되었습니다.");
 }
-
 var btnSname = document.querySelector("button#btn-student-name");
+btnSname.addEventListener("click", OnclickSname);
 var spanSname = document.querySelector("span#student-name");
-
-
-function onClickbtSname(event){
+function OnclickSname(event){
     event.preventDefault();
-    spanSname.innerText = "전화영";
-    alert ("이름이 입력되었습니다.");
+    spanSname.innerText = "이수아";
+    window.alert("이름이 입력되었습니다.");
 }
-btnSname.addEventListener("click",onClickbtSname);
 
 
 
@@ -48,17 +43,16 @@ Quest 2.
 ----------
 */
 // Answer 2.
-var winiH = window.innerHeight;
-var winiW = window.innerWidth;
-
-var btnwinsize = document.querySelector("button#btn-window-size");
-
-function onClickbtnwinsize(event){
+var winW = window.innerWidth;
+var winH = window.innerHeight;
+var btnWinSize = document.querySelector("button#btn-window-size");
+btnWinSize.addEventListener("click", onClickwinSize);
+function onClickwinSize(event){
     event.preventDefault();
-    console.log("윈도우 콘텐츠의 영역 width : ", +winiW + " px, height : " + winiH + "px 입니다.");
+    console.log("윈도우 콘텐츠의 영역 width :" + winW + "px, height :" + winH + "px 입니다.");
 }
 
-btnwinsize.addEventListener("click", onClickbtnwinsize);
+
 
 /*
 Quest 3.
@@ -71,16 +65,14 @@ input#user_id - value 속성 값의 문자열 개수는 ____ 입니다.
 */
 // Answer 3.
 var btnCid = document.querySelector("button#btn-check-id");
-
-function id(event){
+btnCid.addEventListener("click", OnClickCid);
+function OnClickCid(event){
     event.preventDefault();
-
-    var userId = document.getElementById("user_id");
-    var userIdAttri = btnCid.value;
-
-    console.log("input#user_id - value 속성 값의 문자열 개수는" + userIdAttri.length + " 입니다.");
+    var userid = document.getElementById('user_id');
+    var userid_value = userid.value.length;
+    console.log("input#user_id - value 속성 값의 문자열 개수는" + userid_value +"입니다.");
 }
-btnCid.addEventListener("click", id);
+
 
 /*
 Quest 4.
@@ -89,12 +81,13 @@ Quest 4.
 */
 // Answer 4.
 var btnCancel = document.querySelector("button#btn-cancel");
+btnCancel.addEventListener("click", onClickcan);
 
-function onClickbtnCancel(event){
+function onClickcan(event)
+{
     event.preventDefault();
     window.location.reload();
 }
-btnCancel.addEventListener("click", onClickbtnCancel);
 
 
 /*
@@ -113,20 +106,18 @@ Quest 5.
 ----------
 */
 // Answer 5.
-var btnApply = document.querySelector("button#btn-apply");
-
-function onClickbtnApply(event){
+var btnApp = document.querySelector("button#btn-apply");
+btnApp.addEventListener("click", onClickApp);
+function onClickApp(event){
     event.preventDefault();
-
-    var applyIn = window.confirm("가입하시겠습니까?");
-    if(applyIn === true){
-        alert("가입을 환영합니다!")
-    }
-    else{
-        alert("가입을 취소하였습니다.")
+    var join = window.confirm("가입하시겠습니까?");
+    if (join){
+        alert("가입을 환영합니다!");
+    }else if(!join){
+        alert("가입을 취소하였습니다.");
     }
 }
-btnApply.addEventListener("click", onClickbtnApply);
+
 
 /*
 Quest 6.
@@ -135,25 +126,22 @@ Quest 6.
 3. 사용자가 100을 정확하게 입력할 경우, input#user_id 와 input#user_pass 요소의 value 속성이 빈 값으로 초기화 되도록 작성합니다.
 */
 // Answer 6.
-var btnreset = document.querySelector("button#btn-reset");
-btnreset.addEventListener("click",onClickbtnreset);
-
-function onClickbtnreset(event){
+var btnRe = document.querySelector("button#btn-reset");
+btnRe.addEventListener("click", onClickRe);
+var inid = document.querySelector("input#user_id");
+var inpa = document.querySelector("input#user_pass");
+function onClickRe(event){
     event.preventDefault();
-    var btnreset = window.prompt("초기화 하시려면 100을 입력하세요.");
+    var prore = window.prompt("초기화하시려면 100을 입력하세요.");
+    if (prore == 100){
 
-    if(btnreset === 100){
-        var inputuserid = document.querySelector("input#user_id");
-        var inputuserid2 = document.querySelectord("input#user_pass");
+        var inid = document.querySelector("input#user_id"); 
+        var inpa = document.querySelector("input#user_pass"); 
 
-        inuid.setAtrribute("value", "");
-        inupass.setAtrribute("value", "");
-
-        console.log(inuid.getAttribute("value"));
-        console.log(inupass.getAttribute("value"));
+        inid.value = "";
+        inpa.value = "";
     }
 }
-
 
 
 /*
@@ -169,23 +157,23 @@ Quest 7.
 ----------
 */
 // Answer 7.
-var btnodd = document.querySelector("button#btn-odd");
-btnodd.addEventListener("click",onClickbtnodd);
-
-function onClickbtnodd(event){
+var btnOdd = document.querySelector("button#btn-odd");
+var oddRe = document.querySelector("div#odd-result");
+btnOdd.addEventListener("click", onClickOdd);
+function onClickOdd(event){
     event.preventDefault();
-    var enternum = window.prompt("숫자를 입력해주세요.");
-    var divodd = document.querySelector("div#odd-result")
+    var proodd = window.prompt("숫자를 입력해주세요.");
     var result = "";
-    for(var i = 1; i<= enternum; i++){
-        if(i < enternum -1){
-            result += i + ", ";
-        }else{
-            result += i +".";
+    for(var i = 0; i <= proodd; i++){
+        if(i % 2 == 1){
+            if (i <= proodd - 2){
+                result += i + ", ";
+            }else{
+                result += i + ".";
+            }
         }
-        i += 1;
     }
-    divodd.innerText = result;
+    oddRe.innerText = result;
 }
 
 
@@ -196,17 +184,17 @@ Quest 8.
 3. 사용자가 도시명을 입력할 경우, ul#city-list 자식인 li 요소에 도시명 문자열이 추가되도록 작성합니다.
 */
 // Answer 8.
-var btnacity = document.querySelector("button#btn-add-city");
-btnacity.addEventListener("click",onClickbtnacity);
-var cityul = document.querySelector("ul#city-list");
-
-function onClickbtnacity(event){
+var btnAci = document.querySelector("button#btn-add-city");
+btnAci.addEventListener("click", onClickcity);
+function onClickcity(event){
     event.preventDefault();
-    var city = window.prompt("도시명을 입력하세요");
-    var cityEl = document.createElement("li");
-    cityEl.innerText = city;
-    cityul.appendChild(cityEl);
+    var adpro = window.prompt("도시명을 입력하세요.");
+    var UlCi = document.querySelector("ul#city-list");
+    var Cili = document.createElement("li");
+    UlCi.appendChild(Cili);
+    Cili.innerText = adpro;
 }
+
 
 /*
 Quest 9.
@@ -228,34 +216,34 @@ Quest 9.
 ----------
 */
 // Answer 9.
-var btncolor = document.querySelector("button#btn-color");
-btncolor.addEventListener("click", onclickbtncolor);
+var btnCo = document.querySelector("button#btn-color");
+btnCo.addEventListener("click", onClickCo);
 var sentence = document.getElementsByClassName("sentence");
 var click = 0;
 
-function onclickbtncolor(event){
+function onClickCo(event){
     event.preventDefault();
-
-    for(var i = 0; i < sentence.length; i ++){
-        sentence[i].style.color = 'red';
+    for(i = 0; i < sentence.length; i++){
+        sentence[i].style.color = "red";
+        sentence[click].style.color = "black";
     }
-    sentence[click].style.color = 'black';
     click++;
     if(click == sentence.length){
-        click = 0 ;
+        click = 0;
     }
 }
+
+
 /*
 Quest 10.
 1. button#btn-go-top 요소에 클릭 이벤트를 추가하고 이벤트 핸들러를 할당합니다.
 2. 1(순서) 이벤트 호출 시 스크롤이 현재 화면의 최상단으로 이동되도록 작성합니다.
 */
 // Answer 10.
-var btngotop = document.querySelector(" button#btn-go-top");
-btngotop.addEventListener("click", onClickbtngotop);
-
-function onClickbtngotop(event){
+var btnGoto = document.querySelector("button#btn-go-top");
+btnGoto.addEventListener("click", onclickTop);
+function onclickTop(event){
     event.preventDefault();
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
 }
 
