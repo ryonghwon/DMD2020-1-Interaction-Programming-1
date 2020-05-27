@@ -14,35 +14,26 @@ Quest 1.
 ----------
 */
 // Answer 1.
+var btsnumber = document.querySelector("button#btn-student-number");
+btsnumber.addEventListener("click", onClickbtnSnumber); 
 
-// var a = document.querySelector("button#btn-student-number");
-// console.log(a);
-// button#btn-student-number 요소 노드만 반환하기 성공!
+var span = document.querySelector("span#student-number");
 
-var number = document.querySelector("button#btn-student-number");
-//[학번출력] 버튼 노드
-var numberSpan = document.querySelector("span#student-number");
-//학번이 적혀질 span 요소 노드
-//console.log(numberSpan);
-
-number.addEventListener("click", NumberLog);
-
-//callback 함수 
-function NumberLog(whatever){
-    numberSpan.innerText = "21861049";
-    console.log("학번이 입력되었습니다.");
+function onClickbtnSnumber(event){
+    event.preventDefault(); 
+    span.innerText = "21661064"; 
+    window.alert("학번이 입력되었습니다."); 
 }
+var btsname = document.querySelector("button#btn-student-name"); 
+btsname.addEventListener("click", onClickbtnSname); 
 
+var span = document.querySelector("span#student-name"); 
 
-//원래는 name이라는 변수명으로 진행했었는데 오류가 나서 다른 이름으로 변경하니까 실행이 되네요
-var myname = document.querySelector("button#btn-student-name");
-var mynameSpan = document.getElementById("student-name");
-//console.log(nameSpan);
-
-myname.addEventListener("click", function NameLog(event){
-    mynameSpan.innerText = "남정아";
-    console.log("이름이 입력되었습니다.");
-});
+function onClickbtnSname(event){ 
+    event.preventDefault(); 
+    span.innerText = "송인";  
+    window.alert("이름이 입력되었습니다");
+}
 
 /*
 Quest 2.
@@ -54,15 +45,16 @@ Quest 2.
 ----------
 */
 // Answer 2.
+var buttonsize = document.querySelector("button#btn-window-size"); 
+buttonsize.addEventListener("click", onClicksize); 
 
-var windowSize = document.querySelector("button#btn-window-size");
-// [윈도우사이즈 호출하기] 버튼 요소 노드 반환
-var width = window.innerWidth;
-var height = window.innerWidth;
+var winw = window.innerWidth; 
+var winh = window.innerHeight; 
 
-windowSize.addEventListener("click",function(){
-    console.log("윈도우 콘텐츠의 영역 width : "+width+" px, height : "+height+" px 입니다.");
-});
+function onClicksize(event){
+    event.preventDefault(); 
+    console.log("윈도우 콘텐츠의 영역 width : " + winw + "px, height : " + winh + "px 입니다.");
+}
 
 /*
 Quest 3.
@@ -73,32 +65,16 @@ Quest 3.
 input#user_id - value 속성 값의 문자열 개수는 ____ 입니다.
 ----------
 */
-
 // Answer 3.
-var checkid = document.querySelector("button#btn-check-id");
-//var userid = document.getElementById("user_id");
-
-// function useridLength(event){
-//     console.log("input#user_id - value 속성 값의 문자열 개수는 " + userid.length + " 입니다.");
-// }
-
-// checkid.addEventListener("click",useridLength);
-//undefineded가 뜨면서 바로 창이 닫힌다...
-//document.getElementById("user_id"); => user_id의 요소 노드는 가져왔지만 그 값은 가져오지 않는다
-
-
-//var userid = document.getElementById("user_id").value;
-//밖에 작성하면 함수가 작동하면서 변경될 수 있는 값이 반영되지 않습니다
-
-function useridLength(coffee){
-    coffee.preventDefault(); 
-    var userid = document.getElementById("user_id").value;
-    console.log("input#user_id - value 속성 값의 문자열 개수는 " + userid.length + " 입니다.");
+var bth = document.querySelector("button#btn-check-id"); 
+bth.addEventListener("click", onClickid);
+function onClickid(event)
+{
+    event.preventDefault();
+    var Buu = document.getElementById("user_id"); 
+    var buu1 = Buu.value; 
+    console.log("input#user_id - value 속성 값의 문자열 개수는 " + buu1.length + " 입니다.");
 }
-
-checkid.addEventListener("click",useridLength);
-// 뭐임 창이 계속 꺼져
-//  Submit하면 창이 refresh되어서 창이 꺼진다. => event.preventDefault(); 를 사용하면 정보가 입력되지 않아서 콘솔창을 유지할 수 있따 
 
 
 /*
@@ -107,11 +83,13 @@ Quest 4.
 2. 1(순서) 이벤트 호출 시 현재 브라우저 창이 새로고침 되도록 작성합니다.
 */
 // Answer 4.
-var cancel = document.querySelector("button#btn-cancel");
-// [취소] 버튼
 
-cancel.addEventListener("click", function(refresh){window.location.reload();})
-
+var bc = document.getElementById("btn-cancel");
+bc.addEventListener("click", onClickCancel); 
+function onClickCancel(event) {
+  event.preventDefault();
+  window.location.reload();
+}
 
 
 /*
@@ -131,22 +109,22 @@ Quest 5.
 */
 // Answer 5.
 
-var join = document.querySelector("button#btn-apply");
-// [가입] 버튼
+var btnapply = document.getElementById("btn-apply");
+btnapply .addEventListener("click", onClickApply); 
 
-function joinIn (welcome){
-    //alert("test");
-
-    var choose = window.confirm("가입하시겠습니까?");
-        if (choose === true){
-            alert("가입을 환영합니다!");
-        }else{
-            alert("가입을 취소하였습니다.");
-        }
-    welcome.preventDefault(); 
+function onClickApply(event) {
+  
+  event.preventDefault();
+  var apply = confirm("가입하시겠습니까?"); 
+  if (apply)
+   {
+    alert("가입을 환영합니다!");
+  } 
+  else
+   {
+    alert("가입을 취소하셨습니다..");
+  }
 }
-
-join.addEventListener("click", joinIn);
 
 /*
 Quest 6.
@@ -156,21 +134,20 @@ Quest 6.
 */
 // Answer 6.
 
-var reset = document.querySelector("button#btn-reset");
-function ReallyReset(reset){
-    var hundred= prompt("초기화하시려면 100을 입력하세요.")
-    if(hundred ==="100"){
-        //document.getElementById("user_id").value; => 초기화한 후에 봐도 값이 남아있음.
-        document.getElementById("user_id").value = "";
-        document.getElementById("user_pass").value = "";
-        
-    }else{
-        alert("100이 아닌 값을 입력하셨어요. 초기화를 취소합니다.")
+var btreset = document.querySelector("button#btn-reset"); 
+btreset.addEventListener("click", ClickReset); 
+function ClickReset(event) 
+{
+    event.preventDefault(); 
+    var ten = prompt("초기화 하시려면 100을 입력하세요."); 
+    if(ten === 100)
+    {
+        var ri = document.querySelector("input#user_id"); 
+        var rp = document.querySelector("input#user_pass"); 
+        ri.value = null; 
+        rp.value = null; 
     }
-    reset.preventDefault(); 
 }
-
-reset.addEventListener("click", ReallyReset);
 
 /*
 Quest 7.
@@ -186,25 +163,6 @@ Quest 7.
 */
 // Answer 7.
 
-var odd = document.querySelector("button#btn-odd");
-function oddOrEven(odd){
-    var inputNumber= prompt("숫자를 입력해주세요");
-    var value = ""
-    for (var i = 1; i<=inputNumber; i++){
-        if (i % 2 != 0){
-            value += i+",";
-            // if(i===inputNumber){
-            //     value += i + ".";
-            // }
-        }
-
-    }
-    console.log(inputNumber+"까지의 홀수는 "+value);
-}
-
-odd.addEventListener("click",oddOrEven);
-
-
 /*
 Quest 8.
 1. button#btn-add-city 요소에 클릭 이벤트를 추가하고 이벤트 핸들러를 할당합니다.
@@ -212,21 +170,17 @@ Quest 8.
 3. 사용자가 도시명을 입력할 경우, ul#city-list 자식인 li 요소에 도시명 문자열이 추가되도록 작성합니다.
 */
 // Answer 8.
-
-var city = document.querySelector("button#btn-add-city");
-
-var cityLi=document.querySelector("ul#city-list");
-
-city.addEventListener("click", function(){
-    var inputCity = prompt("도시명을 입력하세요.");
-    //console.log(inputCity);
-    var createLi = document.createElement("li");
-    //createElement를 입력하는 순간 바로 <li></li>태그가 생성
-    //console.log(createLi);
-    cityLi.appendChild(createLi);
-    //ul#city-list 에 Li를 생성하는 요소 노드 넣기
-    createLi.innerText=inputCity;
-});
+var nac = document.querySelector("button#btn-add-city"); 
+nac.addEventListener("click", ClickCity);
+function ClickCity(event) 
+{
+    event.preventDefault(); 
+    var acity = prompt("도시명을 입력하세요"); 
+    var ucity = document.querySelector("ul#city-list");
+    var lcity = document.createElement("li");
+    ucity.appendChild(lcity); 
+    lcity.innerText = acity;
+}
 
 /*
 Quest 9.
@@ -249,19 +203,17 @@ Quest 9.
 */
 // Answer 9.
 
-
-
 /*
 Quest 10.
 1. button#btn-go-top 요소에 클릭 이벤트를 추가하고 이벤트 핸들러를 할당합니다.
 2. 1(순서) 이벤트 호출 시 스크롤이 현재 화면의 최상단으로 이동되도록 작성합니다.
 */
 // Answer 10.
-var top = document.querySelector("button#btn-go-top");
-// [맨 위로 가기] 버튼
 
-top.addEventListener("click", function(top){
-    window.scrollTo(0,0);
-    top.preventDefault(); 
-});
-//근데 이걸 적용하면 다른 버튼을 눌러도 다 top으로 이동함...왜지
+var bgt = document.querySelector("button#btn-go-top");
+bgt.addEventListener("click", ClickGoTop); 
+function ClickGoTop(event) 
+{
+    event.preventDefault(); 
+    window.scrollTo(0, 0);
+}
