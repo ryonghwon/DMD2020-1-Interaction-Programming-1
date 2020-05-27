@@ -140,7 +140,7 @@ btnreset.addEventListener("click",onClickbtnreset);
 
 function onClickbtnreset(event){
     event.preventDefault();
-    var btnreset = window.confirm("초기화 하시려면 100을 입력하세요.");
+    var btnreset = window.prompt("초기화 하시려면 100을 입력하세요.");
 
     if(btnreset === 100){
         var inputuserid = document.querySelector("input#user_id");
@@ -174,7 +174,7 @@ btnodd.addEventListener("click",onClickbtnodd);
 
 function onClickbtnodd(event){
     event.preventDefault();
-    var enternum = window.confirm("숫자를 입력해주세요.");
+    var enternum = window.prompt("숫자를 입력해주세요.");
     var divodd = document.querySelector("div#odd-result")
     var result = "";
     for(var i = 1; i<= enternum; i++){
@@ -202,7 +202,7 @@ var cityul = document.querySelector("ul#city-list");
 
 function onClickbtnacity(event){
     event.preventDefault();
-    var city = window.confirm("도시명을 입력하세요");
+    var city = window.prompt("도시명을 입력하세요");
     var cityEl = document.createElement("li");
     cityEl.innerText = city;
     cityul.appendChild(cityEl);
