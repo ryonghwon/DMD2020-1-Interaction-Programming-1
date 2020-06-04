@@ -57,8 +57,8 @@ function onDivide(e){
     resultDiv.innerText = result;
 }
 
-percent.addEventListener('click', onDivide);
-function onDivide(e){
+percent.addEventListener('click', onPercent);
+function onPercent(e){
     for(var i = 0; i < radio.length; i++){
         if(radio[i].checked){
             result %= parseInt(radio[i].value);
