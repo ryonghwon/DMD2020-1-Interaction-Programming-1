@@ -14,7 +14,26 @@ Quest 1.
 ----------
 */
 // Answer 1.
+var btnStudentNumberEl = document.querySelector("button#btn-student-number");
+btnStudentNumberEl = document.getElementById("btn-student-number");
+function onClickBtnStudentNumber(e) { // 핸들러(handler) 정의.
+    e.preventDefault(); // 요소가 가지고 있는 기본 이벤트 동작을 방지.
+    // console.log(e); // 이벤트 정보에 대한 객체(내장 매개변수 객체)
+    // 클릭 이벤트가 발생되면 코드가 동작.
+    var spanStudentNumberEl = document.querySelector("span#student-number");
+    spanStudentNumberEl.innerText = "20200001";
+    alert("학번이 입력되었습니다.");
+}
+btnStudentNumberEl.addEventListener("click", onClickBtnStudentNumber);
 
+var btnStudentNameEl = document.querySelector("button#btn-student-name");
+function onClickBtnStudentName(e) {
+    e.preventDefault();
+    var spanStudentNameEl = document.querySelector("span#student-name");
+    spanStudentNameEl.innerHTML = "<b>김용원</b>";
+    alert("이름이 입력되었습니다.");
+}
+btnStudentNameEl.addEventListener("click", onClickBtnStudentName);
 
 
 /*
@@ -27,6 +46,15 @@ Quest 2.
 ----------
 */
 // Answer 2.
+var btnWinSizeEl = document.querySelector("button#btn-window-size");
+function onClickBtnWinSize(e) {
+    e.preventDefault();
+    var winWidth = window.innerWidth;
+    var winHeight = window.innerHeight;
+    var result = "윈도우 콘텐츠의 영역 width : " + winWidth + "px, height : " + winHeight + "px 입니다.";
+    console.log(result);
+}
+btnWinSizeEl.addEventListener("click", onClickBtnWinSize);
 
 
 
@@ -40,7 +68,18 @@ input#user_id - value 속성 값의 문자열 개수는 ____ 입니다.
 ----------
 */
 // Answer 3.
-
+var btnCheckIdEl = document.querySelector("button#btn-check-id");
+function onClickBtnCheckId(e) {
+    e.preventDefault();
+    var userIdEl = document.getElementById("user_id");
+    var value = userIdEl.value; // input 요소에서 value 값을 찾는 걸 주로 사용되기 때문에 해당 방법으로 찾을 수 있다. - 현재 input 에서 값이 변경되면 해당 값을 반환.
+    value = userIdEl.getAttribute("value"); // 문서 속성에 기입된 값을 반환.
+    // console.log(value.length); // 문자열의 개수 구하기.
+    var max = value.length;
+    var result = "input#user_id - value 속성 값의 문자열 개수는 " + max + " 입니다.";
+    console.log(result);
+}
+btnCheckIdEl.addEventListener("click", onClickBtnCheckId);
 
 
 /*
@@ -49,7 +88,13 @@ Quest 4.
 2. 1(순서) 이벤트 호출 시 현재 브라우저 창이 새로고침 되도록 작성합니다.
 */
 // Answer 4.
-
+var btnCancelEl = document.querySelector("button#btn-cancel");
+function onClickBtnCancel(e) {
+    e.preventDefault();
+    // window.location.reload();
+    location.reload(); // 현재 문서를 새로 고침.
+}
+btnCancelEl.addEventListener("click", onClickBtnCancel);
 
 
 /*
@@ -68,6 +113,24 @@ Quest 5.
 ----------
 */
 // Answer 5.
+var btnApplyEl = document.querySelector("button#btn-apply");
+function onClickBtnApply(e) {
+    e.preventDefault();
+    var isApply = confirm("가입하시겠습니까?");
+    console.log(isApply);
+    if(isApply) { // true 인 경우. (확인)
+        alert("가입을 환영합니다!");
+    }else{ // false 인 경우. (취소)
+        alert("가입을 취소하였습니다.");
+    }
+    /*
+    // (Boolean일 때 조건문 표기법)
+    if(!isApply) { // false.
+    }else{ // true.
+    }
+    */
+}
+btnApplyEl.addEventListener("click", onClickBtnApply);
 
 
 
@@ -78,6 +141,27 @@ Quest 6.
 3. 사용자가 100을 정확하게 입력할 경우, input#user_id 와 input#user_pass 요소의 value 속성이 빈 값으로 초기화 되도록 작성합니다.
 */
 // Answer 6.
+var btnResetEl = document.querySelector("button#btn-reset");
+function onClickBtnReset(e) {
+    e.preventDefault();
+    var number = prompt("초기화하시려면 100을 입력하세요.");
+    // prompt - 취소 : null, 확인 : 현재 입력된 문자열 값. // 데이터 타입이 무조건 문자열.
+    // if(number == 100) { // 문자열 100 이라도 true 가 됨.
+    // }
+    // if(number === 100) { // false - prompt 의 숫자가 100 이지만 문자열 타입의 데이터 이기 때문에 false.
+    // }
+    if(parseInt(number, 10) === 100) {
+        // parseInt(값(문자열), 진법); 
+        // parseInt("100") - 기본이 10진법.
+        // parseInt("100", 10); 문자열 "100" 을 숫자(10진번의) 타입으로 변경한다.
+        // parseInt("100", 2); 문자열 "100" 을 2진법의 숫자로 변경.
+        var userIdEl = document.querySelector("input#user_id");
+        var userPassEl = document.querySelector("input#user_pass");
+        userIdEl.value = "";
+        userPassEl.value = "";
+    }
+}
+btnResetEl.addEventListener("click", onClickBtnReset);
 
 
 
@@ -94,6 +178,34 @@ Quest 7.
 ----------
 */
 // Answer 7.
+var btnOddEl = document.querySelector("button#btn-odd");
+function onClickBtnOdd(e) {
+    e.preventDefault();
+    var number = prompt("숫자를 입력해주세요.");
+
+    // "안녕하세요.";
+    // parseInt("안녕하세요.", 10) -> NaN
+    if(number !== null && number !== "" && parseInt(number, 10) !== NaN) {
+        number = parseInt(number, 10);
+        // 0 부터 number 까지의 반복문.
+        var result = "";
+        for(var i = 0; i <= number; i++) {
+            if(i % 2 === 1) { // 홀수.
+                if(result !== "") { // result 의 값이 빈 문자열이 아닌 경우, 홀수 여부를 한번은 확인하여 연산이 이뤄짐.
+                    result += ", ";
+                }
+                result += i;
+            }else{ //짝수.
+            }
+            if(i === number) {
+                result += ".";
+            }
+        }
+        var oddResultEl = document.querySelector("div#odd-result");
+        oddResultEl.innerText = result;
+    }
+}
+btnOddEl.addEventListener("click", onClickBtnOdd);
 
 
 
