@@ -57,13 +57,37 @@ var radio = document.getElementsByClassName("radio");
 var _number = document.getElementById("result");
 var number = _number.innerHTML;
 //console.log(number);   output = 0
+//console.log(typeof number);
+//값이 문자열이라 클릭시 숫자열로 먼저 치환을 해야할것같다.
 
 
+
+
+
+
+// 피연산자 
+var num = 0 ;
+
+// event.currentTarget - 해당 이벤트가 발생된 요소 노드.
+var radioEls = document.querySelectorAll("input[name=select_number]");
+for(var i = 0; i < radioEls.length; i++)
+     {
+          radioEls[i].addEventListener("change",function(event){
+          //console.log("change");
+          //console.log(event.currentTarget.value);
+          //클릭된 숫자가 출력이됨 이 숫자를 반환 해서 피연산자 값으로 쓸수 있을까
+          num = event.currentTarget.value;
+          console.log(num); // 이거 문자열이니까 숫자로 바꿔라 
+          
+          });
+     } 
+
+     
 
 function onClickPlus(event){
      event.preventDefault();
      //console.log("클릭확인1");
-    //
+    
 }
 
 function onClickMainus(event){
@@ -89,6 +113,7 @@ function onClickPercent(event){
 function onClickReset(event){
      event.preventDefault();
      //console.log("클릭확인6");
+     //number.innerText("5");
 }
 
 
