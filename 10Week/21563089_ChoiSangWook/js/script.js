@@ -98,7 +98,7 @@ console.log(radiochecked);
 // input태그 value값이 문자열이라 숫자열로 바꿔줘야한다.
 radiotype = radioEls[0].value
 console.log(typeof radiotype);
-
+// output = string
 
 function onClickPlus(event){
      event.preventDefault();
@@ -175,6 +175,8 @@ function onClickReset(event){
           {
           Total = 0; // 연산된 값을 0으로 바꾸고
           number.innerText = Total; // // 초기화된 값을 "result id"를 가진 노드 요소에 출력
+
+          alert("값이 초기화 되었습니다.");
           }
      }
 }
