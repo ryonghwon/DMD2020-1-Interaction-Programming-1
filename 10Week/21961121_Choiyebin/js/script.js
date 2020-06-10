@@ -6,8 +6,6 @@ Quest.
 4. 초기화 버튼을 클릭시 숫자를 0으로 초기화합니다.
 */
 // Answer.
-// 1. 연산자(+, -, *, /, %) 버튼 클릭 시 해당 연산 기호에 따라 산술 연산되도록 합니다.
-
 // 각 연산자, 초기화
 var plus = document.getElementById("btn-plus");
 var minus = document.getElementById("btn-minus");
