@@ -19,5 +19,5 @@ html{overflow:hidden;min-height:100vh;color:#333;font-family:"Noto Sans KR",sans
 .tab-menu + .tab-container{margin-top:20px}
 .tab-container{position:relative;width:800px;margin-right:auto;margin-left:auto;padding-top:24px}
 .tab-container::before{content:"";display:block;position:absolute;top:0;right:0;left:0;padding-top:2px;border-top:1px solid #96d2d9;border-bottom:1px solid #96d2d9}
-.tab-container .tab-content{display:none;padding:30px;height:500px;font-weight:700;border-radius:2px;box-shadow:0 1px 4px rgba(0,0,0,0.1)}
+.tab-container .tab-content{display:none;position:relative;padding:30px;height:500px;font-weight:700;border-radius:2px;box-shadow:0 1px 4px rgba(0,0,0,0.1)}
 .tab-container .tab-content.selected{display:block}
