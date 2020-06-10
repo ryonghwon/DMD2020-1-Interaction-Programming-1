@@ -71,7 +71,8 @@ function calculatePercent(){
 }
 reset.addEventListener("click", resultReset)
 function resultReset(){
-    result.innerText = 0;
+    num = 0;
+    result.innerText = num;
 }
 
 
