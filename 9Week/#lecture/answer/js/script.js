@@ -216,7 +216,23 @@ Quest 8.
 3. 사용자가 도시명을 입력할 경우, ul#city-list 자식인 li 요소에 도시명 문자열이 추가되도록 작성합니다.
 */
 // Answer 8.
+var btnAddCityEl = document.getElementById("btn-add-city");
+btnAddCityEl = document.querySelector("button#btn-add-city");
+btnAddCityEl = document.querySelector("#btn-add-city");
 
+function onClickAddCity(e) {
+    e.preventDefault();
+    var city = prompt("도시명을 입력하세요.");
+    if(city !== null && city !== "") {
+        var cityListEl = document.querySelector("ul#city-list");
+        var cityItemEl = document.createElement("li"); // <li></li>
+        cityItemEl.innerText = city; // <li>도시명</li>
+        cityItemEl.style.backgroundColor = "#000";
+        cityItemEl.style.color = "#fff";
+        cityListEl.appendChild(cityItemEl);
+    }
+}
+btnAddCityEl.addEventListener("click", onClickAddCity);
 
 
 /*
@@ -239,7 +255,25 @@ Quest 9.
 ----------
 */
 // Answer 9.
-
+var btnColorEl = document.querySelector("button#btn-color");
+var cuId = 0;
+function onClickColor(e) {
+    e.preventDefault();
+    var scentenceEls = document.querySelectorAll("p.sentence");
+    var max = scentenceEls.length;
+    for(var i = 0; i < max; i++) {
+        var scentenceEl = scentenceEls[i];
+        scentenceEl.style.color = "red";
+        if(cuId === i) {
+            scentenceEl.style.color = "black";
+        }
+    }
+    cuId++; // cuId 의 값에서 +1;
+    if(cuId >= max) {
+        cuId = 0;
+    }
+}
+btnColorEl.addEventListener("click", onClickColor);
 
 
 /*
@@ -248,5 +282,9 @@ Quest 10.
 2. 1(순서) 이벤트 호출 시 스크롤이 현재 화면의 최상단으로 이동되도록 작성합니다.
 */
 // Answer 10.
-
-
+var btnGoTopEl = document.querySelector("button#btn-go-top");
+function onClickGoTop(e) {
+    e.preventDefault();
+    window.scrollTo(0, 0);
+}
+btnGoTopEl.addEventListener("click", onClickGoTop);
