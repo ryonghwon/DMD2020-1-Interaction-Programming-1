@@ -44,7 +44,7 @@ html{
     overflow:hidden;  /* 내용이 할당된 범위를 초과하면 자른다.*/
     display:-webkit-box;
      /* 
-     박스스타일display: -webkit-box (가로정렬)
+     박스스타일display: -webkit-box (가로정렬)   현재 페이지에 적용되있음 
      display: -webkit-box(부모에게 꼭적어라!  ex ul)
       -webkit-box-pack:justify; (좌우균등)
     */
@@ -52,16 +52,84 @@ html{
     display:-ms-flexbox;
     /*IE 10 브라우저를 지원하려면 2012년 플렉스 속성에 -ms- 제조사 접두어를 붙여야 합니다*/
     /* 설명 참고하기 https://webclub.tistory.com/604 */
+
     display:flex;
+    /* 자식요소들이 수직으로 쌓인다
+    display: inline-flex 는 수평으로 쌓임*/ 
     /* flexbox의 콘텐츠는 어떤 방향에든 위치할 수 있으며, 동적으로 변경가능한 순서를 지정할 수도 있고, 가용한 공간 내에서 크기와 위치를 자동으로 조정하기도 한다.*/
     margin:0;
     padding:0;
     list-style:none; /* li의 텍스트 옆 기호를 스타일을 안쓴다는거임*/
     border-radius:2px} /* 모서리 둥글게*/
-.tab-menu li{flex:1;height:50px}
-.tab-menu li a{position:relative;display:block;width:100%;height:100%;padding-top:13px;padding-bottom:13px;background-color:#eee;text-align:center;text-decoration:none;color:#242424;font-weight:700;line-height:2rem;-webkit-transition:background-color 120ms cubic-bezier(0.455,0.030,0.515,0.955),color 120ms cubic-bezier(0.455,0.030,0.515,0.955);-moz-transition:background-color 120ms cubic-bezier(0.455,0.030,0.515,0.955),color 120ms cubic-bezier(0.455,0.030,0.515,0.955);-o-transition:background-color 120ms cubic-bezier(0.455,0.030,0.515,0.955),color 120ms cubic-bezier(0.455,0.030,0.515,0.955);-ms-transition:background-color 120ms cubic-bezier(0.455,0.030,0.515,0.955),color 120ms cubic-bezier(0.455,0.030,0.515,0.955);transition:background-color 120ms cubic-bezier(0.455,0.030,0.515,0.955),color 120ms cubic-bezier(0.455,0.030,0.515,0.955)}
-.tab-menu li a span{display:inline-block;position:relative;vertical-align:top}
-.tab-menu li a span::before{content:"";display:block;position:absolute;bottom:0;left:50%;width:0;height:0;border-bottom:2px solid #96d2d9;-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);-o-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);-webkit-transition:width 200ms cubic-bezier(0.455,0.030,0.515,0.955),border-color 120ms cubic-bezier(0.455,0.030,0.515,0.955);-moz-transition:width 200ms cubic-bezier(0.455,0.030,0.515,0.955),border-color 120ms cubic-bezier(0.455,0.030,0.515,0.955);-o-transition:width 200ms cubic-bezier(0.455,0.030,0.515,0.955),border-color 120ms cubic-bezier(0.455,0.030,0.515,0.955);-ms-transition:width 200ms cubic-bezier(0.455,0.030,0.515,0.955),border-color 120ms cubic-bezier(0.455,0.030,0.515,0.955);transition:width 200ms cubic-bezier(0.455,0.030,0.515,0.955),border-color 120ms cubic-bezier(0.455,0.030,0.515,0.955)}
+.tab-menu li{
+    flex:1;
+    height:50px} /* li 박스 하나*/
+.tab-menu li a{
+    position:relative; /* position: relative 속성은 static의 원래 위치부터 계산한다.
+                        위(top), 아래(bottom), 왼쪽(left), 오른쪽(right) 의 위치를 같이 설정할 수도 있다.*/
+    display:block; /* 인라인요소 a 태그를 블록박스로 만든다. 즉 좌우 빈공간없는 한겹을 차지하게됨*/
+    width:100%; /* 100% 로 하지않으면 a 태그 공간이 줄어듬 그리고 overflow(hidden) 이기때문에 텍스트가 잘린다 */
+    height:100%; /* 상동*/
+    padding-top:13px;
+    padding-bottom:13px;
+    background-color:#eee;
+    text-align:center;
+    text-decoration:none; /* 텍스트 밑줄 없음*/
+    color:#242424;
+    font-weight:700;
+    line-height:2rem;
+
+    /* cubic-bezier란 ?*/
+    /* cubic-bezier() function은 CSS에서 transition 속성 혹은 transition-timing-function 속성에서
+     전환의 시작과 끝까지의 효과를 제어하는데 쓰인다. */
+     /* 해당 요소의 background-color를 120ms 동안 제어하고 4개의 컨트롤 포인트(0.25, 0.25, 0.75, 0.75)에 의거해 효과를 주겠다.*/
+     /* 설명 참고 https://kutar37.tistory.com/entry/CSS-cubic-bezier%EB%9E%80 */
+    -webkit-transition:background-color 120ms cubic-bezier(0.455,0.030,0.515,0.955),
+    color 120ms cubic-bezier(0.455,0.030,0.515,0.955);
+    -moz-transition:background-color 120ms cubic-bezier(0.455,0.030,0.515,0.955),
+    color 120ms cubic-bezier(0.455,0.030,0.515,0.955);
+    -o-transition:background-color 120ms cubic-bezier(0.455,0.030,0.515,0.955),
+    color 120ms cubic-bezier(0.455,0.030,0.515,0.955);
+    -ms-transition:background-color 120ms cubic-bezier(0.455,0.030,0.515,0.955),
+    color 120ms cubic-bezier(0.455,0.030,0.515,0.955);
+    transition:background-color 120ms cubic-bezier(0.455,0.030,0.515,0.955),
+    color 120ms cubic-bezier(0.455,0.030,0.515,0.955)}
+
+.tab-menu li a span{
+    display:inline-block; /* inline-block : 블록박스로 만들어지지만, 인라인 박스처럼 배치된다. 원래 속성값은 inlien*/
+    position:relative; /* 위치값을 지정하기 위해*/
+    vertical-align:top /* inline or inline-block 요소에만 적용되며 컨테이너의 라인 박스의 top 을 기반으로 수직으로 정렬*/}
+
+
+    /* ::before, ::after 란?*/
+    /* 가상클래스(Pseudo-Class)는,별도의 class를 지정하지 않아도 지정한 것 처럼요소를 선택할 수 있습니다.
+        가상요소(Pseudo-Element)는, 가상클래스처럼 선택자(selector)에 추가되며,
+        존재하지 않는 요소를 존재하는 것처럼 부여하여 문서의 특정 부분 선택이 가능합니다.*/
+.tab-menu li a span::before{
+    content:""; /* html 문서에 쓰지않고도 css로 내용을 생성하며 ::before, ::after 와 함께 사용*/
+    display:block;
+    position:absolute;
+    bottom:0;
+    left:50%;
+    width:0;
+    height:0;
+    border-bottom:2px solid #96d2d9;
+    -webkit-transform:translateX(-50%);
+    -moz-transform:translateX(-50%);
+    -o-transform:translateX(-50%);
+    -ms-transform:translateX(-50%);
+    transform:translateX(-50%);
+    -webkit-transition:width 200ms cubic-bezier(0.455,0.030,0.515,0.955),
+    border-color 120ms cubic-bezier(0.455,0.030,0.515,0.955);
+    -moz-transition:width 200ms cubic-bezier(0.455,0.030,0.515,0.955),
+    border-color 120ms cubic-bezier(0.455,0.030,0.515,0.955);
+    -o-transition:width 200ms cubic-bezier(0.455,0.030,0.515,0.955),
+    border-color 120ms cubic-bezier(0.455,0.030,0.515,0.955);
+    -ms-transition:width 200ms cubic-bezier(0.455,0.030,0.515,0.955),
+    border-color 120ms cubic-bezier(0.455,0.030,0.515,0.955);
+    transition:width 200ms cubic-bezier(0.455,0.030,0.515,0.955),
+    border-color 120ms cubic-bezier(0.455,0.030,0.515,0.955)}
+
 .tab-menu li a.selected{background-color:#242424;border-radius:2px;color:#fff;cursor:default}
 .tab-menu li a:hover span::before,.tab-menu li a.selected span::before{width:100%}
 .tab-menu li a.selected span::before{border-bottom-color:#fff}
