@@ -176,11 +176,10 @@ html{
 
 
 
-/* float  해제 1
+/*float  해제 1*/
 .clear{
     clear: both;
 }
-*/
 .tab-content1-wrap{
     overflow: hidden;
     height: 1000px;
@@ -208,6 +207,6 @@ html{
 .tab-content1-wrap > footer{
     background-color: #6ad856;
     text-align: center;
-    height: 200px;
+    height: 100px;
 }
 
