@@ -36,8 +36,8 @@ html{
     line-height:1.5rem} /* 폰트의 굵기*/
 
 .tab-menu{ /* 탭을 둘러싸고 있는 큰 틀*/
-    width:800px;/* 탭 큰틀의 가로넓이*/
-    margin-top:50px; /* 상단으로 부터 50px  떨어짐*/
+    width:100%;/* 탭 큰틀의 가로넓이*/
+    margin-top:0; /* 상단으로 부터 50px  떨어짐*/
     margin-right:auto; /*  right auto left auto 는 가운데 정렬*/
     margin-left:auto}
 .tab-menu ul{
@@ -72,7 +72,7 @@ html{
     height:100%; /* 상동*/
     padding-top:13px;
     padding-bottom:13px;
-    background-color:#eee;
+    background-color:rgb(255, 255, 255);
     text-align:center;
     text-decoration:none; /* 텍스트 밑줄 없음*/
     color:#242424;
@@ -113,7 +113,7 @@ html{
     left:50%;
     width:0;
     height:0;
-    border-bottom:2px solid #96d2d9;
+    border-bottom:2px solid #2bff00;
     -webkit-transform:translateX(-50%);
     -moz-transform:translateX(-50%);
     -o-transform:translateX(-50%);
@@ -133,15 +133,80 @@ html{
 .tab-menu li a.selected{background-color:#242424;border-radius:2px;color:#fff;cursor:default}
 .tab-menu li a:hover span::before,.tab-menu li a.selected span::before{width:100%}
 .tab-menu li a.selected span::before{border-bottom-color:#fff}
-.tab-menu + .tab-container{margin-top:20px}
-.tab-container{position:relative;width:800px;margin-right:auto;margin-left:auto;padding-top:24px}
-.tab-container::before{content:"";display:block;position:absolute;top:0;right:0;left:0;padding-top:2px;border-top:1px solid #96d2d9;border-bottom:1px solid #96d2d9}
-.tab-container .tab-content{display:none;position:relative;padding:30px;height:500px;font-weight:700;border-radius:2px;box-shadow:0 1px 4px rgba(0,0,0,0.1)}
-.tab-container .tab-content.selected{display:block}
+.tab-menu + .tab-container{margin-top:0px}
+.tab-container{
+    position:relative;
+    width:100%;
+    margin-right:auto;
+    margin-left:auto;
+    padding-top:24px}
+
+    /*
+.tab-container::before{
+    content:"";
+    display:block;
+    position:absolute;
+    top:0;right:0;left:0;
+    padding-top:2px;
+    border-top:1px solid #96d2d9;
+    border-bottom:1px solid #96d2d9}
+    */
+.tab-container .tab-content{
+    display:none;
+    position:relative;
+    padding:10px;
+    height:100%;
+    font-weight:700;
+    border-radius:2px;
+    box-shadow:0 1px 4px rgba(0,0,0,0.1)}
+.tab-container .tab-content.selected{display:block;}
 @media (prefers-color-scheme: dark) {
     html{background-color:#000;color:#fff}
     .tab-menu li a{background-color:#242424;color:#fff}
     .tab-menu li a.selected{background-color:#fff;color:#242424}
     .tab-menu li a.selected span::before{border-bottom-color:#242424}
-    .tab-container .tab-content::before{content:"";display:block;position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%;border:1px solid rgba(255,255,255,0.15);box-shadow:none;pointer-events:none}
+    .tab-container .tab-content::before{content:"";
+        display:block;
+        position:absolute;
+        top:0;right:0;bottom:0;left:0;
+        width:100%;height:100%;border:1px solid rgba(255,255,255,0.15);
+        box-shadow:none;
+        pointer-events:none}
 }
+
+
+
+/*float  해제 1*/
+.clear{
+    clear: both;
+}
+.tab-content1-wrap{
+    overflow: hidden;
+    height: 1000px;
+}
+.tab-content1-wrap > header{
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #2bff00;
+    width: 100%;
+    text-align: center;}
+.tab-content1-wrap > section{
+    background-color: #4e7247;
+    float :left;
+    width: 70%;
+    text-align: center;
+    height: 400px;
+}
+.tab-content1-wrap > aside{
+    background-color: #00a2ff91;
+    float :right;
+    width: 30%;
+    text-align: center;
+    height: 400px;
+}
+.tab-content1-wrap > footer{
+    background-color: #6ad856;
+    text-align: center;
+    height: 100px;
+}
+
