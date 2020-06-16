@@ -159,7 +159,7 @@ html{
     font-weight:700;
     border-radius:2px;
     box-shadow:0 1px 4px rgba(0,0,0,0.1)}
-.tab-container .tab-content.selected{display:block}
+.tab-container .tab-content.selected{display:block;}
 @media (prefers-color-scheme: dark) {
     html{background-color:#000;color:#fff}
     .tab-menu li a{background-color:#242424;color:#fff}
@@ -174,20 +174,40 @@ html{
         pointer-events:none}
 }
 
-.tab-content:nth-child(1){}
-.tab-content:nth-child(1) > header{
+
+
+/* float  해제 1
+.clear{
+    clear: both;
+}
+*/
+.tab-content1-wrap{
+    overflow: hidden;
+    height: 1000px;
+}
+.tab-content1-wrap > header{
+    margin: 0 auto;
     padding: 10px;
     background-color: #2bff00;
-    display: inline-block;
-    width: 100%;}
-.tab-content:nth-child(1) > header > nav > ul{}
-.tab-content:nth-child(1) > header > nav > ul > li{
-    float: right;
-    list-style: none;
-    margin: 0 10px ;
+    width: 100%;
+    text-align: center;}
+.tab-content1-wrap > section{
+    background-color: #4e7247;
+    float :left;
+    width: 70%;
+    text-align: center;
+    height: 400px;
 }
-.tab-content:nth-child(1) > section{background-color: #4e7247}
-.tab-content:nth-child(1) > article{background-color: #6f9468}
-.tab-content:nth-child(1) > aside{background-color: #00a2ff91}
-.tab-content:nth-child(1) > footer{background-color: #5d6e5a}
+.tab-content1-wrap > aside{
+    background-color: #00a2ff91;
+    float :right;
+    width: 30%;
+    text-align: center;
+    height: 400px;
+}
+.tab-content1-wrap > footer{
+    background-color: #6ad856;
+    text-align: center;
+    height: 200px;
+}
 
