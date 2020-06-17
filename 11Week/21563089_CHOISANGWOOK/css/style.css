@@ -303,3 +303,9 @@ html{
   
   .item-5 {
     background-image: url("../image/prada7.jpg");}
+  .itemname{
+    color: #fff;
+    font-weight: 400;
+    margin-top: 18px;
+    text-align: center
+  }
