@@ -29,12 +29,12 @@
 html{
     overflow:hidden; /* 내용이 할당된 범위를 초과하면 자른다.*/
     min-height:100vh;
-    background: linear-gradient(to right, #5d4157, #a8caba); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #5a3f37, #2c7744); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color:#333;
     font-family:"Noto Sans KR",sans-serif;
     font-size:12px;
     font-weight:400;
-    line-height:1.5rem} /* 폰트의 굵기*/
+    line-height:1.5rem;} /* 폰트의 굵기*/
 
 .tab-menu{ /* 탭을 둘러싸고 있는 큰 틀*/
     width:70%;/* 탭 큰틀의 가로넓이*/
@@ -50,11 +50,11 @@ html{
      display: -webkit-box(부모에게 꼭적어라!  ex ul)
       -webkit-box-pack:justify; (좌우균등)
     */
-
+    opacity: 90%;
     display:-ms-flexbox;
     /*IE 10 브라우저를 지원하려면 2012년 플렉스 속성에 -ms- 제조사 접두어를 붙여야 합니다*/
     /* 설명 참고하기 https://webclub.tistory.com/604 */
-
+    
     display:flex;
     /* 자식요소들이 수직으로 쌓인다
     display: inline-flex 는 수평으로 쌓임*/ 
@@ -62,10 +62,11 @@ html{
     margin:0;
     padding:0;
     list-style:none; /* li의 텍스트 옆 기호를 스타일을 안쓴다는거임*/
-    border-radius:2px} /* 모서리 둥글게*/
+    border-radius:5px;} /* 모서리 둥글게*/
+    
 .tab-menu li{
     flex:1;
-    height:50px} /* li 박스 하나*/
+    height:50px;} /* li 박스 하나*/
 .tab-menu li a{
     position:relative; /* position: relative 속성은 static의 원래 위치부터 계산한다.
                         위(top), 아래(bottom), 왼쪽(left), 오른쪽(right) 의 위치를 같이 설정할 수도 있다.*/
@@ -100,7 +101,7 @@ html{
 .tab-menu li a span{
     display:inline-block; /* inline-block : 블록박스로 만들어지지만, 인라인 박스처럼 배치된다. 원래 속성값은 inlien*/
     position:relative; /* 위치값을 지정하기 위해*/
-    vertical-align:top /* inline or inline-block 요소에만 적용되며 컨테이너의 라인 박스의 top 을 기반으로 수직으로 정렬*/}
+    vertical-align:top; /* inline or inline-block 요소에만 적용되며 컨테이너의 라인 박스의 top 을 기반으로 수직으로 정렬*/}
 
 
     /* ::before, ::after 란?*/
@@ -112,10 +113,10 @@ html{
     display:block;
     position:absolute;
     bottom:0;
-    left:60%;
+    left:50%;
     width:0;
     height:0;
-    border-bottom:2px solid #a9a9a9;
+    border-bottom:3px solid #a9a9a9;
     -webkit-transform:translateX(-50%);
     -moz-transform:translateX(-50%);
     -o-transform:translateX(-50%);
@@ -132,7 +133,7 @@ html{
     transition:width 200ms cubic-bezier(0.455,0.030,0.515,0.955),
     border-color 120ms cubic-bezier(0.455,0.030,0.515,0.955)}
 
-.tab-menu li a.selected{background-color:#242424;border-radius:2px;color:#fff;cursor:default}
+.tab-menu li a.selected{background-color:#242424;border-radius:4px;color:#fff;cursor:default;}
 .tab-menu li a:hover span::before,.tab-menu li a.selected span::before{width:100%}
 .tab-menu li a.selected span::before{border-bottom-color:#fff}
 .tab-menu + .tab-container{margin-top:0px}
@@ -140,8 +141,8 @@ html{
     position:relative;
     width:70%;
     margin-right:auto;
-    margin-left:auto;}
-
+    margin-left:auto;
+    }
     /*
 .tab-container::before{
     content:"";
@@ -157,7 +158,9 @@ html{
         position:relative;
         width: 100%;
         height:600px;
-        font-weight:700;border-radius:3px;box-shadow:0 0px 15px rgba(0,0,0,0.1)}
+        font-weight:700;
+        border-radius:5px;
+        box-shadow:0 0px 15px rgba(0,0,0,0.1)}
 .tab-container .tab-content.selected{display:block;}
 @media (prefers-color-scheme: dark) {
     html{background-color:#000;color:#fff}
@@ -173,19 +176,136 @@ html{
         pointer-events:none}
 }
 
-
-
-/*float  해제 1*/
-.clear{
-    clear: both;
-}
-
 .tab-content1-wrap{
     padding: 0px;
-    background-image: url("../image/prada2.jpg");
+    background-image: url("../image/prada1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height:100%;
 }
 
+.tab-content1-wrap h1 {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 25%;
+    font-size: 70px;
+    color: aliceblue;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
 
+.tab-content1-wrap h1 span {
+    display: block;
+    margin: 11px 0 17px 0;
+    font-size: 80px;
+    line-height: 80px;
+    color: #f1ebe5;
+    text-shadow: 0 -80px 8.896px #000000,0 -2px 1px #fff;
+    letter-spacing: -3px;
+  }
+
+.tab-content2-wrap {
+    padding: 0px;
+    background-image: url("../image/prada3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+}
+
+.tab-content2-wrap{
+    padding: 30px;
+    color: #fff;
+    
+}
+
+.tab-content2-text h1{font-weight: 400;}
+
+.tab-content2-text p{
+    width: 300px;
+    font-weight: 200;
+}
+
+.tab-content3-wrap {
+    padding: 0px;
+    overflow: hidden;
+    height:100%;
+}
+
+.slider {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    cursor: col-resize;
+  }
+  
+  .slider .slider-image,
+  .slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1100px;
+    height: 100%;
+    background-size: 794px 1192px;
+    overflow: hidden;
+  }
+  
+
+
+
+
+
+
+
+  /* */
+
+
+
+  .container {
+    padding: 0 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .gallery-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 70vh;
+  }
+  
+  .item {
+    flex: 1;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    transition: flex 0.8s ease;
+  
+
+  }
+  .item:hover{flex: 7;}
+  
+  .item-1 {
+    background-image: url("../image/prada8.jpg");
+  }
+  
+  .item-2 {
+    background-image: url("../image/prada4.jpg");
+  }
+  
+  .item-3 {
+    background-image: url("../image/prada5.jpg");
+  }
+  
+  .item-4 {
+    background-image: url("../image/prada6.jpg");
+  }
+  
+  .item-5 {
+    background-image: url("../image/prada7.jpg");}
+  .itemname{
+    color: #fff;
+    font-weight: 400;
+    margin-top: 18px;
+    text-align: center
+  }
