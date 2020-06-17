@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Tab Menu</title>
+    <link rel="stylesheet" href="./css/style.css"/> 
+</head>
+<body>
+<h1 class="blind">Tab Menu</h1>
+<div id="tab-menu" class="tab-menu">
+    <ul>
+        <li><a href="#" class="selected"><span>Tab Menu 1</span></a></li><li>
+            <a href="#"><span>Tab Menu 2</span></a></li><li>
+            <a href="#"><span>Tab Menu 3</span></a></li><li>
+            <a href="#"><span>Tab Menu 4</span></a></li>
+    </ul>
+</div>
+<div class="tab-container">
+    <div class="tab-content selected" id = "tab01">
+        <div class="movie_info">
+            <img src ="img/poster_image.jpg" width=250 alt="poster" />
+            <h1 class = "title">월-E</h1>
+            <p>(WALL-E, 2008)</p>
+            <ul>
+                <li>개봉일: 2008.08.06</li>
+                <li>감독: 앤드류 스탠튼</li>
+                <li>개요: 애니메이션, SF, 가족, 코미디</li>  
+            </ul>  
+            <a href ="#" target="_self">영화 보러가기</a>    
+        </div>
+    </div>
+
+    <div class="tab-content" id = "tab02">
+        <div class = "movie_character">
+            <div class ="pic">
+                <img src = "img/Wall_E.png" alt="Wall_E" width=150/>
+                <h2>Wall E</h2>
+                <p>전 지구의 쓰레기를 처리하기 위해 BnL사에서 제작한 양산형 쓰레기 처리 로봇. </p>
+            </div>
+            <div class ="pic">
+                <img src = "img/EVE.png" alt="EVE" width=150/>
+                <h2>EVE</h2>
+                <p>픽사의 애니메이션 월-E에 등장하는 로봇이자 히로인. 하얗고 매끈하며 동그란 달걀형 몸체를 한 여성 로봇.</p>
+            </div>
+            <div class ="pic">
+                <img src = "img/Mo.png" alt="MO" width=150/>
+                <h2>MO</h2>
+                <p>불순물 감지 센서를 장착하여 오염 물질을 감지, 청소하는 역할을 수행하며 월 E의 협력자가 됨.</p>
+            </div>
+        </div>
+        <a href ="#" target="_self">자세히 보기</a>
+    </div>    
+    <div class="tab-content" id = "tab03">
+        <iframe width="320" height="180" src="https://www.youtube.com/embed/hkta4xYaj1k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class ="trailer">
+            <h1>줄거리</h1>
+            <p class="trailer_title">예측불허! 차세대 영웅, 그가 지구 구하기에 나섰다!</p>
+            <p>
+                텅 빈 지구에 홀로 남아 수백 년이란 시간을 외롭게 일만 하며 보내던 월-E (WALL-E: Waste Allocation Load Lifter Earth-Class, 지구 폐기물 수거-처리용 로봇). 그런 그가 매력적인 탐사 로봇 ‘이브’와 마주친 순간, 잡동사니 수집만이 낙이던 인생에도 소중한 목표가 생긴다. 
+            </p>
+            <div class="trailer_image">
+                <img src="img/trailer01.jpg" alt="trailer_image1" width="170"/>
+                <img src="img/trailer02.jpg" alt="trailer_image2" width="170"/>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content" id = "tab04">
+        <div>
+            <div class = "star">
+                <img src ="img/tab04.jpg" alt="Wall_E_02" width="320"/>
+                <div class = "star01">
+                    <h1>평점</h1>
+                    <a>네티즌<img src="img/star01.png" alt="star01" width="100"/>9.41</a>
+                    <a>기자/평론가<img src="img/star2.png" alt="star02" width="100"/>7.88</a>
+                </div>
+                <div class = "star02">
+                    <h1>명대사</h1>
+                    <p>
+                        "난 생존이 아니라 생활을 하고싶다고! </br> (I don't want to survive I want to live!)"
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html> 

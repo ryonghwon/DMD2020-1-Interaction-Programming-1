@@ -1,0 +1,23 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
+
+/* Modern Normalize */
+*,::after,::before{box-sizing:border-box}:root{-moz-tab-size:4;tab-size:4}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'}hr{height:0}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{padding:0}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+/* Layout */
+.blind{display:none!important;visibility:hidden!important;position:absolute;margin:0;padding:0;clip:rect(0 0 0 0);pointer-events:none}
+html{overflow:hidden;min-height:100vh;background-color:#fff;color:#333;font-family:"Noto Sans KR",sans-serif;font-size:12px;font-weight:400;line-height:1.5rem;-webkit-transition:all 180ms cubic-bezier(0.455, 0.030, 0.515, 0.955);-moz-transition:all 180ms cubic-bezier(0.455, 0.030, 0.515, 0.955);-o-transition:all 180ms cubic-bezier(0.455, 0.030, 0.515, 0.955);-ms-transition:all 180ms cubic-bezier(0.455, 0.030, 0.515, 0.955);transition:all 180ms cubic-bezier(0.455, 0.030, 0.515, 0.955)}
+body{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;height:100vh;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:vertical;-ms-flex-direction:column;flex-direction:column}
+input[type=checkbox]{-webkit-appearance:none;-moz-appearance:none;appearance:none}
+input[type=checkbox]::-ms-check{display:none}
+h1#title{margin:0;padding:0;font-size:3.000rem;font-weight:700;line-height:3.500rem}
+.desc{font-size:1.667rem;line-height:2.167rem}
+h1#title + .desc{margin-top:20px}
+.mode{position:absolute;top:20px;right:20px}
+label.switch{display:block;position:relative;width:28px;height:16px;border-radius:8px;background-color:#242424;-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-transition:background-color 180ms cubic-bezier(0.455, 0.030, 0.515, 0.955);-moz-transition:background-color 180ms cubic-bezier(0.455, 0.030, 0.515, 0.955);-o-transition:background-color 180ms cubic-bezier(0.455, 0.030, 0.515, 0.955);-ms-transition:background-color 180ms cubic-bezier(0.455, 0.030, 0.515, 0.955);transition:background-color 180ms cubic-bezier(0.455, 0.030, 0.515, 0.955)}
+label.switch input[type=checkbox]{position:absolute;top:0;left:0;width:0;height:0;line-height:0;clip:rect(0 0 0 0)}
+label.switch span{display:block;position:absolute;top:2px;left:2px;width:12px;height:12px;border-radius:50%;background-color:#fff;pointer-events:none;-webkit-transition:background-color 180ms cubic-bezier(0.455, 0.030, 0.515, 0.955),left 140ms cubic-bezier(0.455, 0.030, 0.515, 0.955);-moz-transition:background-color 180ms cubic-bezier(0.455, 0.030, 0.515, 0.955),left 140ms cubic-bezier(0.455, 0.030, 0.515, 0.955);-o-transition:background-color 180ms cubic-bezier(0.455, 0.030, 0.515, 0.955),left 140ms cubic-bezier(0.455, 0.030, 0.515, 0.955);-ms-transition:background-color 180ms cubic-bezier(0.455, 0.030, 0.515, 0.955),left 140ms cubic-bezier(0.455, 0.030, 0.515, 0.955);transition:background-color 180ms cubic-bezier(0.455, 0.030, 0.515, 0.955),left 140ms cubic-bezier(0.455, 0.030, 0.515, 0.955)}
+label.switch input[type=checkbox]:checked + span{left:14px}
+html.mode-dark{background-color:#333;color:#fff}
+html.mode-dark label.switch{background-color:#fff}
+html.mode-dark label.switch span{background-color:#242424}
