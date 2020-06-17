@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Tab Menu</title>
+    <link rel="stylesheet" href="./css/style.css"/> 
+</head>
+<body>
+<h1 class="blind">Tab Menu</h1>
+<div id="tab-menu" class="tab-menu">
+    <ul>
+        <li><a href="#" class="selected"><span>CAST</span></a></li><li>
+            <a href="#"><span>STORY</span></a></li><li>
+            <a href="#"><span>GALLERY</span></a></li><li>
+            <a href="#"><span>VIDEO</span></a></li>
+    </ul>
+</div>
+<div class="tab-container">
+    <div class="tab-content selected">
+        <div class="alan">
+            <div>
+                <img src="./img/cast1.png" alt="앨런 튜링" />
+            </div>
+            <div class="alan_info">
+                <p class="character_name">Alan Turing</p>
+                <p class="actor_name">Benedict Cumberbatch</p>
+                <p>앨런 튜링은<br />세계적인 명문 캠브리지 대학교 킹스칼리지 출신으로,<br />23살에 수학 논문을 쓰고,<br />24살에 교수로 임용된 타고난 천재 수학자였다.</p>
+                <p>베네딕트 컴버배치는 영국 런던 출신으로,<br />맨체스터 대학과 런던 극예술학교(LAMDA) 에서 연기 공부를 했고,<br />2000년 TV시리즈 <하트비트>로 데뷔하였다.<br />이 후 연극, TV시리즈, 영화 뿐 아니라<br />특유의 저음 목소리로 오디오 북이나 내래이션에 참여하는 등<br />다양한 분야에서 작품활동을 하며 연기 경험을 쌓았다.</p>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content">
+        <div class="poster">
+            <img src="./img/poster.png" alt="poster" />
+        </div>
+        <div class="story">
+            <p>24시간 마다 바뀌는 해독불가 암호를 풀고<br />1,400 만 명의 목숨을 구한 천재 수학자 앨런 튜링
+            </p>
+            <p>제2차 세계대전은 서로 상대국의 군사 기밀을 알아내려고<br />온갖 방법을 동원했다.<br />특히 독일군은 ‘에니그마(Enigma, 그리스어로 수수께끼)’라는 기계로 만든<br />암호를 모스 부호로 바꿔 무전으로 메시지 를 주고받았다.<br />이 암호는 웬만해서는 그 내용을 알기 힘든 당시 최고 기술이었다.<br />매 순간 3명이 죽는 사상 최악의 위기에 처한 제 2차 세계대전.<br />해독 불가능한 암호 ‘에니그마’로 인해 연합군은 속수무책으로 당하게 된다.<br />결국 각 분야의 수재들을 모아 기밀 프로젝트 암호 해독팀을 가동한다.<br />천재 수학자 앨런 튜링은 암호 해독을 위한 특별한 기계를<br />발명하지만 24시간 마다 바뀌는 완벽한 암호 체계 때문에 <br />번번히 좌절하게 된다.
+            </p>
+        </div>
+    </div>
+    <div class="tab-content">
+        <div class="gallery">
+            <img src="./img/movie_image1.jpg" alt="gallery image" />
+            <img src="./img/movie_image2.jpg" alt="gallery image" />
+            <img src="./img/movie_image3.jpg" alt="gallery image" />
+            <img src="./img/movie_image4.jpg" alt="gallery image" />
+        </div>
+    </div>
+    <div class="tab-content">
+        <div class="video">
+            <video controls>
+                <source src="./video/TheImitationGame.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>
