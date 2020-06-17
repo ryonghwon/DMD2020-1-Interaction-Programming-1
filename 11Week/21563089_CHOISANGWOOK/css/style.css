@@ -36,10 +36,11 @@ html{
     line-height:1.5rem} /* 폰트의 굵기*/
 
 .tab-menu{ /* 탭을 둘러싸고 있는 큰 틀*/
-    width:100%;/* 탭 큰틀의 가로넓이*/
-    margin-top:0; /* 상단으로 부터 50px  떨어짐*/
+    width:70%;/* 탭 큰틀의 가로넓이*/
+    margin-top:60px; /* 상단으로 부터 50px  떨어짐*/
     margin-right:auto; /*  right auto left auto 는 가운데 정렬*/
-    margin-left:auto}
+    margin-left:auto;
+}
 .tab-menu ul{
     overflow:hidden;  /* 내용이 할당된 범위를 초과하면 자른다.*/
     display:-webkit-box;
@@ -110,10 +111,10 @@ html{
     display:block;
     position:absolute;
     bottom:0;
-    left:50%;
+    left:60%;
     width:0;
     height:0;
-    border-bottom:2px solid #2bff00;
+    border-bottom:2px solid #a9a9a9;
     -webkit-transform:translateX(-50%);
     -moz-transform:translateX(-50%);
     -o-transform:translateX(-50%);
@@ -136,10 +137,9 @@ html{
 .tab-menu + .tab-container{margin-top:0px}
 .tab-container{
     position:relative;
-    width:100%;
+    width:70%;
     margin-right:auto;
-    margin-left:auto;
-    padding-top:24px}
+    margin-left:auto;}
 
     /*
 .tab-container::before{
@@ -151,14 +151,12 @@ html{
     border-top:1px solid #96d2d9;
     border-bottom:1px solid #96d2d9}
     */
-.tab-container .tab-content{
-    display:none;
-    position:relative;
-    padding:10px;
-    height:100%;
-    font-weight:700;
-    border-radius:2px;
-    box-shadow:0 1px 4px rgba(0,0,0,0.1)}
+    .tab-container .tab-content{
+        display:none;
+        position:relative;
+        width: 100%;
+        height:600px;
+        font-weight:700;border-radius:2px;box-shadow:0 0px 10px rgba(0,0,0,0.1)}
 .tab-container .tab-content.selected{display:block;}
 @media (prefers-color-scheme: dark) {
     html{background-color:#000;color:#fff}
@@ -180,33 +178,12 @@ html{
 .clear{
     clear: both;
 }
+
 .tab-content1-wrap{
-    overflow: hidden;
-    height: 1000px;
+    padding: 0px;
+    background-image: url("../image/prada1.jpg");
+    background-repeat: no-repeat;
+    height:100%;
 }
-.tab-content1-wrap > header{
-    margin: 0 auto;
-    padding: 10px;
-    background-color: #2bff00;
-    width: 100%;
-    text-align: center;}
-.tab-content1-wrap > section{
-    background-color: #4e7247;
-    float :left;
-    width: 70%;
-    text-align: center;
-    height: 400px;
-}
-.tab-content1-wrap > aside{
-    background-color: #00a2ff91;
-    float :right;
-    width: 30%;
-    text-align: center;
-    height: 400px;
-}
-.tab-content1-wrap > footer{
-    background-color: #6ad856;
-    text-align: center;
-    height: 100px;
-}
+
 
