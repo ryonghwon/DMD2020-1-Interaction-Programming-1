@@ -84,3 +84,5 @@ $RECYCLE.BIN/
 
 # End of https://www.gitignore.io/api/git,macos,windows,visualstudiocode
 3Week/21961132_HongYeonHwa/js/script.js
+*.jpg
+*.mp4
