@@ -36,3 +36,35 @@ function init() {
     addEvent();
 }
 init();
+
+
+
+//
+
+
+var slider = document.querySelector(".slider");
+var topImage = slider.querySelector(".slider .top");
+
+topImage.style.width = "１00px";
+
+slider.addEventListener("mousemove", function (e) {
+  topImage.style.width = e.offsetX + "px";
+});
+
+slider.addEventListener("touchmove", function (e) {
+  topImage.style.width = e.touches[0].clientX + "px";
+});
+// Need to prevent touchstart from dragging the page instead of giving us touch events
+slider.addEventListener("touchstart", function (e) {
+  e.preventDefault();
+});
+
+
+
+
+
+///
+
+
+
+
