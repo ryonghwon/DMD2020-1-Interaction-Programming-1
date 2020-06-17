@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Tab Menu</title>
+    <link rel="stylesheet" href="./css/style.css"/> 
+</head>
+<body id="body" class="dark-mode">
+    <h1 class="blind">Tab Menu</h1>
+    <div id="tab-menu" class="tab-menu">
+        <ul>
+            <li><a href="#" class="selected"><span>Intro</span></a></li><li>
+                <a href="#"><span>Characters</span></a></li><li>
+                <a href="#"><span>Photo</span></a></li><li>
+                <a href="#"><span>Official Trailer</span></a></li>
+        </ul>
+        <!-- <button id="btn" type="button" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode"></button> -->
+        <input type="checkbox" id="switch"onclick="toggleDarkLight()" /><label for="switch">Toggle</label>
+    </div>
+   
+    <div class="tab-container">
+        <div class="tab-content selected">
+            <div class="text">
+                <h2>
+                    어둠의 기사 배트맨 VS 절대 악 조커
+                    운명을 건 최후의 결전이 시작된다!
+                </h2>
+                <p>
+                    정의로운 지방 검사 ‘하비 덴트’, ‘짐 고든’ 반장과 함께 범죄 소탕 작전을 펼치며
+                    범죄와 부패로 들끓는 고담시를 지켜나가는 ‘배트맨’
+                    
+                    그러던 어느 날, 살아남기 위해 발버둥치던 범죄 조직은 배트맨을 제거하기 위해
+                    광기어린 악당 ‘조커’를 끌어들이고
+                    정체를 알 수 없는 조커의 등장에 고담시 전체가 깊은 혼돈 속으로 빠져든다.
+                    
+                    급기야 배트맨을 향한 강한 집착을 드러낸 조커는
+                    그가 시민들 앞에 정체를 밝힐 때까지 매일 새로운 사람들을 죽이겠다 선포하고
+                    배트맨은 사상 최악의 악당 조커를 막기 위해 자신의 모든 것을 내던진 마지막 대결을 준비한다..
+                </p>
+            </div>
+        </div>
+        <div class="tab-content">
+            <div id="img">
+                <figure class="snip1384">
+                    <img src="./img/ch1.jpg" alt="sample83" />
+                    <figcaption>
+                        <h3>크리스찬 베일</h3>
+                        <p>브루스웨인 / 배트맨 역</p><i class="ion-ios-arrow-right"></i>
+                    </figcaption>
+                </figure>
+                <figure class="snip1384">
+                    <img src="./img/ch2.jpg" alt="sample83" />
+                    <figcaption>
+                        <h3>히스레져</h3>
+                        <p>조커 역</p><i class="ion-ios-arrow-right"></i>
+                    </figcaption>
+                </figure>
+                <figure class="snip1384">
+                    <img src="./img/ch3.jpg" alt="sample83" />
+                    <figcaption>
+                        <h3>아론 에크하트</h3>
+                        <p>하비 덴트/투 페이스 역</p><i class="ion-ios-arrow-right"></i>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="tab-content">
+           <img src="./img/se1.jpg">
+           <img src="./img/se2.jpg">
+           <img src="./img/se3.jpg">
+        </div>
+        <div class="tab-content">
+            <div class="video-container">
+                <iframe width="1189" height="505" src="https://www.youtube.com/embed/EXeTwQWrcwY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="Title">
+        The Dark Knight
+    </div>
+
+    
+    <script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>
