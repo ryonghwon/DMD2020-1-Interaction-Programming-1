@@ -29,6 +29,7 @@
 html{
     overflow:hidden; /* 내용이 할당된 범위를 초과하면 자른다.*/
     min-height:100vh;
+    background: linear-gradient(to right, #5d4157, #a8caba); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color:#333;
     font-family:"Noto Sans KR",sans-serif;
     font-size:12px;
@@ -156,7 +157,7 @@ html{
         position:relative;
         width: 100%;
         height:600px;
-        font-weight:700;border-radius:2px;box-shadow:0 0px 10px rgba(0,0,0,0.1)}
+        font-weight:700;border-radius:3px;box-shadow:0 0px 15px rgba(0,0,0,0.1)}
 .tab-container .tab-content.selected{display:block;}
 @media (prefers-color-scheme: dark) {
     html{background-color:#000;color:#fff}
@@ -181,8 +182,9 @@ html{
 
 .tab-content1-wrap{
     padding: 0px;
-    background-image: url("../image/prada1.jpg");
+    background-image: url("../image/prada2.jpg");
     background-repeat: no-repeat;
+    background-size: cover;
     height:100%;
 }
 
