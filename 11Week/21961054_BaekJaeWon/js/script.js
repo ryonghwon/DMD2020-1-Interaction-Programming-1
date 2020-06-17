@@ -43,3 +43,15 @@ window.onload = function onClickTabTips(e) {
 tipMenuEls[i].addEventListener("click", onClickTabTips);
 // 질문
 // 두번째 메뉴에서 tips 01 02 03 클릭하면 3가지 중 각각 해당하는 article의 background color를 white로 변경시키고 싶은데 잘 안되네요..ㅠㅠ 알려주시면 감사하겠습니다!!
+
+/*
+rh :
+JavaScript - (기능)
+- tips 01, 02, 03 을 눌렀을 때(클릭 이벤트) article 요소에 각 케이스 마다의 클래스를 추가하거나 제거합니다.
+CSS - (화면)
+- article.tips-01 하위 항목에 대한 background-color 스타일 적용.(tips 01 일 때 적용되는 스타일 준비)
+- article.tips-02 하위 항목에 대한 background-color 스타일 적용.(tips 02 일 때 적용되는 스타일 준비)
+- article.tips-03 하위 항목에 대한 background-color 스타일 적용.(tips 03 일 때 적용되는 스타일 준비)
+
+CSS 준비된 클래스 규칙에 따라서 JavaScript 에서 현재 클릭한 버튼의 케이스(타입)를 확인하여 tips-01 클래스를 추가하거나 tips-01 클래스를 제거하나거 하면 제어가 가능합니다.
+*/
