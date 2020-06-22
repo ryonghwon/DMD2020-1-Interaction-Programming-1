@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Gallery</title>
+    <link rel="stylesheet" href="./css/gallery.css"/>
+    <link rel="stylesheet" href="./css/cursor.css"/>
+</head>
+<body>
+<h1 class="blind">Gallery</h1>
+<h2>SPIDER-MAN</h2>
+<div id="gallery" class="gallery">
+    <div class="view">
+        <div class="view-container">
+            <div class="view-item"><img src="./img/spider1.jpg"></div>
+            <div class="view-item"><img src="./img/spider2.jpg"></div>
+            <div class="view-item"><img src="./img/spider3.jpg"></div>
+            <div class="view-item"><img src="./img/spider4.jpg"></div>
+        </div>
+    </div>
+    <ul class="list">
+        <li class="selected"><a href="#"><img src="./img/spider1.jpg"></a></li>
+        <li><a href="#"><img src="./img/spider2.jpg"></a></li>
+        <li><a href="#"><img src="./img/spider3.jpg"></a></li>
+        <li><a href="#"><img src="./img/spider4.jpg"></a></li>
+    </ul>
+</div>
+<div id="cursor-dot">&nbsp;</div>
+<div id="cursor-bg">&nbsp;</div>
+<div id="progress"><span>&nbsp;</span></div>
+
+<!-- 아래 gsap 파일을 불러오지 않고 계속 마우스 커서가 안움직인다고 낑낑대고있었다... ㄱ-.. -->
+<script type="text/javascript" src="./vendor/gsap/gsap.min.js"></script>
+<script type="text/javascript" src="./js/gallery.js"></script>
+<script type="text/javascript" src="./js/cursor.js"></script>
+</body>
+</html>
