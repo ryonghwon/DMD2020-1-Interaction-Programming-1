@@ -11,7 +11,21 @@ body{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;height:100v
 .gallery{width:800px}
 .view{overflow:hidden;position:relative;width:800px;height:500px}
 .view-container{position:absolute;top:0;left:0;width:100%;height:100%}
-.view-container::after{content:'';display:block;position:relative;clear:both}
+.view-container::after{content:'';display:block;position:relative;
+    clear:both
+    /* 요소의 정렬이 float 으로 구성되어 있을 때 끝나는 부분에
+       clear 의 속성이 부여되어야 영역의 사이즈를 찾아낼 수 있다 */
+}
+/*
+<div>
+    <div - float:left />
+    <div - float:left />
+    <div - float:left />
+    <div - float:left />
+    ::after - clear:both (부모 div 의 영역이 하위 항목까지 모두 인식됨)
+</div>
+*/
+
 .view-item{position:relative;float:left;width:100%}
 .view-item img{display:block;width:100%}
 .list{display:-webkit-box;display:-ms-flexbox;display:flex;position:relative;width:100%;margin:0;padding:30px 20px;list-style:none}

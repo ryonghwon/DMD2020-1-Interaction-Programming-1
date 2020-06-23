@@ -6,11 +6,34 @@
 
 /* Variable */
 html{--gn-height:60px}
+
+/* CSS 변수를 사용할 수 있다. */
+html{
+    --main-color:#999999;
+    --font-size:1rem;
+    --line-height:1.5rem;
+}
+
+
 /* Layout */
 .blind{display:none!important;visibility:hidden!important;position:absolute;margin:0;padding:0;clip:rect(0 0 0 0);pointer-events:none}
 html{color:#333;font-family:"Noto Sans KR",sans-serif;font-size:12px;font-weight:400;line-height:1.5rem}
 body{background-color:#fff}
+
+body{
+    background-color:var(--main-color);
+    font-size:var(--font-size);
+    line-height:var(--line-height)
+}
+
 #global-nav{position:fixed;display:block;z-index:9999;top:0;right:0;left:0;width:100%;min-width:1024px;height:var(--gn-height);background-color:rgba(255,255,255,0.95);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);-webkit-transition:background-color 180ms cubic-bezier(0.455,0.030,0.515,0.955);-moz-transition:background-color 180ms cubic-bezier(0.455,0.030,0.515,0.955);-o-transition:background-color 180ms cubic-bezier(0.455,0.030,0.515,0.955);-ms-transition:background-color 180ms cubic-bezier(0.455,0.030,0.515,0.955);transition:background-color 180ms cubic-bezier(0.455,0.030,0.515,0.955)}
+
+#global-nav{
+    background-color:var(--main-color);
+    font-size:var(--font-size);
+    line-height:var(--line-height)
+}
+
 #global-nav::before{content:"";display:block;position:absolute;bottom:0;right:0;left:0;width:100%;height:0;border-bottom:1px solid rgba(255,255,255,0.5)}
 #global-nav .gn-content{max-width:980px;height:100%;margin-right:auto;margin-left:auto;padding-right:22px;padding-left:22px;padding-left:calc(max(22px,env(safe-area-inset-left)));padding-right:calc(max(22px,env(safe-area-inset-right)))}
 #global-nav ul{margin:0;padding:0;list-style:none}
@@ -34,3 +57,55 @@ body{background-color:#fff}
 #global-footer .gf-content h2{margin:0;padding:0;color:#fff;font-size:1rem;font-weight:400;line-height:1.667rem}
 .notice{display:block;position:fixed;z-index:10000;bottom:0;left:0;padding:10px;background-color:#fff;border-top-right-radius:4px;border-bottom-right-radius:4px;color:#000;font-size:1rem;line-height:1.667rem}
 .notice::before{content:"--"}
+
+.notice::after{content:"...after";display:block;width:40px;height:40px}
+
+.notice{width:50%}
+.notice{width:calc(100% / 2)}
+.notice{width:calc(100vw / 2);height:25vh}
+
+/* calc() - CSS 에서의 숫자 연산. */
+/* vw, vh - 브라우저의 사이즈 (viewport 해상도) 단위 */
+/* 100vw - 브라우저의 width 100% */
+/* 80vw - 브라우저의 width 80% */
+/* 100vh - 브라우저의 height 100% */
+/* 50vh - 브라우저 height 50% */
+
+/* em, rem */
+/* 브라우저에서 사용되는 사이즈 단위 */
+
+/* html{폰트 사이즈가 12px} */
+/* body{폰트 사이즈 1em(12px)}  */
+/* body{폰트 사이즈 0.5em(6px)}  */
+/* h1(body 의 자식요소) {폰트 사이즈 1em(6px)} */
+/* em - 부모요소의 사이즈를 기준으로 상대적인 비율 단위 */
+
+/* rem - root em */
+/* html 에 지정된 사이즈를 기준으로 상대적인 비율 단위 */
+/* html{폰트 사이트가 12px} */
+/* body{폰트사이즈 1rem(12px)} */
+/* body{폰트사이즈 0.5rem(6px)} */
+/* h1(body 의 자식요소) {폰트 사이즈 2rem(24px)} */
+
+
+/* Media Query */
+/* 반응형 웹을 제작할 때, 스타일을 분류할 수 있다. */
+/* ~ 1024px */
+@media only screen and (max-width:1024px) {
+    .notice::before{content:"~ 1024px"}
+    #global-nav{background-color:black;color:white}
+    #global-nav .gn-list li a{color:white}
+}
+/* (테블릿 기준)모바일과 데스크탑 스타일을 나눠서 적용하고자 할 때 사용 가능 */
+/* 1025px ~ */
+@media only screen and (min-width:1025px) {
+    .notice::before{content:"1025px ~"}
+    #global-nav{background-color:blue;color:white}
+    #global-nav .gn-list li a{color:white}
+}
+/* 481px ~ 768px */
+@media only screen and (min-width:481px) and (max-width:768px) {
+    .notice::before{content:"481px ~ 768px"}
+    #global-nav{background-color:red;color:white}
+    #global-nav .gn-list li a{color:white}
+}
