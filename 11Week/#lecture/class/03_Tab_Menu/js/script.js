@@ -17,7 +17,7 @@ function onClickTabMenu(e) {
         // 현재 클릭된 탭 메뉴로 상태 변경.
         cuId = index;
         el.classList.add("selected");
-        tabContentEls[cuId].classList.add("selected"); // display:block - 보일 수 있게 처리.
+        tabContentEls[cuId].classList.add("selected");
         // ** 이벤트에 따라 변화가 일어나고 끝 부분에 값을 변경.
         exId = cuId; // ** 다음번 클릭이 될 때, 이전에 선택된 index 값을 확인하여 복귀시킬 수 있도록 꼭 변경해야 함.
     }
