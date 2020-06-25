@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Audio Player</title>
+    <link rel="stylesheet" href="./css/style.css"/> 
+</head>
+<body>
+<h1 class="blind">Audio Player</h1>
+<div id="wrap">
+    <div id="audio-player" class="audio-player">
+        <div class="audio-container">
+            <div class="audio-frame">
+                <div class="audio-info">
+                    <div class="song-cover"><img/></div>
+                    <div class="song-info">
+                        <div class="song-title"><span class="title"></span></div>
+                        <div class="song-desc"><span class="byline"></span><span class="album"></span><span class="year"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="audio-controls">
+            <div class="progress-bar-container">
+                <div class="progress-bar">
+                    <span class="progress"></span>
+                    <span class="handle"></span>
+                </div>
+            </div>
+            <div class="controls-container">
+                <div class="play-control">
+                    <button class="btn-prev"><span>&nbsp;</span></button>
+                    <button class="btn-play-pause"><span>&nbsp;</span></button>
+                    <button class="btn-next"><span>&nbsp;</span></button>
+                </div>
+                <div class="time-info">
+                    <div class="current-time">--:--:--</div><div class="total-time">--:--:--</div>
+                </div>
+                <div class="volume-control">
+                    <button class="btn-mute"><span>&nbsp;</span></button>
+                    <div class="volume-bar">
+                        <span class="volume"></span>
+                        <span class="handle"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>
