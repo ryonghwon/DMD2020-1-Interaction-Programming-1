@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Video Player</title>
+    <link rel="stylesheet" href="./css/style.css"/> 
+</head>
+<body>
+<h1 class="blind">Video Player</h1>
+<div id="wrap">
+    <div id="video-player" class="video-player">
+        <div class="video-wrap">
+            <div class="video-container">
+                <div class="video-frame">
+                    <video class="video" controlslist="nodownload"></video>
+                </div>
+            </div>
+        </div>
+        <div class="video-controls">
+            <div class="progress-bar-container">
+                <div class="current-time">--:--:--</div>
+                <div class="progress-bar">
+                    <span class="progress"></span>
+                    <span class="handle"></span>
+                </div>
+                <div class="total-time">--:--:--</div>
+            </div>
+            <div class="controls-container">
+                <div class="play-control">
+                    <button class="btn-prev"><span>&nbsp;</span></button>
+                    <button class="btn-play-pause"><span>&nbsp;</span></button>
+                    <button class="btn-next"><span>&nbsp;</span></button>
+                </div>
+                <div class="volume-control">
+                    <button class="btn-mute"><span>&nbsp;</span></button>
+                    <div class="volume-bar">
+                        <span class="volume"></span>
+                        <span class="handle"></span>
+                    </div>
+                </div>
+                <div class="fullscreen-control">
+                    <button class="btn-fullscreen"><span>&nbsp;</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>
