@@ -203,7 +203,7 @@ body {
     position: absolute;
     z-index: 2;
     top: 50%;
-    left: 50%;
+    right: -20%;
     -webkit-transform: translateX(-50%) translateY(-50%) rotate(90deg);
     -moz-transform: translateX(-50%) translateY(-50%) rotate(90deg);
     -o-transform: translateX(-50%) translateY(-50%) rotate(90deg);
@@ -226,9 +226,9 @@ body {
     position: relative;
     white-space: nowrap;
     text-transform: uppercase;
-    font-size: 1.167rem;
+    font-size: 3rem;
     font-weight: 700;
-    line-height: 1.667rem
+    line-height: 5rem
 }
 .view-item .menu-collapse span::before {
     content: "";
@@ -270,14 +270,16 @@ body {
     display: flex;
     position: relative;
     z-index: 2;
+    padding: 50px;
+    padding-top: 120px;
     width: 100%;
     height: 100%;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    justify-content: top;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
+    align-items: left;
     -webkit-box-orient: vertical;
     -ms-flex-direction: column;
     flex-direction: column
@@ -295,7 +297,7 @@ body {
 }
 .view-item .menu-view span.title {
     text-transform: uppercase;
-    font-size: 1.667rem;
+    font-size: 1.5rem;
     font-weight: 700;
     line-height: 2.167rem;
     -webkit-transform: translateY(10px);
@@ -384,7 +386,7 @@ body {
     width: 12px;
     height: 0;
     height: 0;
-    border-top: 1px solid #fff
+    border-top: 1px solid rgb(255, 255, 255)
 }
 .view-item .btn-close span::before {
     -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
@@ -501,7 +503,7 @@ input[type=checkbox] {
  }
  html.mode-dark {
      background-color: rgb(0, 0, 0);
-     color: rgba(0, 0, 0, 0.304);
+     color: rgba(0, 0, 0, 0.146);
  }
  html.mode-dark label.switch {
      background-color: #fff
@@ -510,20 +512,64 @@ input[type=checkbox] {
      background-color: #242424
  }
 
+ html.mode-dark a{color: rgba(0, 0, 0, 0.112);}
 
-
-
- html.mode-dark .view-item::before {
-     content: "";
-     display: block;
-     position: absolute;
-     z-index: 1;
-     top: 0;
-     right: 0;
-     bottom: 0;
-     left: 0;
+html.mode-dark .view-item::before{
      background-color: rgba(255, 255, 255, 0);
- }
+}
 
  html.mode-dark #title{color: black;}
 
+
+
+
+
+ /* 버튼 */
+ .btn {
+     flex: 1 1 auto;
+     display: block;
+     width:120px;
+     margin-top: 30px;
+     padding: 5px;
+     text-align: center;
+     text-transform: uppercase;
+     transition: 0.5s;
+     background-size: 200% auto;
+     color: rgb(0, 0, 0);
+    /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+     box-shadow: 0 0 20px #eee;
+     border-radius: 5px;
+    }
+   
+   /* Demo Stuff End -> */
+   
+   /* <- Magic Stuff Start */
+   
+   .btn:hover {
+     background-position: right center; /* change the direction of the change here */
+   }
+   
+   .btn-1 {
+     background-image: linear-gradient(to right, #f6d365 0%, #fcbaa7 51%, #f6d365 100%);
+   }
+   
+   .btn-2 {
+     background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+   }
+   
+   .btn-3 {
+     background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+   }
+   
+   .btn-4 {
+     background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+   }
+   
+   .btn-5 {
+     background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);
+   }
+   
+
+
+
+ 
