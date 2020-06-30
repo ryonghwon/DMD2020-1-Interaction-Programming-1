@@ -52,3 +52,15 @@ init();
 
 // 다크모드
 
+
+
+
+// 텍스트 인터렉션
+$(document).ready(function() {
+    $('.has-animation').each(function(index) {
+      $(this).delay($(this).data('delay')).queue(function(){
+        $(this).addClass('animate-in');
+      });
+    });
+  });
+  
