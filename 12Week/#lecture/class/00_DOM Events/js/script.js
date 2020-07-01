@@ -39,7 +39,7 @@ function onLoadImage(e) {
     //image.style.width = el.naturalWidth + "px";
     //image.style.height = el.naturalHeight + "px";
 
-    // 1차 방정식를 이용해서 사이즈를 같은 비율로 줄임.
+    // 1차 함수를 이용해서 사이즈를 같은 비율로 줄임.
     // x : y = a : b
     // 지정하고자하는 width 값 : 구하고자하는 height = 원본이미지의 width : 원본이미지의 height
     // y = x * b / a
@@ -51,11 +51,6 @@ function onLoadImage(e) {
     image.style.height = height + "px";
     document.body.appendChild(image);
 }
-function onErrorImage(e) {
-    console.log(e);
-    // Image src 속성에서 이미지 경로를 찾지 못하는 경우 오류가 발생될 수 있다.
-}
 // 이미지를 로드하는 이벤트.
 image.src = imgPath;
 image.addEventListener("load", onLoadImage);
-image.addEventListener("error", onErrorImage);

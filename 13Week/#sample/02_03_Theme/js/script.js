@@ -7,7 +7,7 @@ var htmlEl = document.documentElement,
 
 function onClickMode(e) {
     e.preventDefault();
-    var el = e.currentTarget, parentEl = el.parentElement,type = el.getAttribute("href").replace("#", "");
+    var el = e.currentTarget, parentEl = el.parentElement, type = el.getAttribute("href").replace("#", "");
     if(!parentEl.classList.contains("selected")) {
         for(var i = 0; i < modeItemEls.length; i++) {
             modeItemEls[i].classList.remove("selected");
